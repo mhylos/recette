@@ -13,6 +13,10 @@
     --gris-oscuro: #b8b8b891;
 }
 
+body {
+    margin: 0px;
+}
+
 a {
     text-decoration: none;
     color: purple;
