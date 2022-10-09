@@ -2,9 +2,9 @@
     --fuenteHeading: 'Montserrat', sans-serif;
     --fuenteParrafos: 'Montserrat', sans-serif;
 
-    --primario: #784D3C;
-    --gris: #2e2e2ed5;
-    --gris-oscuro: #25252591;
+    --primario: whitesmoke;
+    --gris: #dbdbdbd5;
+    --gris-oscuro: #b8b8b891;
 }
 
 a {
