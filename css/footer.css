@@ -77,3 +77,10 @@ label {
 .footer-text {
     font-size: 0.8rem;
 }
+
+@media (min-width: 1440px) {
+    .newsletter {
+        flex-direction: row;
+        gap: 50px;
+    }
+}
