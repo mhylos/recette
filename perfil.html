@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <meta name="description" content="Busca las mejores recetas de Chile">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preload" href="css/profile.css" as="style">
+    <link rel="stylesheet" href="css/profile.css">
+    
+    <link rel="preload" href="css/footer.css" as="style">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header>
+        <h1 href="index.html">Recette 2</h1>
+        <nav>
+            <a href="perfil.html" class="btn-nav">Mi perfil</a>
+            <a href="faq.html" class="btn-nav">Preguntas frecuentes</a>
+            <a href="soporte.html" class="btn-nav">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="bg-white bd-radius"
+            style="width: fit-content ; height: fit-content; text-align: center; justify-content: center; margin-right: 10px; padding-inline: 10px;">
+            <div class="fa-stack fa-2x pad-icons bd-radius mar-all" style="margin-inline: auto;" id="p-div">
+                <i class="fa-solid fa-face-smile fa-stack-1x fa-inverse"
+                    style="font-size: 1.5em; --fa-stack-z-index: 2;" id="profile-btn"></i>
+                <i class="fa-solid fa-circle fa-stack-2x col-icons" id="circle-btn"
+                    style="--fa-stack-z-index: 1; color: purple"></i>
+            </div>
+            <div class="pad-icons bd-radius mar-all" style="width: 50px; margin-inline: auto;" id="b-div">
+                <i class="fa-regular fa-bookmark fa-2x col-icons" id="bookmarks-btn"></i>
+            </div>
+            <div class="pad-icons bd-radius mar-all" style="width: 50px; margin-inline: auto;" id="s-div">
+                <i class="fa-solid fa-gear fa-2x fa-spin-reverse col-icons" id="setting-btn"></i>
+            </div>
+        </div>
+        <div id="profile-content">
+            <b style="font-size: 2rem;" id="title-content"></b>
+            <div id="profile-div">
+                <div class="bg-white bd-radius info-div">
+                    <div class="pad-all" style="display: grid; grid-template-columns: 90% 10%;">
+                        Información Personal
+                        <i class="fa-solid fa-pen col-icons pad-icons-2" id="edit-information"></i>
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="first-name" style="padding-right: 10px;">Nombre </label>
+                        <input class="bg-white info-input" id="first-name" type="text" disabled value="Alan Alejandro">
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="last-name" style="padding-right: 10px;">Apellido </label>
+                        <input class="bg-white info-input" id="last-name" type="text" disabled value="Arias Vargas">
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="gender" style="padding-right: 10px;">Género </label>
+                        <input class="bg-white info-input" id="gender" type="text" disabled value="Másculino">
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="birthdate" style="padding-right: 10px;">Cumpleaños </label>
+                        <input class="bg-white info-input" id="birthdate" type="text" disabled value="19/07/2000">
+                    </div>
+                </div>
+                <div class="bg-white bd-radius info-div">
+                    <div class="pad-all" style="display: grid; grid-template-columns: 90% 10%;">
+                        Información Personal
+                        <i class="fa-solid fa-pen col-icons pad-icons-2" id="edit-informationb "></i>
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="first-name" style="padding-right: 10px;">Nombre </label>
+                        <input class="bg-white info-input" id="first-name" type="text" disabled value="Alan Alejandro">
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="last-name" style="padding-right: 10px;">Apellido </label>
+                        <input class="bg-white info-input" id="last-name" type="text" disabled value="Arias Vargas">
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="gender" style="padding-right: 10px;">Género </label>
+                        <input class="bg-white info-input" id="gender" type="text" disabled value="Másculino">
+                    </div>
+                    <div class="pad-all info-content">
+                        <label for="birthdate" style="padding-right: 10px;">Cumpleaños </label>
+                        <input class="bg-white info-input" id="birthdate" type="text" disabled value="19/07/2000">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="newsletter">
+            <div class="newsletter-intro">
+                <div class="icon">
+                    <i class="fa-regular fa-envelope fa-3x"></i>
+                </div>
+                <div class="newsletter-text">
+                    <h2 class="newsletter-title">¿Quieres recibir las ultimas recetas?</h2>
+                    <p>Escribenos tu correo para recibir las notificaciones apenas se suba una receta</p>
+                </div>
+            </div>
+
+            <form action="">
+                <div class="email-container">
+                    <input type="email" name="email" id="email">
+                    <button class="newsletter-button">Inscribirse</button>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="terminos" required>
+                    <label for="terminos">He leido y comprendido los <span class="underline">terminos y
+                            condiciones.</span></label>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="licencia">
+            <div class="footer-logo">
+                <a class="logo-text" href="index.html">Recette 2</a>
+            </div>
+            <div class="footer-text">
+                @2022 Recette 2<br>
+                This work is licensed under the <a class="underline"
+                    href="http://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 Creative Commons License</a>.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+    //btn = document.getElementById("btn-menu");
+    var title_content = document.getElementById('title-content');
+    var profile_btn = document.getElementById('profile-btn');
+    var bookmarks_btn = document.getElementById('bookmarks-btn');
+    var setting_btn = document.getElementById('setting-btn');
+
+    screen = 0;
+
+    /*btn.addEventListener('mouseenter', () => {
+        btn.classList.add('fa-bounce');
+    })
+    btn.addEventListener('mouseleave', () => {
+        btn.classList.remove('fa-bounce');
+    })*/
+
+    function updateScreen(event, i) {
+        screen = i;
+        console.log(screen)
+    }
+
+
+    setInterval(() => {
+        if (screen == 0) {
+            title_content.innerHTML = 'Perfil'
+            profile_btn.classList.remove('fa-face-smile');
+            profile_btn.classList.add('fa-face-smile-wink');
+            document.getElementById('p-div').style.backgroundColor = 'rgba(195, 195, 195, 0.5)';
+        } else if (screen == 1) {
+            title_content.innerHTML = 'Favoritos'
+        } else {
+
+            title_content.innerHTML = 'Configuraciones'
+        }
+
+        if (screen != 0) {
+            profile_btn.addEventListener('mouseenter', () => {
+                profile_btn.classList.remove('fa-face-smile');
+                profile_btn.classList.add('fa-face-smile-wink');
+                document.getElementById('p-div').style.backgroundColor = 'rgba(195, 195, 195, 0.5)';
+            });
+            profile_btn.addEventListener('mouseleave', () => {
+                profile_btn.classList.remove('fa-face-smile-wink');
+                profile_btn.classList.add('fa-face-smile');
+                document.getElementById('p-div').style.backgroundColor = 'transparent';
+            });
+            profile_btn.addEventListener('click', () => updateScreen(event, 0));
+        }
+        if (screen != 1) {
+            bookmarks_btn.addEventListener('mouseenter', () => {
+                bookmarks_btn.classList.remove('fa-regular');
+                bookmarks_btn.classList.add('fa-solid');
+                bookmarks_btn.classList.add('fa-shake');
+                document.getElementById('b-div').style.backgroundColor = 'rgba(195, 195, 195, 0.5)';
+            });
+            bookmarks_btn.addEventListener('mouseleave', () => {
+                bookmarks_btn.classList.remove('fa-solid');
+                bookmarks_btn.classList.add('fa-regular');
+                bookmarks_btn.classList.remove('fa-shake');
+                document.getElementById('b-div').style.backgroundColor = 'transparent';
+            });
+            bookmarks_btn.addEventListener('click', () => updateScreen(event, 1));
+        }
+        if (screen != 2) {
+            setting_btn.addEventListener('mouseenter', () => {
+                setting_btn.classList.add('fa-spin');
+                document.getElementById('s-div').style.backgroundColor = 'rgba(195, 195, 195, 0.5)';
+            });
+            setting_btn.addEventListener('mouseleave', () => {
+                setting_btn.classList.remove('fa-spin');
+                document.getElementById('s-div').style.backgroundColor = 'transparent';
+            });
+            setting_btn.addEventListener('click', () => updateScreen(event, 2));
+        }
+    }, 100)
+
+    //console.log(btn.getHover)
+</script>
+
+</html>
