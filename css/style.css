@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'Cookie';
+    src:  url('/assets/fonts/Cookie-Regular.ttf');
+}
+
 :root {
     --fuenteHeading: 'Montserrat', sans-serif;
     --fuenteParrafos: 'Montserrat', sans-serif;
+    --fuenteLogo:  'Cookie', sans-serif;
 
     --primario: whitesmoke;
     --gris: #dbdbdbd5;
@@ -25,13 +31,14 @@ a {
     padding-top: 5px;
 }
 
-h1, h2, h3, h4 {
+h2, h3, h4 {
     font-family: var(--fuenteHeading);
     line-height: 1.2;
 }
 
 h1 {
-    font-size: 3rem;
+    font-family: var(--fuenteLogo);
+    font-size: 5rem;
 }
 
 h2 {
@@ -50,9 +57,17 @@ img {
     max-width: 100%;
 }
 
+hr {
+    max-width: 95%;
+}
+
 .center {
     display: flex;
     justify-content: center;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 body {
@@ -68,10 +83,6 @@ header {
     display: grid;
     text-align: center;
     grid-template-columns: minmax(0, 1fr);
-}
-
-footer {
-    background-color: rgb(221, 221, 221);
 }
 
 @media (min-width: 1024px) {

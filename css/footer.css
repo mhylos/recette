@@ -1,0 +1,79 @@
+footer {
+    background-color: rgb(221, 221, 221);
+}
+
+footer h2{
+    font-size: 1.3rem;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.newsletter-intro {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.newsletter-title {
+    margin: 0;
+}
+
+.newsletter-text p {
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.email-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+input[type="email"] {
+    height: 40px;
+    font-size: 1.3rem;
+    border-radius: 30px;
+    margin: 0px 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.newsletter-button {
+    font-family: var(--fuenteParrafos);
+    font-size: 1rem;
+    border-radius: 30px;
+    margin: 0px;
+    height: 40px;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+.licencia {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+.logo-text{
+    font-family: var(--fuenteLogo);
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.footer-text {
+    font-size: 0.8rem;
+}

@@ -147,6 +147,10 @@ ul {
         transition: all 1s;
         z-index: 2;
     }
+
+    .categorias {
+        justify-content: left;
+    }
 }
 
 @media (min-width: 1440px) {
