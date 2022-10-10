@@ -72,11 +72,6 @@ section{
     box-sizing: border-box;
 }
 
-a {
-    color: #03658c;
-    text-decoration: none;
-}
-
 ul {
    list-style-type: none;
 }
