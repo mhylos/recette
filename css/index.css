@@ -67,6 +67,10 @@ ul {
     color: rgb(85, 56, 109);
 }
 
+.receta-container:hover {
+    cursor: pointer;
+}
+
 /*
 ------------
 ---Swiper---
