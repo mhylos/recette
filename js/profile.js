@@ -17,7 +17,7 @@ var title = 'Perfil';
 
 var profile_screen = `  <b class="fs-1">${title}</b>
                         <div class="row bg-white my-2 p-2 radius-10px justify-content-center">
-                            <div class="col-12 row m-0 mb-3 justify-content-center">
+                            <div class="col-12 row m-0 mb-3 justify-content-center fs-5">
                                 <p class="col-9 col-sm-8 my-auto p-0 text-end">Información Personal</p>
                                 <i class="col-3 col-sm-4 fa-regular fa-pen-to-square col-icons pad-icons-2 text-start my-auto pointer"
                                     id="edit-personal"></i>
@@ -167,7 +167,7 @@ var comments_screen = ` <b class="fs-1">Comentarios</b>
                         </div>`;
 
 const settings_screen = `   <b class="fs-1">Configuraciones</b>
-                            <div class="row bg-white my-3 p-2 radius-10px">
+                            <div class="row bg-white my-3 p-2 radius-10px fs-5">
                                 <div class="col-12 row m-0">
                                     <p class="col-11 m-0 mb-3 p-0">Información de Seguridad</p>
                                     <i class="col-1 fa-regular fa-pen-to-square col-icons pad-icons-2" id="edit-contact"></i>
@@ -198,7 +198,7 @@ const settings_screen = `   <b class="fs-1">Configuraciones</b>
                                         disabled>
                                 </div>
                             </div>
-                            <div class="row bg-white mt-3 p-2 radius-10px">
+                            <div class="row bg-white mt-3 p-2 radius-10px fs-5">
                                 <div class="col-12 row m-0">
                                     <p class="col-11 m-0 mb-3 p-0">Información de Pago</p>
                                     <i class="col-1 fa-regular fa-pen-to-square col-icons pad-icons-2" id="edit-pay"></i>
