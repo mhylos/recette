@@ -22,6 +22,10 @@ a {
     color: purple;
 }
 
+a:hover {
+    color: purple;
+}
+
 .btn-nav {
     background-color: rgba(230, 230, 230, 0.63);
     border-top-left-radius: 10px;
@@ -100,4 +104,4 @@ header {
     nav{
         align-self: flex-end;
     }
-}
+} 

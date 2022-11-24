@@ -1,169 +1,242 @@
+/* Antes */
+:root {
+    --color-text: purple;
+}
+
 header {
     /* display: flex; */
     background-color: white;
-    height: 100px;
+    /* height: 100px; */
 
     /* align-items: center; */
     /* align-content: stretch; */
     /* height: fit-content; */
 }
 
-h1 {
-    /* height: min-content; */
-    margin: 0px;
-    font-size: 4rem;
+hr {
+    color: purple;
 }
 
-#btn_menu:hover {
+.radius-10px {
+    border-radius: 10px;
+}
+
+.btn-custom {
+    /* height: min-content; */
+    width: fit-content;
+    height: auto;
+    border: 1px solid grey;
+    background-color: white;
+    color: var(--color-text);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}
+
+.border-right {
+    border-right: none;
+}
+
+
+/* .btn-custom {
+    height: min-content;
+    color: var(--color-text);
+} */
+
+.pointer:hover {
     cursor: pointer;
 }
 
-.bg-white {
-    background-color: white;
+.form-control {
+    color: var(--color-text);
 }
 
-.bd-radius {
-    border-radius: 15px;
+
+.form-select {
+    color: var(--color-text);
 }
 
-.in-line {
-    display: inline-flex;
+/* select option:focus {
+    color: white;
+    background-color: var(--color-text)
+} */
+
+.btn-custom:hover {
+    color: white;
+    background-color: var(--color-text);
+}
+
+.btn-custom:active {
+    color: white;
+    background-color: var(--color-text);
 
 }
 
-.pad-all {
-    padding: 10px;
-}
-
-.mar-all {
-    margin: 10px;
-}
-
-.center {
-    align-self: flex-end;
-    margin-bottom: 10px;
-}
-
-.pad-icons {
-    padding-inline: 5px;
-    padding-block: 10px;
-}
-
-.pad-icons-2 {
-    padding-inline: 5px;
-}
-
-.col-icons {
+.icon-color {
     color: grey;
 }
 
-.main-content {
-    display: flex;
-    justify-content: center;
-    margin-inline: 10%;
-    margin-block: 2.5%;
-    --fa-animation-duration: 3.5s;
-    /* display: flex;margin-inline: 10%; margin-block: 2.5%; --fa-animation-duration: 3.5s; */
-}
-
-.info-content {
-    display: grid;
-    /* display: flex; justify-content: end; */
-}
-
-.info-input {
-    border-radius: 5px;
-    width: 120px;
-    margin: auto;
-    text-align: center;
-}
-
-
-#profile-content {
-    width: min-content;
-    text-align: center;
-    padding: 10px;
-    /*width: 100%; text-align: center; padding: 10px;*/
-
-}
-
-.info-div {
-    margin-block: 10px;
-    width: max-content;
-    height: max-content;
-    padding: 10px;
-}
-
-/* #profile-div { */
-    /* display: flex; justify-content: space-evenly; */
-/* } */
-
-#profile-btn:hover {
-    cursor: pointer;
-}
-
-#profile-btn:hover+#circle-btn {
-    color: purple;
-}
-
-
-#bookmarks-btn:hover {
-    color: purple;
-    cursor: pointer;
-}
-
-#setting-btn:hover {
-    color: purple;
-    cursor: pointer;
-}
-
-#edit-information:hover {
-    color: purple;
-    cursor: pointer;
+#sort-bookmarks-btn:hover, #sort-comments-btn:hover {
+    color: var(--color-text);
 }
 
 @media (min-width: 768px) {
-
-    #profile-content {
-        display: grid;
-        grid-template-columns: 50% auto;
-        grid-template-rows: 7.5% auto;
-        width: 100%;
-    }
-
-    #title-content {
-        grid-row: 1;
-        grid-column: 1/3;
-    }
-
-    .info-div {
-        margin-inline: 10px;
-        width: 100%;
-    }
-
-    #profile-div {
-        display: flex;
-        justify-content: space-evenly;
-        grid-column: 1/3;
-        grid-row: 2;
+    .border-right {
+        border-right: 1px solid grey;
     }
 }
 
-@media (min-width: 1024px) {
-    .info-content {
-        display: flex;
-        justify-content: space-between;
-    }
-    label {
-        text-align: center;
-        width: 100%;
-    }
 
-    .info-input {
-        margin: 0;
-        width: 100%;
-    }
-}
+/* #bookmarks-btn:hover {
+    color: var(--color-text);
+} */
+
+/*
+/*h1 {
+/*    /* height: min-content; */
+/*    margin: 0px;
+/*    font-size: 4rem;
+/*}
+/*
+/*#btn_menu:hover {
+/*    cursor: pointer;
+/*}
+/*
+*/
+/*
+/*.in-line {
+/*    display: inline-flex;
+/*
+/*}
+/*
+/*.pad-all {
+/*    padding: 10px;
+/*}
+/*
+/*.mar-all {
+/*    margin: 10px;
+/*}
+/*
+/*.center {
+/*    align-self: flex-end;
+/*    margin-bottom: 10px;
+/*}
+/*
+/*.pad-icons {
+/*    padding-inline: 5px;
+/*    padding-block: 10px;
+/*}
+/*
+/*.pad-icons-2 {
+/*    padding-inline: 5px;
+/*}
+/*
+/*
+/*.main-content {
+/*    display: flex;
+/*    justify-content: center;
+/*    margin-inline: 10%;
+/*    margin-block: 2.5%;
+/*    --fa-animation-duration: 3.5s;
+/*    /* display: flex;margin-inline: 10%; margin-block: 2.5%; --fa-animation-duration: 3.5s; */
+/*}
+/*
+/*.info-content {
+/*    display: grid;
+/*    /* display: flex; justify-content: end; */
+/*}
+/*
+/*.info-input {
+/*    border-radius: 5px;
+/*    width: 120px;
+/*    margin: auto;
+/*    text-align: center;
+/*}
+/*
+/*
+/*#profile-content {
+/*    width: min-content;
+/*    text-align: center;
+/*    padding: 10px;
+/*    /*width: 100%; text-align: center; padding: 10px;*/
+/*
+/*}
+/*
+/*.info-div {
+/*    margin-block: 10px;
+/*    width: max-content;
+/*    height: max-content;
+/*    padding: 10px;
+/*}
+/*
+/* #profile-div { */
+/*    /* display: flex; justify-content: space-evenly; */
+/*/* } */
+/*
+/*#profile-btn:hover {
+/*    cursor: pointer;
+/*}
+/*
+/*#profile-btn:hover+#circle-btn {
+/*    color: purple;
+/*}
+/*
+/*
+/*#bookmarks-btn:hover {
+/*    color: purple;
+/*    cursor: pointer;
+/*}
+/*
+/*#setting-btn:hover {
+/*    color: purple;
+/*    cursor: pointer;
+/*}
+/*
+/*#edit-information:hover {
+/*    color: purple;
+/*    cursor: pointer;
+/*}
+/*
+/*@media (min-width: 768px) {
+/*
+/*    #profile-content {
+/*        display: grid;
+/*        grid-template-columns: 50% auto;
+/*        grid-template-rows: 7.5% auto;
+/*        width: 100%;
+/*    }
+/*
+/*    #title-content {
+/*        grid-row: 1;
+/*        grid-column: 1/3;
+/*    }
+/*
+/*    .info-div {
+/*        margin-inline: 10px;
+/*        width: 100%;
+/*    }
+/*
+/*    #profile-div {
+/*        display: flex;
+/*        justify-content: space-evenly;
+/*        grid-column: 1/3;
+/*        grid-row: 2;
+/*    }
+/*}
+/*
+/*@media (min-width: 1024px) {
+/*    .info-content {
+/*        display: flex;
+/*        justify-content: space-between;
+/*    }
+/*    label {
+/*        text-align: center;
+/*        width: 100%;
+/*    }
+/*
+/*    .info-input {
+/*        margin: 0;
+/*        width: 100%;
+/*    }
+/*}
 
 /* @media (min-width: 1440px) {
     section {
