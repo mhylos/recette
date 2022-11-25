@@ -43,6 +43,7 @@
                             ¡Bienvenido!</p>
                     </div>
                     <div style="margin-block: 25%;">
+
                         <label for="username" class="fs-5">Nombre de Usuario</label>
                         <div class="input-group shadow">
                             <span class="input-group-text">
@@ -50,6 +51,7 @@
                             </span>
                             <input type="text" class="form-control shadow-none">
                         </div>
+
                         <label for=" username" class="mt-3 fs-5">Contraseña</label>
                         <div class="input-group shadow">
                             <span class="input-group-text">
@@ -75,7 +77,7 @@
                         </span>
                         <input type="text" class="form-control shadow-none">
                     </div>
-                    <p class="d-none m-0 ms-3 mt-2" id="user-exists-message">
+                    <p class="d-none m-0 ms-3 mt-2 text-danger" id="user-exists-message">
                         El usuario ingresado ya se encuentra registrado
                     </p>
 
@@ -95,7 +97,7 @@
                         </span>
                         <input type="email" placeholder="usuario@email.com" class="form-control shadow-none m-0 rounded-end">
                     </div>
-                    <p class="d-none m-0 ms-3 mt-2" id="email-exists-message">
+                    <p class="d-none m-0 ms-3 mt-2 text-danger" id="email-exists-message">
                         El correo ingresado ya se encuentra registrado
                     </p>
 
