@@ -6,6 +6,15 @@
     color: rgb(97, 51, 97);
 }
 
+.morado-2 {
+    color: rgb(74, 39, 74);
+}
+
+.btn-calificar {
+    background-color: gold;
+    border-radius: 500px
+}
+
 h3 {
     font-size: 1.5rem;
 }
