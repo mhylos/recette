@@ -13,14 +13,13 @@ function updateScreen(screen) {
 }
 
 
-var title = 'Perfil';
+// var title = 'Perfil';
 
-var profile_screen = `  <b class="fs-1">${title}</b>
-                        <div class="row bg-white my-2 p-2 radius-10px justify-content-center">
+var profile_screen = `  <b class="fs-1">Perfil</b>
+                        <div class="row bg-white my-2 p-2 radius-10px justify-content-center shadow">
                             <div class="col-12 row m-0 mb-3 justify-content-center fs-5">
-                                <p class="col-9 col-sm-8 my-auto p-0 text-end">Información Personal</p>
-                                <i class="col-3 col-sm-4 fa-regular fa-pen-to-square col-icons pad-icons-2 text-start my-auto pointer"
-                                    id="edit-personal"></i>
+                                <p class="col-10 col-sm-7 col-xl-5 col-xxl-6 my-auto p-0 text-end">Información de Seguridad</p>
+                                <i class="col-2 fa-regular fa-pen-to-square col-icons w-auto icon-color pad-icons-2 text-start my-auto pointer" id="edit-security-btn"></i>
                             </div>
 
                             <label class="col-4 p-0 m-auto" for="first-name">Nombre</label>
@@ -46,11 +45,9 @@ var profile_screen = `  <b class="fs-1">${title}</b>
                             </div>
 
                         </div>
-                        <div class="row bg-white my-2 p-2 radius-10px  justify-content-center">
+                        <div class="row bg-white my-2 p-2 radius-10px  justify-content-center shadow">
                             <div class="col-12 row m-0 mb-3 text-start fs-5">
-                                <p class="col-9 col-sm-8 my-auto p-0 text-end">Guardados <span class="fs-6">(Recientes)</span></p>
-                                <i class="col-3 col-sm-4 fa-regular fa-pen-to-square col-icons pad-icons-2 text-start my-auto pointer"
-                                    id="edit-personal"></i>
+                                <p class="col-10 col-sm-9 col-lg-8 my-auto p-0 text-end">Guardados <span class="fs-6">(Recientes)</span></p>
                             </div>
 
                             <div class="col-12 row m-0 p-0 justify-content-evenly">
@@ -76,16 +73,17 @@ var profile_screen = `  <b class="fs-1">${title}</b>
                         </div>`;
 
 var bookmarks_screen = `<b class="fs-1">Guardados</b>
-                        <div class="row bg-white my-2 p-2 radius-10px justify-content-center">
-                            <div class="col-12 row m-0 mb-3 text-start fs-5 gap-1">
-                                <label class="col-5 col-md-6 my-auto p-0 text-end fs-5" for="order">Ordenado por:</label>
-                                <select class="col-4 col-md-5 form-select pe-auto text-center border-0 shadow-none fs-5 w-auto" id="bookmarks-order">
+                        <div class="row bg-white my-2 p-2 radius-10px justify-content-center shadow">
+                            <div class="col-12 row m-0 mb-3 text-start fs-5 gap-1 justify-content-center justify-content-sm-start">
+                                <label class="col-12 col-sm-6 my-auto p-0 text-center text-sm-end px-2 px-sm-0 fs-5" for="bookmarks-order">Ordenado por:</label>
+                                <select class="col-5 form-select pe-auto text-center border-0 shadow-none fs-5 w-auto" id="bookmarks-order">
                                     <option value="name" class="text-start">Nombre</option>
                                     <option value="date" class="text-start">Fecha</option>
                                     <option value="score" class="text-start">Puntaje</option>
                                 </select>
                                 <!-- <i class="col-6 bi bi-arrow-down-up bg-black"></i> -->
-                                <i class="col-1 fa-solid fa-arrow-down-a-z my-auto pointer icon-color w-auto p-0" id="sort-bookmarks-btn"></i>
+                                <i class="col-1 fa-solid fa-arrow-down-a-z my-auto pointer w-auto p-0 icon-color"
+                                    id="sort-bookmarks-btn"></i>
                             </div>
 
                             <!-- <div class="col-12 m-0 p-0 mb-1 ">
@@ -118,11 +116,11 @@ var bookmarks_screen = `<b class="fs-1">Guardados</b>
                         </div>`
 
 var comments_screen = ` <b class="fs-1">Comentarios</b>
-                        <div class="row bg-white my-2 p-2 radius-10px justify-content-center">
-                            <div class="col-12 row m-0 mb-3 text-start fs-5">
-                                <label class="col-5 col-md-6 my-auto p-0 text-end fs-5" for="order">Ordenado por:</label>
-                                <select class="col-4 col-md-5 form-select pe-auto text-center border-0 shadow-none fs-5 w-auto"
-                                    id="order">
+                        <div class="row bg-white my-2 p-2 radius-10px justify-content-center shadow">
+                            <div class="col-12 row m-0 mb-3 text-start fs-5 justify-content-center justify-content-sm-start">
+                                <label class="col-12 col-sm-6 my-auto p-0 text-center text-sm-end px-2 px-sm-0 fs-5" for="comments-order">Ordenado por:</label>
+                                <select class="col-5 form-select pe-auto text-center border-0 shadow-none fs-5 w-auto"
+                                    id="comments-order">
                                     <option value="recete" class="text-start">Receta</option>
                                     <option value="date" class="text-start">Fecha</option>
                                     <option value="comments" class="text-start">Comentarios</option>
@@ -167,10 +165,10 @@ var comments_screen = ` <b class="fs-1">Comentarios</b>
                         </div>`;
 
 const settings_screen = `   <b class="fs-1">Configuraciones</b>
-                            <div class="row bg-white my-3 p-2 radius-10px fs-5">
+                            <div class="row bg-white my-3 p-2 radius-10px fs-5 shadow">
                                 <div class="col-12 row m-0">
-                                    <p class="col-11 m-0 mb-3 p-0">Información de Seguridad</p>
-                                    <i class="col-1 fa-regular fa-pen-to-square col-icons pad-icons-2" id="edit-contact"></i>
+                                    <p class="col-10 col-sm-9 col-lg-8 my-auto p-0 text-end">Información de Seguridad</p>
+                                    <i class="col-2 col-sm-3 col-lg-4 fa-regular fa-pen-to-square col-icons w-auto icon-color pad-icons-2 text-start my-auto pointer" id="edit-security-btn"></i>
                                 </div>
 
                                 <label class="col-4 p-0 m-auto" for="e-mail">Correo Electrónico</label>
@@ -198,10 +196,10 @@ const settings_screen = `   <b class="fs-1">Configuraciones</b>
                                         disabled>
                                 </div>
                             </div>
-                            <div class="row bg-white mt-3 p-2 radius-10px fs-5">
+                            <div class="row bg-white mt-3 p-2 radius-10px fs-5 shadow">
                                 <div class="col-12 row m-0">
-                                    <p class="col-11 m-0 mb-3 p-0">Información de Pago</p>
-                                    <i class="col-1 fa-regular fa-pen-to-square col-icons pad-icons-2" id="edit-pay"></i>
+                                    <p class="col-9 col-sm-8 my-auto p-0 text-end">Información de Pago</p>
+                                    <i class="col-3 col-sm-4 fa-regular fa-pen-to-square col-icons w-auto icon-color pad-icons-2 text-start my-auto pointer" id="edit-pay-btn"></i>
                                 </div>
 
                                 <label class="col-4 p-0 m-auto" for="number_card">Número de tarjeta</label>

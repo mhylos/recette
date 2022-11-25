@@ -1,0 +1,19 @@
+header {
+    background-color: white;
+    display: grid;
+    text-align: center;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        padding-left: 40px;
+        padding-right: 40px;
+        justify-content: space-between;
+    }
+
+    nav {
+        align-self: flex-end;
+    }
+}

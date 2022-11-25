@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $(".receta-container").click(function(){
-        window.location = 'receta.html';
+$(document).ready(function () {
+    $(".receta-container").click(function () {
+        window.location = 'receta2.php';
     });
 });
