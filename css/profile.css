@@ -3,15 +3,6 @@
     --color-text: purple;
 }
 
-header {
-    /* display: flex; */
-    background-color: white;
-    /* height: 100px; */
-
-    /* align-items: center; */
-    /* align-content: stretch; */
-    /* height: fit-content; */
-}
 
 hr {
     color: purple;
@@ -45,14 +36,19 @@ hr {
     cursor: pointer;
 }
 
-.form-control {
-    color: var(--color-text);
-}
 
+.form-control:focus {
+    border-color: var(--color-text);
+}
 
 .form-select {
     color: var(--color-text);
 }
+
+.input-group {
+    border-radius: .375rem;
+}
+
 
 /* select option:focus {
     color: white;
@@ -74,7 +70,11 @@ hr {
     color: grey;
 }
 
-#sort-bookmarks-btn:hover, #sort-comments-btn:hover {
+#sort-bookmarks-btn:hover,
+#sort-comments-btn:hover,
+#edit-personal-btn:hover,
+#edit-security-btn:hover,
+#edit-pay-btn:hover {
     color: var(--color-text);
 }
 

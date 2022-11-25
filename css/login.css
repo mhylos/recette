@@ -1,0 +1,91 @@
+/* root { */
+/* --bs-nav-tabs-link-active-color: var(--color-text); */
+/* } */
+.pointer:hover {
+    cursor: pointer;
+}
+
+
+.form-control:focus {
+    border-color: var(--color-text);
+}
+
+.form-select {
+    color: var(--color-text);
+}
+
+.input-group {
+    border-radius: .375rem;
+}
+
+.icon-color {
+    color: grey;
+}
+
+.nav-tabs {
+    --bs-nav-tabs-link-active-color: var(--color-text);
+    --bs-link-hover-color: var(--color-text);
+}
+
+.nav-link {
+    color: grey;
+    width: 49%;
+}
+
+.circle-bg {
+    /* padding-block: auto; */
+    margin-inline: auto;
+    margin-block: 10%;
+    background-color: purple;
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    position: relative;
+}
+
+.welcome {
+    font-family: 'Cookie';
+    display: flex;
+    height: 50px;
+    font-size: 4rem;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+#remember-btn {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.25);
+}
+
+#remember-btn:checked {
+    background-color: purple;
+    border-color: purple;
+
+}
+
+#remember-btn[selected] {
+    box-shadow: none;
+
+}
+
+
+#cancel-register-btn,
+#continue-register-btn {
+    border: 1px solid #ced4da;
+    color: black;
+}
+
+#cancel-register-btn:hover {
+    color: red;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+#continue-register-btn:hover {
+    color: var(--color-text);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
