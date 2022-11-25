@@ -1,0 +1,39 @@
+.bold {
+    font-weight: 800;
+}
+
+.morado-1 {
+    color: rgb(97, 51, 97);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.fa-star {
+    color: gold;
+}
+
+.info-receta {
+    font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+    .info-receta {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .receta-container {
+        width: 70%;
+        margin: 0 auto 0 auto;
+    }
+}
+
+@media (min-width: 1800px) {
+    .receta-container {
+        width: 60%;
+        margin: 0 auto 0 auto;
+    }
+}
