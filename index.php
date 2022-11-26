@@ -31,7 +31,7 @@
 <body>
     <?php include('includes/header.php') ?>
     <main>
-        <section>
+        <section class="mb-3">
             <div class="swiper swipeRecetas">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">

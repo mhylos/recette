@@ -28,14 +28,8 @@
     
 </head>
 <body>
-    <header class="pt-5">
-        <a href="index.html"><h1 >Recette 2</h1></a>
-        <nav>
-            <a href="perfil.html" class="btn-nav">Mi perfil</a>
-            <a href="faq.html" class="btn-nav">Preguntas frecuentes</a>
-            <a href="soporte.html" class="btn-nav">Contacto</a>
-        </nav>
-    </header>
+    <?php include('includes/header.php')?>
+    
     <main class="m-1">
         <div class="receta-container">
 
@@ -48,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="d-grid bg-body border rounded-2 shadow mx-xl-5 my-3">
+            <div class="d-grid bg-body border rounded-2 shadow my-3">
                 <div class="row">
                     <div class="col-7">
                         <img src="assets/img/recetas/charquican.jpg" alt="">
@@ -135,44 +129,9 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="newsletter">
-            <div class="newsletter-intro">
-                <div class="icon">
-                    <i class="fa-regular fa-envelope fa-3x"></i>
-                </div>
-                <div class="newsletter-text">
-                    <h2 class="newsletter-title">¿Quieres recibir las ultimas recetas?</h2>
-                    <p>Escribenos tu correo para recibir las notificaciones apenas se suba una receta</p>
-                </div>
-            </div>
-            
-            <form action="">
-                <div class="email-container">
-                    <input type="email" name="email" id="email">
-                    <button class="newsletter-button">Inscribirse</button>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" name="terminos" required>
-                    <label for="terminos">He leido y comprendido los <span class="underline">terminos y condiciones.</span></label>
-                </div>
-            </form>
-        </div>
-        <hr>
-        <div class="licencia">
-            <div class="footer-logo">
-                <a class="logo-text" href="index.html">Recette 2</a>
-            </div>
-            <div class="footer-text">
-                @2022 Recette 2<br>
-                This work is licensed under the  <a class="underline" href="http://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 Creative Commons License</a>.
-            </div>
-        </div>        
-    </footer>
+    <?php include('includes/footer.php') ?>
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
-    <script src="js/index.js"></script>
 </body>
 
 </html>

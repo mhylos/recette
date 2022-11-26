@@ -15,7 +15,6 @@ h2 {
 }
 
 section {
-    height: 250px;
     width: 350px;
     padding: 20px;
     background-color: var(--gris) ;
