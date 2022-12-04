@@ -1,0 +1,49 @@
+<?php
+require "conexion.php";
+
+class Recetas {
+    public $recetas;
+    private $db;
+
+    function __construct()
+    {
+        $this->db = new Database();
+    }
+
+    function Ejecutar($sentencia, $op)
+    {
+        $this->db->connect();
+        if($op == 0){
+            $data = $this->db->EjecutarQuery($sentencia, $op);
+            $this->db->disconnect();
+            return $data;
+        } else {
+            $this->db->EjecutarQuery($sentencia, $op);
+            $this->db->disconnect();
+        }
+    }
+
+    function obtenerRecetaPorId($id)
+    {
+        $this->db->connect();
+        $sql = "SELECT * FROM recetas WHERE receta_id = $id";
+        $result = mysqli_query($this->db->conn, $sql);
+        $receta = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $this->db->disconnect();
+        return $receta;
+    }    
+
+    function listarRecetas()
+    {
+        $sentencia = "SELECT * FROM recetas";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
+    }
+
+    function getLatest($quantity)
+    {
+        $sentencia = "SELECT * FROM recetas ORDER BY fecha DESC LIMIT $quantity";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
+    }
+}

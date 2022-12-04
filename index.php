@@ -21,7 +21,6 @@
     <link rel="preload" href="css/index.css" as="style">
     <link rel="stylesheet" href="css/index.css">
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -34,54 +33,7 @@
         <section class="my-3">
             <div class="swiper swipeRecetas">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <article class="receta-container">
-                            <img class="overlay" src="assets/img/recetas/porotos.jpg" alt="">
-                            <div class="info-receta">
-                                <h3 class="nombre">Porotos</h3>
-                                <div class="interacciones">
-                                    <div>
-                                        <i class="fa-solid fa-star"></i><span>4.8</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-comment"></i><span>10</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="swiper-slide">
-                        <article class="receta-container">
-                            <img class="overlay" src="assets/img/recetas/charquican.jpg" alt="">
-                            <div class="info-receta">
-                                <h3 class="nombre">Charquicán</h3>
-                                <div class="interacciones">
-                                    <div>
-                                        <i class="fa-solid fa-star"></i><span>4.8</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-comment"></i><span>10</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="swiper-slide">
-                        <article class="receta-container">
-                            <img class="overlay" src="assets/img/recetas/sopaipillas.jpg" alt="">
-                            <div class="info-receta">
-                                <h3 class="nombre">Sopaipillas</h3>
-                                <div class="interacciones">
-                                    <div>
-                                        <i class="fa-solid fa-star"></i><span>4.8</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-comment"></i><span>10</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                    <!--JS-->
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -94,40 +46,34 @@
                     <ul class="list-group list-group col-md-5">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
-                            </div>
-                            <span class="badge rounded-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
+                                <div class="fw-bold">Almuerzo</div>
                             </div>
                             <span class="badge rounded-pill">30</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
+                                <div class="fw-bold">Acompañamientos</div>
                             </div>
-                            <span class="badge rounded-pill">2</span>
+                            <span class="badge rounded-pill">30</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
+                                <div class="fw-bold">Pastas</div>
                             </div>
-                            <span class="badge rounded-pill">2</span>
+                            <span class="badge rounded-pill">30</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
+                                <div class="fw-bold">Comida Chilena</div>
                             </div>
-                            <span class="badge rounded-pill">2</span>
+                            <span class="badge rounded-pill">30</span>
                         </li>
-
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Postre</div>
+                            </div>
+                            <span class="badge rounded-pill">30</span>
+                        </li>
                     </ul>
                     <div class="col-md-7 pt-1 pt-md-0">
                         <div class="input-group rounded gap-1">
@@ -176,35 +122,6 @@
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-<!-- Initialize Swiper -->
-<script type="module">
-    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-    var swiper = new Swiper(".swipeRecetas", {
-        speed: 400,
-        spaceBetween: 50,
-        loop: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        // Responsive breakpoints
-        breakpoints: {
-            // when window width is <= 768
-            768: {
-                slidesPerView: "auto",
-                slidesPerView: 2,
-                spaceBetweenSlides: 50
-            },
-            // when window width is <= 1024px
-            1024: {
-                slidesPerView: "auto",
-                slidesPerView: 3,
-                spaceBetweenSlides: 50
-            }
-        }
-    });
-</script>
 
 <script src="js/index.js"></script>
 
