@@ -19,5 +19,9 @@
             else 
                 echo 0;
             break;
+
+        case 'get_all_of_recipe':
+            $data = $comentarios->getAllByRecetaId($_POST['receta_id']);
+            echo json_encode($data);
     }
 ?>

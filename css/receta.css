@@ -27,6 +27,12 @@ h3 {
     font-size: 0.7rem;
 }
 
+.receta-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
 @media (min-width: 768px) {
     .info-receta {
         font-size: 1rem;

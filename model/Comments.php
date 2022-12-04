@@ -30,17 +30,26 @@ class Comments {
         return $data;
     }
 
-    function avgScoreReceta($id)
+    function avgScoreReceta($receta_id)
     {
-        $sentencia = "SELECT ROUND(AVG(nota),1) FROM comments where receta_id = $id";
+        $sentencia = "SELECT ROUND(AVG(nota),1) FROM comments where receta_id = $receta_id";
         $data = $this->Ejecutar($sentencia, 0);
         return $data[0][0];
     }
 
-    function quantityCommentsReceta($id)
+    function quantityCommentsReceta($receta_id)
     {
-        $sentencia = "SELECT COUNT(1) FROM comments WHERE receta_id = $id";
+        $sentencia = "SELECT COUNT(1) FROM comments WHERE receta_id = $receta_id";
         $data = $this->Ejecutar($sentencia, 0);
         return $data[0][0];
+    }
+
+    function getAllByRecetaId($receta_id)
+    {
+        $sentencia = "SELECT users.nombre, users.apellido, comments.contenido, comments.fecha, comments.nota 
+            FROM comments JOIN users USING (user_id)
+            WHERE receta_id = $receta_id";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
     }
 }

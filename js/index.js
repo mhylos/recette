@@ -8,9 +8,16 @@ $(document).ready(function () {
                 insertIntoSwiper(receta);
             });
             initSwiper();
+            addSwiperRecetaListeners();
         }
     });
 });
+
+function addSwiperRecetaListeners(){
+    $('.receta-container').click(function(){
+        window.location = 'receta.php?id='+$(this).attr('id');
+    });
+}
 
 function getRecetaScore(id) {
     return $.ajax({
@@ -37,23 +44,23 @@ function insertIntoSwiper(data){
     score = getRecetaScore(receta_id).responseText;
     cantidad_comments = getCantidadComments(receta_id).responseText;
     swiper = $('.swiper-wrapper');
-    var html = `<div class="swiper-slide">` +
-            `    <article class="receta-container">` +
-            `        <img class="overlay" src="assets/img/recetas/${img_name}" alt="">` +
-            `        <div class="info-receta">` +
-            `            <h3 class="nombre">${nombre}</h3>` +
-            `            <div class="interacciones">` +
-            `                <div>` +
-            `                    <i class="fa-solid fa-star"></i><span>${score}</span>` +
-            `                </div>` +
-            `                <div>` +
-            `                    <i class="fa-solid fa-comment"></i><span>${cantidad_comments}</span>` +
-            `                </div>` +
-            `            </div>` +
-            `        </div>` +
-            `    </article>` +
-            `</div>`
-    
+    var html = `<div class="swiper-slide">
+                <article class="receta-container" id="${receta_id}">
+                    <img class="overlay" src="assets/img/recetas/${img_name}" alt="">
+                    <div class="info-receta">
+                        <h3 class="nombre">${nombre}</h3>
+                        <div class="interacciones">
+                            <div>
+                                <i class="fa-solid fa-star"></i><span>${score}</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-comment"></i><span>${cantidad_comments}</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>`
+
     swiper.append(html)
 }
 

@@ -35,9 +35,9 @@
 
             <div class="d-grid my-2">
                 <div class="row d-flex align-items-end">
-                    <h2 class="titulo-receta col-10 bold morado-1">Lorem ipsum dolor sit amet</h2>
+                    <h2 class="titulo-receta col-10 bold morado-1" id="titulo">Lorem ipsum dolor sit amet</h2>
                     <div class="col-2 ">
-                        <i class="fa-solid fa-star"></i><b>5/5</b>
+                        <i class="fa-solid fa-star"></i><b><span id="score">4</span>/7</b>
                     </div>
                 </div>
             </div>
@@ -45,53 +45,30 @@
             <div class="d-grid bg-body border rounded-2 shadow my-3">
                 <div class="row">
                     <div class="col-7">
-                        <img src="assets/img/recetas/charquican.jpg" alt="">
+                        <img id="receta-img" src="assets/img/recetas/charquican.jpg" alt="">
                     </div>
                     <div class="col-5 info-receta py-2">
-                        <i class="fa-solid fa-chevron-right"></i> <span> Dificultad: <b>Facil</b></span>
+                        <i class="fa-solid fa-chevron-right"></i> <span> Dificultad: <b id="dificultad"></b></span>
                         <br>
-                        <i class="fa-solid fa-chevron-right"></i> <span>Preparación: <b>123 minutos</b></span>
+                        <i class="fa-solid fa-chevron-right"></i> <span>Preparación: <b id="duracion"></b></span>
                         <br>
-                        <i class="fa-solid fa-chevron-right"></i> <span>Dosis: <b>1 persona</b></span>
+                        <i class="fa-solid fa-chevron-right"></i> <span>Dosis: <b id="dosis"></b></span>
                     </div>
                 </div>
             </div>
 
-            <div class="d-grid bg-body my-3 p-2 rounded-2 shadow">
+            <div class="d-grid bg-body my-3 p-2 rounded-2 shadow" id="ingredientes">
                 <h2 class="bold morado-1">Ingredientes</h2>
                 <hr class="w-25 ms-2">
-                <div class="row">
-                    <div class="col-1"><i class="fa-solid fa-check"></i></div>
-                    <div class="col-11">Lorem ipsum dolor sit amet</div>
-                </div>
-                <div class="row">
-                    <div class="col-1"><i class="fa-solid fa-check"></i></div>
-                    <div class="col-11">Lorem ipsum dolor sit amet</div>
-                </div>
-                <div class="row">
-                    <div class="col-1"><i class="fa-solid fa-check"></i></div>
-                    <div class="col-11">Lorem ipsum dolor sit amet</div>
-                </div>
             </div>
 
             <div class="d-grid bg-body my-3 p-2 rounded-2 shadow">
                 <h2 class="bold morado-1">Preparación</h2>
                 <hr class="w-25 ms-2">
                 <div>
-                    <ol class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h3 class="bold morado-2">Paso 1:</h3>
-                            <div>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <h3 class="bold morado-2">Paso 2:</h3>
-                            <div>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            </div>
-                        </li>
-                      </ul>
+                    <ol class="list-group list-group-flush" id="pasos">
+
+                    </ol>
                 </div>
             </div>
 
@@ -102,36 +79,17 @@
                 </div>
                 <hr class="w-25 ms-2">
                 <div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div>
-                                <span class="bold morado-2">Usuario</span> <span class="fw-light">2022-11-24</span>
-                            </div>
-                            <div>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            </div>                            
-                        </li>
-                        <li class="list-group-item">
-                            <div>
-                                <span class="bold morado-2">Usuario</span> <span class="fw-light">2022-11-24</span>
-                            </div>
-                            <div>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            </div>                            
-                        </li>
+                    <ul class="list-group list-group-flush" id="comentarios">
+                        
                     </ul>
-                </div>
-                
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn">Ver más</button>
-                </div>
-                
+                </div>                
             </div>
         </div>
     </main>
     <?php include('includes/footer.php') ?>
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="js/receta.js"></script>
 </body>
 
 </html>
