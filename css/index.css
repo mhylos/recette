@@ -70,6 +70,23 @@ ul {
     cursor: pointer;
 }
 
+.badge {
+    background-color: rgb(85, 56, 109);
+}
+
+.input-group-text {
+    background-color: rgb(85, 56, 109);
+    color: white;
+}
+
+.page-link {
+    color: rgb(85, 56, 109) !important;
+}
+
+.card {
+    width: 300px;
+}
+
 /*
 ------------
 ---Swiper---
@@ -79,6 +96,10 @@ ul {
     width: auto;
     height: 250px;
     margin-right: 50px;
+}
+
+:root {
+    --swiper-theme-color: rgb(85, 56, 109) !important; 
 }
 
 .swiper-slide {
@@ -110,7 +131,6 @@ ul {
 .swiper-slide {
 	position: relative;
 }
-
 
 @media (min-width: 768px) {
     section {
@@ -153,6 +173,10 @@ ul {
 
     .categorias {
         justify-content: left;
+    }
+
+    .card {
+        width: 250px;
     }
 }
 

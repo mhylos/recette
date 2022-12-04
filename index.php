@@ -31,7 +31,7 @@
 <body>
     <?php include('includes/header.php') ?>
     <main>
-        <section class="mb-3">
+        <section class="my-3">
             <div class="swiper swipeRecetas">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -87,29 +87,86 @@
                 <div class="swiper-button-next"></div>
             </div>
         </section>
-        <aside>
-            <h2>Categorias</h2>
-            <div class="categorias">
-                <div class="seccion">
-                    <h3 class="nombre-categoria">Principal</h3>
-                    <ul>
-                        <li>Pastas</li>
-                        <li>Mariscos</li>
-                        <li>Rapidos</li>
-                        <li>...</li>
+        <section>
+            <h2>Busqueda</h2>
+            <div class="search-container">
+                <div class="categories-container row">
+                    <ul class="list-group list-group col-md-5">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Cras justo odio
+                            </div>
+                            <span class="badge rounded-pill">1</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Cras justo odio
+                            </div>
+                            <span class="badge rounded-pill">30</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Cras justo odio
+                            </div>
+                            <span class="badge rounded-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Cras justo odio
+                            </div>
+                            <span class="badge rounded-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Cras justo odio
+                            </div>
+                            <span class="badge rounded-pill">2</span>
+                        </li>
+
                     </ul>
-                </div>
-                <div class="seccion">
-                    <h3 class="nombre-categoria">Postres</h3>
-                    <ul>
-                        <li>Ensalada de frutas</li>
-                        <li>Cheesecake</li>
-                        <li>Tortas</li>
-                        <li>...</li>
-                    </ul>
-                </div>
+                    <div class="col-md-7 pt-1 pt-md-0">
+                        <div class="input-group rounded gap-1">
+                            <input type="search" class="form-control rounded-pill" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                            <span class="input-group-text rounded-circle" id="search">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                        <div class="search-results d-flex flex-row justify-content-center my-2">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/img/recetas/porotos.jpg" alt="porotos">
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagination-container d-flex flex-row justify-content-center">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                
             </div>
-        </aside>
+        </section>
     </main>
     <hr>
     <?php include('includes/footer.php') ?>
