@@ -33,27 +33,31 @@
     <div class="row justify-content-evenly justify-content-lg-center m-0 py-4">
 
         <div class="col-2 col-lg-1 p-2 py-3 bg-white radius-10px me-lg-5 shadow" id="left-div" style="height: max-content;">
-            <div class="center pointer" id="profile-div">
+            <div class="center" id="profile-div">
                 <div class="fa-stack fa-2x">
-                    <i class="fa-solid fa-face-smile-wink fa-stack-1x fa-inverse" style="font-size: 1.5em; --fa-stack-z-index: 2;" id="profile-btn"></i>
+                    <i class="fa-solid fa-face-smile-wink fa-stack-1x fa-inverse pointer" style="font-size: 1.5em; --fa-stack-z-index: 2;" id="profile-btn"></i>
                     <i class="fa-solid fa-circle fa-stack-2x" id="circle-btn" style="--fa-stack-z-index: 1;"></i>
                 </div>
             </div>
 
-            <div class="pad-icons bd-radius center mt-4 mb-3 pointer icon-color" id="bookmarks-div">
-                <i class="fa-regular fa-bookmark fa-2x" id="bookmarks-btn"></i>
+            <div class="pad-icons bd-radius center mt-4 mb-3 icon-color" id="bookmarks-div">
+                <i class="fa-regular fa-bookmark fa-2x pointer" id="bookmarks-btn"></i>
             </div>
 
-            <div class="pad-icons bd-radius center mt-4 mb-3 pointer icon-color" id="comments-div">
-                <i class="fa-regular fa-comments fa-2x" id="comments-btn"></i>
+            <div class="pad-icons bd-radius center mt-4 mb-3 icon-color" id="comments-div">
+                <i class="fa-regular fa-comments fa-2x pointer" id="comments-btn"></i>
             </div>
 
-            <div class="pad-icons bd-radius center pointer icon-color" id="settings-div">
-                <i class="fa-solid fa-gear fa-2x fa-spin-reverse" id="settings-btn"></i>
+            <div class="pad-icons bd-radius center mt-4 mb-3 icon-color" id="settings-div">
+                <i class="fa-solid fa-gear fa-2x fa-spin-reverse pointer" id="settings-btn"></i>
+            </div>
+            
+            <div class="pad-icons bd-radius center mt-4 icon-color" id="logout-div">
+                <i class="fa-solid fa-arrow-right-from-bracket fa-2x pointer" id="logout-btn"></i>
             </div>
         </div>
 
-        <div class="col-8 col-lg-6 m-0 p-0 text-center" id="right-div">
+        <div class="col-8 col-lg-6 m-0 p-0 text-center" id="rightDiv">
 
         </div>
 

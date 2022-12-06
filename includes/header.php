@@ -14,7 +14,7 @@
 
 <script>
     const myProfile = document.querySelector('#my-profile-btn')
-    if (sessionStorage.getItem('loggedIn') != null) {
+    if (localStorage.getItem('logged') != null) {
         myProfile.innerHTML = 'Mi Perfil';
         myProfile.href = 'perfil.php'
     } else {

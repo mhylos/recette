@@ -16,10 +16,14 @@ function restoreListener(tag) {
         commentsBtn.style.color = 'grey';
         element.addEventListener('mouseenter', commentsMouseEnter);
         element.addEventListener('mouseleave', commentsMouseLeave);
-    } else {
+    } else if (tag == 'settings') {
         settingsBtn.style.color = 'grey';
         element.addEventListener('mouseenter', settingsMouseEnter);
         element.addEventListener('mouseleave', settingsMouseLeave);
+    } else {
+        logoutBtn.style.color = 'grey';
+        element.addEventListener('mouseenter', logoutMouseEnter);
+        element.addEventListener('mouseleave', logoutMouseLeave);
     }
 }
 
@@ -42,7 +46,7 @@ function profileClick(event) {
         profileBtn.removeEventListener('mouseenter', profileMouseEnter);
         profileBtn.removeEventListener('mouseleave', profileMouseLeave);
         tagActive = 'profile';
-        updateScreen(profile_screen);
+        setProfileScreen();
     }
 }
 
@@ -69,7 +73,7 @@ function bookmarksClick(event) {
         bookmarksBtn.removeEventListener('mouseenter', bookmarksMouseEnter);
         bookmarksBtn.removeEventListener('mouseleave', bookmarksMouseLeave);
         tagActive = 'bookmarks';
-        updateScreen(bookmarks_screen);
+        setBookmarksScreen();
     }
 }
 
@@ -96,7 +100,7 @@ function commentsClick(event) {
         commentsBtn.removeEventListener('mouseenter', commentsMouseEnter);
         commentsBtn.removeEventListener('mouseleave', commentsMouseLeave);
         tagActive = 'comments';
-        updateScreen(comments_screen);
+        setCommentsScreen();
     }
 }
 
@@ -118,9 +122,37 @@ function settingsClick(event) {
         settingsBtn.removeEventListener('mouseenter', settingsMouseEnter);
         settingsBtn.removeEventListener('mouseleave', settingsMouseLeave);
         tagActive = 'settings';
-        updateScreen(settings_screen);
+        setSettingsScreen();
     }
 }
+
+function logoutMouseEnter(event) {
+    logoutBtn.classList.add('fa-beat');
+    logoutBtn.style.color = 'purple';
+}
+
+function logoutMouseLeave(event) {
+    logoutBtn.classList.remove('fa-beat');
+    logoutBtn.style.color = 'grey';
+}
+
+function logoutClick(event) {
+    if (tagActive != 'logout') {
+        logoutBtn.classList.remove('fa-beat');
+        restoreListener(tagActive);
+        logoutBtn.style.color = 'purple';
+        logoutBtn.removeEventListener('mouseenter', logoutMouseEnter);
+        logoutBtn.removeEventListener('mouseleave', logoutMouseLeave);
+        tagActive = 'logout';
+        //volver al index
+        location.href = 'index.php';
+        // console.log(JSON.parse(localStorage.getItem('user')).id);
+        localStorage.removeItem('remember');
+        localStorage.removeItem('logged');
+        localStorage.removeItem('user');
+    }
+}
+
 
 var tagActive = 'profile';
 
@@ -128,6 +160,7 @@ const profileBtn = document.querySelector(`#profile-btn`);
 const bookmarksBtn = document.querySelector(`#bookmarks-btn`);
 const commentsBtn = document.querySelector(`#comments-btn`);
 const settingsBtn = document.querySelector(`#settings-btn`);
+const logoutBtn = document.querySelector(`#logout-btn`);
 
 profileBtn.addEventListener('mouseenter', profileMouseEnter);
 // profileBtn.addEventListener('mouseleave', profileMouseLeave);
@@ -144,3 +177,7 @@ commentsBtn.addEventListener('click', commentsClick);
 settingsBtn.addEventListener('mouseenter', settingsMouseEnter);
 settingsBtn.addEventListener('mouseleave', settingsMouseLeave);
 settingsBtn.addEventListener('click', settingsClick);
+
+logoutBtn.addEventListener('mouseenter', logoutMouseEnter);
+logoutBtn.addEventListener('mouseleave', logoutMouseLeave);
+logoutBtn.addEventListener('click', logoutClick);
