@@ -20,5 +20,20 @@
             $data = $receta->getLatest(3);
             echo json_encode($data);
             break;
+
+        case 'get_categories':
+            $data = $receta->getCategories();
+            echo json_encode($data);
+            break; 
+
+        case 'get_receta_by_category':
+            if (!isset($_POST['selected_categories'])) {
+                echo 0;
+                break;
+            }
+            $selected_categories = "('". implode("','", $_POST['selected_categories']). "')";
+            $data = $receta->getByCategories($selected_categories);
+            echo json_encode($data);
+            break; 
     }
 ?>

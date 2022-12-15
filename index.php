@@ -43,34 +43,10 @@
             <h2>Busqueda</h2>
             <div class="search-container">
                 <div class="categories-container row">
-                    <ul class="list-group list-group col-md-5">
+                    <ul class="list-group col-md-5">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Almuerzo</div>
-                            </div>
-                            <span class="badge rounded-pill">30</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                                <div class="fw-bold">Acompañamientos</div>
-                            </div>
-                            <span class="badge rounded-pill">30</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                                <div class="fw-bold">Pastas</div>
-                            </div>
-                            <span class="badge rounded-pill">30</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                                <div class="fw-bold">Comida Chilena</div>
-                            </div>
-                            <span class="badge rounded-pill">30</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                                <div class="fw-bold">Postre</div>
                             </div>
                             <span class="badge rounded-pill">30</span>
                         </li>

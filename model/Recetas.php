@@ -46,4 +46,18 @@ class Recetas {
         $data = $this->Ejecutar($sentencia, 0);
         return $data;
     }
+
+    function getCategories()
+    {
+        $sentencia = "SELECT categoria AS nombre, COUNT(1) AS cantidad FROM recetas GROUP BY categoria";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
+    }
+
+    function getByCategories($categories)
+    {
+        $sentencia = "SELECT receta_id, nombre, descripcion, img_name FROM recetas WHERE categoria IN $categories";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
+    }
 }

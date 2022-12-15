@@ -9,8 +9,11 @@ $(document).ready(function () {
             });
             initSwiper();
             addSwiperRecetaListeners();
+            
         }
     });
+
+    setAllCategorias()
 });
 
 function addSwiperRecetaListeners(){
@@ -63,6 +66,81 @@ function insertIntoSwiper(data){
 
     swiper.append(html)
 }
+
+function setAllCategorias(){
+    lista = $('.list-group')
+    var html = ''
+    $.ajax({
+        url:'controller/CtrlRecetas.php?op=get_categories',
+        type:'POST',
+        success: function(response){
+            data = $.parseJSON(response);
+            data.forEach(categoria => {
+                html += `<li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">${categoria.nombre}</div>
+                            </div>
+                            <span class="badge rounded-pill">${categoria.cantidad}</span>
+                        </li>`
+            });
+            lista.append(html)
+            addSelectCategoryListener()
+        }
+    });
+    
+}
+
+function insertResult(receta) {
+    jQresultados = $('.search-results')
+    html = `<div class="card">
+                <img class="card-img-top" src="assets/img/recetas/${receta.img_name}">
+                <div class="card-body">
+                    <h5 class="card-title">${receta.nombre}</h5>
+                    <p class="card-text">${receta.descripcion}</p>
+                </div>
+            </div>`
+    jQresultados.append(html)
+}
+
+function cleanResultContainer() {
+    jQresultados = $('.search-results')
+    jQresultados.empty()
+}
+
+function searchByCategory(categories) {
+    $.ajax({
+        url:'controller/CtrlRecetas.php?op=get_receta_by_category',
+        type:'POST',
+        data: {'selected_categories': categories},
+        success: function(response){
+            if (response != 0){
+                cleanResultContainer()
+                data = $.parseJSON(response);
+                data.forEach(receta => {
+                    insertResult(receta)
+                });
+            }
+        }
+    });
+}
+
+function addSelectCategoryListener() {
+    $('.list-group-item').on('click', function(){
+        let selected_categories = []
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        } else {
+            $(this).addClass('selected');
+        }
+        $('.list-group').find('.selected').each(function (index, list_item) {
+            selected_categories.push($(list_item).children().children().text())
+        });
+        searchByCategory(selected_categories)
+    })
+    
+}
+
+
 
 function initSwiper() {
     var swiper = new Swiper(".swipeRecetas", {

@@ -87,6 +87,19 @@ ul {
     width: 300px;
 }
 
+.list-group-item:hover {
+    cursor:pointer;
+    background-color: rgba(85, 56, 109, 0.05);
+}
+
+.selected {
+    background-color: rgba(85, 56, 109, 0.05);
+}
+
+label {
+    cursor:inherit;
+}
+
 /*
 ------------
 ---Swiper---
