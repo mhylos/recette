@@ -53,13 +53,18 @@
                                 <i class="fas fa-search"></i>
                             </span>
                         </div>
-                        <div class="search-results my-2">
+                        <div class="paginate my-2">
+                            <div class="items search-results">
+
+                            </div>
+                            <div class="pager">
+                                <div class="firstPage d-inline">&laquo;</div>
+                                <div class="previousPage d-inline">&lsaquo;</div>
+                                <div class="pageNumbers d-inline"></div>
+                                <div class="nextPage d-inline">&rsaquo;</div>
+                                <div class="lastPage d-inline">&raquo;</div>
+                            </div>
                             <!--RESULTADOS-->
-                        </div>
-                        <div class="pagination-container d-flex flex-row justify-content-center">
-                            <ul class="pagination">
-                                
-                            </ul>
                         </div>
                     </div>
                 </div>                
@@ -73,6 +78,8 @@
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script src="https://cdn.rawgit.com/mrk-j/paginga/v0.8.1/paginga.jquery.min.js"></script>
 
 <script src="js/index.js"></script>
 

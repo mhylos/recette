@@ -119,6 +119,45 @@ ul {
     border: solid 2px rgb(85, 56, 109);
 }
 
+.pager {
+    display: flex;
+    justify-content: center;
+}
+
+.pager div{
+    padding: 0 5px 0 5px;
+    margin: 0 5px 0 5px;
+    background-color: rgba(190, 176, 202, 0.6);
+    border: solid 1px rgb(85, 56, 109);
+    cursor: pointer;
+}
+
+.pager div.disabled{
+    background-color: rgba(193, 190, 196, 0.6);
+    border: solid 1px rgb(104, 93, 114);
+    color: grey;
+}
+
+.pageNumbers a {
+    padding: 0 5px 0 5px;
+}
+
+.pageNumbers a.active {
+    background-color: rgb(85, 56, 109);
+    color: aliceblue;
+}
+
+.firstPage {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+.lastPage {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 .list-group-item:hover {
     cursor:pointer;
     background-color: rgba(85, 56, 109, 0.05);
