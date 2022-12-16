@@ -10,6 +10,7 @@ $(document).ready(function () {
             });
             initSwiper();
             addSwiperRecetaListeners();
+            addResultsListeners();
         }
     });
 
