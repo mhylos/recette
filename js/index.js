@@ -164,9 +164,10 @@ function insertResult(receta) {
 }
 
 function paginate() {
+    $('.pager').removeAttr('style');
     $('.paginate').unbind().removeData();
     $(".paginate").paginga({
-        itemsPerPage:1,
+        itemsPerPage:3
     });
 }
 
