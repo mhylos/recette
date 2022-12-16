@@ -1,3 +1,6 @@
+const NUMBER_OF_ELEMENTS_PER_PAGE = 1;
+var pagination;
+
 $(document).ready(function () {
     $.ajax({
         url:'controller/CtrlRecetas.php?op=get_latest',
@@ -18,6 +21,70 @@ $(document).ready(function () {
     setAllCategorias()
     setSearchListener()
 });
+
+class Pagination {
+    constructor(data) {
+        this.current_page = 0
+        this.data = data
+        this.number_elements = data.length
+        this.number_of_pages = Math.ceil(this.number_elements/NUMBER_OF_ELEMENTS_PER_PAGE)
+    }
+
+    changePage(page){
+        const rango_inferior = page * this.number_elements;
+        const rango_superior = page * this.number_elements + NUMBER_OF_ELEMENTS_PER_PAGE;
+        for (let i = rango_inferior; i < rango_superior; i++) {
+            console.log(data[i]);
+            insertResult(data[i])
+        }
+    }
+
+    insertResult(receta) {
+        jQresultados = $('.search-results')
+        jQresultados.empty()
+        html = `<div class="card receta" id="${receta.receta_id}">
+                    <img class="card-img-top" src="assets/img/recetas/${receta.img_name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${receta.nombre}</h5>
+                        <p class="card-text">${receta.descripcion}</p>
+                    </div>
+                </div>`
+        jQresultados.append(html)
+    }
+
+    createPagination(div){
+        div.empty()
+        html = `<ul class="pagination">
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous" disabled>
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    </li>`
+                    
+        for (let i = 0; i < this.number_of_pages; i++){
+            html += `<li class="page-item"><a class="page-link">${i}</a></li>`
+        }
+
+        html +=`<li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                </ul>`
+
+        div.append(html)      
+        
+        this.createListeners()
+    }
+
+    createListeners(){
+        $('.page-link').on('click', function (param) {
+            
+        });
+    }
+}
 
 function setDefaultSearchResults(){
     $.ajax({
@@ -164,6 +231,24 @@ function cleanResultContainer() {
     jQresultados.empty()
 }
 
+// function searchByCategory(categories) {
+//     $.ajax({
+//         url:'controller/CtrlRecetas.php?op=get_receta_by_category',
+//         type:'POST',
+//         data: {'selected_categories': categories},
+//         success: function(response){
+//             if (response != 0){
+//                 cleanResultContainer()
+//                 data = $.parseJSON(response);
+//                 data.forEach(receta => {
+//                     insertResult(receta)
+//                 });
+//                 addResultsListeners()
+//             }
+//         }
+//     });
+// }
+
 function searchByCategory(categories) {
     $.ajax({
         url:'controller/CtrlRecetas.php?op=get_receta_by_category',
@@ -173,9 +258,8 @@ function searchByCategory(categories) {
             if (response != 0){
                 cleanResultContainer()
                 data = $.parseJSON(response);
-                data.forEach(receta => {
-                    insertResult(receta)
-                });
+                pagination = new Pagination(data);
+                pagination.createPagination($('.pagination'))
                 addResultsListeners()
             }
         }
