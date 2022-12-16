@@ -35,5 +35,15 @@
             $data = $receta->getByCategories($selected_categories);
             echo json_encode($data);
             break; 
+
+            case 'get_receta_by_name':
+                if (!isset($_POST['nombre'])) {
+                    echo 0;
+                    break;
+                }
+                $data = $receta->getByName($_POST['nombre']);
+                if ($data) echo json_encode($data);
+                else echo 'sin resultados';
+                break; 
     }
 ?>

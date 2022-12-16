@@ -6,20 +6,77 @@ $(document).ready(function () {
             data = $.parseJSON(response);
             data.forEach(receta => {
                 insertIntoSwiper(receta);
+                insertResult(receta);
             });
             initSwiper();
             addSwiperRecetaListeners();
-            
         }
     });
 
+    //setDefaultSearchResults()
     setAllCategorias()
+    setSearchListener()
 });
+
+function setDefaultSearchResults(){
+    $.ajax({
+        url:'controller/CtrlRecetas.php?op=get_latest',
+        type:'POST',
+        success: function(response){
+            data = $.parseJSON(response);
+            data.forEach(receta => {
+                insertIntoSwiper(receta);
+            });
+            initSwiper();
+            addSwiperRecetaListeners();
+        }
+    });
+}
 
 function addSwiperRecetaListeners(){
     $('.receta-container').click(function(){
         window.location = 'receta.php?id='+$(this).attr('id');
     });
+}
+
+function addResultsListeners(){
+    $('.receta').click(function(){
+        window.location = 'receta.php?id='+$(this).attr('id');
+    });
+}
+
+function setSearchListener(){
+    $('#search').on('click', function(){
+        texto = $('#buscador').val()
+        if (texto == '') return null
+        searchByName(texto)
+    })
+}
+
+function searchByName(nombre){
+    $.ajax({
+        url:'controller/CtrlRecetas.php?op=get_receta_by_name',
+        type:'POST',
+        data: {'nombre': nombre},
+        success: function(response){
+            if (response != 0 && response != 'sin resultados'){
+                cleanResultContainer()
+                data = $.parseJSON(response);
+                data.forEach(receta => {
+                    insertResult(receta)
+                });
+                addResultsListeners()
+            }
+        }
+    });
+}
+
+function noResults(){
+    html = `<div class="alert text-center">
+                <strong>Sin resultados</strong><br>
+                ¡Comprueba que lo que has escrito es correcto!
+            </div>`
+    $('.search-results').append(html)
 }
 
 function getRecetaScore(id) {
@@ -86,13 +143,12 @@ function setAllCategorias(){
             lista.append(html)
             addSelectCategoryListener()
         }
-    });
-    
+    });    
 }
 
 function insertResult(receta) {
     jQresultados = $('.search-results')
-    html = `<div class="card">
+    html = `<div class="card receta" id="${receta.receta_id}">
                 <img class="card-img-top" src="assets/img/recetas/${receta.img_name}">
                 <div class="card-body">
                     <h5 class="card-title">${receta.nombre}</h5>
@@ -119,6 +175,7 @@ function searchByCategory(categories) {
                 data.forEach(receta => {
                     insertResult(receta)
                 });
+                addResultsListeners()
             }
         }
     });
@@ -150,12 +207,6 @@ function initSwiper() {
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
-        },
-
-        on: {
-            init: function () {
-              console.log('swiper initialized');
-            },
         },
         
         // Responsive breakpoints

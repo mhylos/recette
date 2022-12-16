@@ -77,14 +77,42 @@ ul {
 .input-group-text {
     background-color: rgb(85, 56, 109);
     color: white;
+    cursor: pointer;
 }
 
 .page-link {
     color: rgb(85, 56, 109) !important;
 }
 
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
 .card {
-    width: 300px;
+    width: 150px;
+    margin: 5px;
+}
+
+.card-img-top{
+    min-height: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1rem;
+}
+
+.card-text {
+    display: none;
+}
+
+.alert {
+    background-color: rgba(190, 176, 202, 0.6);
+    border: solid 2px rgb(85, 56, 109);
 }
 
 .list-group-item:hover {
@@ -145,6 +173,8 @@ label {
 	position: relative;
 }
 
+
+
 @media (min-width: 768px) {
     section {
         width: 650px;
@@ -191,10 +221,34 @@ label {
     .card {
         width: 250px;
     }
+
+    .card-text {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+                line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+
+    .card-img-top{
+        min-height: 200px;
+        max-height: 200px;
+        object-fit: cover;
+    }
 }
 
 @media (min-width: 1440px) {
     section {
         width: 1350px;
+    }
+
+    .card {
+        width: 230px;
+    }
+
+    .search-results {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

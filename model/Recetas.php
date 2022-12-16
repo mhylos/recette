@@ -60,4 +60,11 @@ class Recetas {
         $data = $this->Ejecutar($sentencia, 0);
         return $data;
     }
+
+    function getByName($name)
+    {
+        $sentencia = "SELECT receta_id, nombre, descripcion, img_name FROM recetas WHERE nombre LIKE '%$name%'";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
+    }
 }

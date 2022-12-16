@@ -33,7 +33,7 @@
         <section class="my-3">
             <div class="swiper swipeRecetas">
                 <div class="swiper-wrapper">
-                    <!--JS-->
+                    <!--RESULTADOS-->
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -44,27 +44,17 @@
             <div class="search-container">
                 <div class="categories-container row">
                     <ul class="list-group col-md-5">
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                                <div class="fw-bold">Almuerzo</div>
-                            </div>
-                            <span class="badge rounded-pill">30</span>
-                        </li>
+                        <!--RESULTADOS-->
                     </ul>
                     <div class="col-md-7 pt-1 pt-md-0">
                         <div class="input-group rounded gap-1">
-                            <input type="search" class="form-control rounded-pill" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                            <input type="search" class="form-control rounded-pill" placeholder="Buscar" id="buscador" aria-label="Search" aria-describedby="search-addon" />
                             <span class="input-group-text rounded-circle" id="search">
                                 <i class="fas fa-search"></i>
                             </span>
                         </div>
-                        <div class="search-results d-flex flex-row justify-content-center my-2">
-                            <div class="card">
-                                <img class="card-img-top" src="assets/img/recetas/porotos.jpg" alt="porotos">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
+                        <div class="search-results my-2">
+                            <!--RESULTADOS-->
                         </div>
                         <div class="pagination-container d-flex flex-row justify-content-center">
                             <ul class="pagination">
@@ -96,7 +86,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
-<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 <script src="js/index.js"></script>
