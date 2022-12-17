@@ -77,9 +77,8 @@
             </div>
 
             <div class="d-grid bg-body my-3 p-2 rounded-2 shadow">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between comments-header">
                     <h2 class="bold morado-1">Comentarios</h2>
-                    <button type="button" class="btn btn-calificar">Calificar</button>
                 </div>
                 <hr class="w-25 ms-2">
                 <div>

@@ -15,12 +15,13 @@ $(document).ready(function () {
 
     if (isLogged()) {
         insertSaveButton()
+        insertCommentButton()
     }
 });
 
 function insertSaveButton(){
     container = $(".info-receta")
-    html = `<button type="button" class="btn d-flex align-items-center align-self-end">
+    html = `<button type="button" id="btnSave" class="btn d-flex align-items-center align-self-end me-3 btnSave">
                 <i class="fa-regular fa-bookmark" id="saveIcon"></i><span class="ms-2" id="btnAction">Guardar</span>
             </button>`
     container.append(html)
@@ -28,9 +29,15 @@ function insertSaveButton(){
         if (response == true) {
             $("#saveIcon").attr('class', 'fa-solid fa-bookmark')
             $("#btnAction").text('Eliminar de guardados')
+            $("#btnSave").addClass('btnRemove').removeClass('btnSave');
         }
     });
-    
+}
+
+function insertCommentButton(){
+    container = $(".comments-header")
+    html = `<button type="button" class="btn btn-calificar">Calificar</button>`
+    container.append(html)
 }
 
 function isSaved(){
@@ -69,6 +76,40 @@ function getRecetaScore(id) {
     });
 }
 
+function insertIngredientes(ingredientes){
+    ingredienteshtml = $('#ingredientes');
+    html = `<div class="row my-1">
+                <div class="col-lg-6 row">`
+    for (let index = 0; index < Math.ceil(ingredientes.length/2); index++) {
+        html += `   <div class="col-1 text-center"><i class="fa-solid fa-check"></i></div>
+                    <div class="col-11">${ingredientes[index]}</div>`;  
+    };
+    html += `   </div>
+                <div class="col-lg-6 row">`
+
+    for (let index = Math.ceil(ingredientes.length/2); index < ingredientes.length; index++){
+        html += `   <div class="col-1 text-center"><i class="fa-solid fa-check"></i></div>
+                    <div class="col-11">${ingredientes[index]}</div>`;  
+    }
+    html += `   </div>
+            </div>`
+
+    ingredienteshtml.append(html);
+}
+
+function insertPasos(pasos){
+    pasoshtml = $('#pasos');
+    for (let index = 0; index < pasos.length; index++) {
+        html = `<li class="list-group-item">
+                    <h3 class="bold morado-2">Paso ${index+1}:</h3>
+                    <div>
+                        ${pasos[index]}
+                    </div>
+                </li>`
+        pasoshtml.append(html);
+    }
+}
+
 function rellenar(data) {
     $('#titulo').text(data.nombre);
     $('#receta-img').attr('src', 'assets/img/recetas/'+data.img_name);
@@ -78,26 +119,10 @@ function rellenar(data) {
     getRecetaScore(data.receta_id);
 
     ingredientes = data.ingredientes.split('+');
-    ingredienteshtml = $('#ingredientes');
-    ingredientes.forEach(ingrediente => {
-        html = `<div class="row my-1">
-                <div class="col-1 text-center"><i class="fa-solid fa-check"></i></div>
-                <div class="col-11">${ingrediente}</div>
-                </div>`;
-        ingredienteshtml.append(html);
-    });
+    insertIngredientes(ingredientes)
 
     pasos = data.pasos.split('+');
-    pasoshtml = $('#pasos');
-    for (let index = 0; index < pasos.length; index++) {
-        html = `<li class="list-group-item">
-                    <h3 class="bold morado-2">Paso ${index+1}:</h3>
-                    <div>
-                        ${pasos[index]};
-                    </div>
-                </li>`
-        pasoshtml.append(html);
-    }
+    insertPasos(pasos)
 
     rellenarComentarios(data.receta_id);
 }
