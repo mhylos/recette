@@ -17,25 +17,10 @@ $(document).ready(function () {
         }
     });
 
-    setDefaultSearchResults()
     setAllCategorias()
     setSearchListener()
 });
 
-function setDefaultSearchResults(){
-    $.ajax({
-        url:'controller/CtrlRecetas.php?op=get_latest',
-        type:'POST',
-        success: function(response){
-            data = $.parseJSON(response);
-            data.forEach(receta => {
-                insertIntoSwiper(receta);
-            });
-            initSwiper();
-            addSwiperRecetaListeners();
-        }
-    });
-}
 
 function addSwiperRecetaListeners(){
     $('.receta-container').click(function(){
@@ -113,12 +98,14 @@ function insertIntoSwiper(data){
                 <article class="receta-container" id="${receta_id}">
                     <img class="overlay" src="assets/img/recetas/${img_name}" alt="">
                     <div class="info-receta">
-                        <h3 class="nombre">${nombre}</h3>
-                        <div class="interacciones">
-                            <div>
+                        <div class="row text-left">
+                            <h3 class="col-12">${nombre}</h3>
+                        </div>
+                        <div class="interacciones row">
+                            <div class="col-4 d-flex">
                                 <i class="fa-solid fa-star"></i><span>${score}</span>
                             </div>
-                            <div>
+                            <div class="col d-flex">
                                 <i class="fa-solid fa-comment"></i><span>${cantidad_comments}</span>
                             </div>
                         </div>

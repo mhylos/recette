@@ -45,7 +45,7 @@
             <div class="d-grid bg-body border rounded-2 shadow my-3">
                 <div class="row">
                     <div class="col-7">
-                        <img id="receta-img" src="assets/img/recetas/charquican.jpg" alt="">
+                        <img id="receta-img" src="" alt="Sin imagen">
                     </div>
                     <div class="col-5 info-receta py-2">
                         <i class="fa-solid fa-chevron-right"></i> <span> Dificultad: <b id="dificultad"></b></span>

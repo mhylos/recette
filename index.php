@@ -70,8 +70,9 @@
                 </div>                
             </div>
         </section>
+        <hr>
     </main>
-    <hr>
+    
     <?php include('includes/footer.php') ?>
 
 </body>

@@ -9,7 +9,7 @@
             </div>
             <div class="newsletter-text">
                 <h2 class="newsletter-title">¿Quieres recibir las ultimas recetas?</h2>
-                <p>Escribenos tu correo para recibir las notificaciones apenas se suba una receta</p>
+                <p>Escribenos tu correo para recibir las notificaciones apenas subamos una receta</p>
             </div>
         </div>
 
