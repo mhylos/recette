@@ -36,8 +36,8 @@
             <div class="d-grid my-2">
                 <div class="row d-flex align-items-end">
                     <h2 class="titulo-receta col-10 bold morado-1" id="titulo">Lorem ipsum dolor sit amet</h2>
-                    <div class="col-2 ">
-                        <i class="fa-solid fa-star"></i><b><span id="score">4</span>/7</b>
+                    <div class="col-2 d-flex justify-content-end">
+                        <i class="fa-solid fa-star"></i><b><span id="score">0</span>/7</b>
                     </div>
                 </div>
             </div>

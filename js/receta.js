@@ -36,8 +36,8 @@ function rellenar(data) {
     ingredientes = data.ingredientes.split('+');
     ingredienteshtml = $('#ingredientes');
     ingredientes.forEach(ingrediente => {
-        html = `<div class="row">
-                <div class="col-1"><i class="fa-solid fa-check"></i></div>
+        html = `<div class="row my-1">
+                <div class="col-1 text-center"><i class="fa-solid fa-check"></i></div>
                 <div class="col-11">${ingrediente}</div>
                 </div>`;
         ingredienteshtml.append(html);

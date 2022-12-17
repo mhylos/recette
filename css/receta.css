@@ -15,6 +15,14 @@
     border-radius: 500px
 }
 
+h2 {
+    margin: 1rem 0 0 1rem;
+}
+
+.titulo-receta {
+    margin: 0;
+}
+
 h3 {
     font-size: 1.5rem;
 }
