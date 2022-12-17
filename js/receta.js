@@ -1,8 +1,8 @@
-$(document).ready(function () {
-    const querystring = window.location.search
-    const params = new URLSearchParams(querystring);
-    const id = params.get('id')
+querystring = window.location.search
+params = new URLSearchParams(querystring);
+const id = params.get('id')
 
+$(document).ready(function () {
     $.ajax({
         url:'controller/CtrlRecetas.php?op=obtener_receta',
         data: {'id': id},
@@ -12,7 +12,51 @@ $(document).ready(function () {
             rellenar(data);
         }
     });
+
+    if (isLogged()) {
+        insertSaveButton()
+    }
 });
+
+function insertSaveButton(){
+    container = $(".info-receta")
+    html = `<button type="button" class="btn d-flex align-items-center align-self-end">
+                <i class="fa-regular fa-bookmark" id="saveIcon"></i><span class="ms-2" id="btnAction">Guardar</span>
+            </button>`
+    container.append(html)
+    $.when(isSaved()).done(function(response) {
+        if (response == true) {
+            $("#saveIcon").attr('class', 'fa-solid fa-bookmark')
+            $("#btnAction").text('Eliminar de guardados')
+        }
+    });
+    
+}
+
+function isSaved(){
+    user_info = localStorage.getItem('user')
+    user_id = $.parseJSON(user_info).id;
+    receta_id = id
+    return ($.ajax({
+        url:'controller/CtrlSavedRecipes.php?op=is_saved',
+        data: {'user_id': user_id,
+               'receta_id': receta_id},
+        type:'POST'
+    }));
+}
+
+function isLogged(){
+    const myProfile = document.querySelector('#my-profile-btn')
+    if (localStorage.getItem('logged') != null) {
+        myProfile.innerHTML = 'Mi Perfil';
+        myProfile.href = 'perfil.php'
+        return true
+    } else {
+        myProfile.innerHTML = 'Iniciar Sesión';
+        myProfile.href = 'logIn.php'
+        return false
+    }
+}
 
 function getRecetaScore(id) {
     $.ajax({

@@ -35,7 +35,9 @@
 
             <div class="d-grid my-2">
                 <div class="row d-flex align-items-end">
-                    <h2 class="titulo-receta col-10 bold morado-1" id="titulo">Lorem ipsum dolor sit amet</h2>
+                    <div class="col-10 d-flex">
+                        <h2 class="titulo-receta bold morado-1" id="titulo"></h2>
+                    </div>
                     <div class="col-2 d-flex justify-content-end">
                         <i class="fa-solid fa-star"></i><b><span id="score">0</span>/7</b>
                     </div>
@@ -47,12 +49,14 @@
                     <div class="col-7">
                         <img id="receta-img" src="" alt="Sin imagen">
                     </div>
-                    <div class="col-5 info-receta py-2">
-                        <i class="fa-solid fa-chevron-right"></i> <span> Dificultad: <b id="dificultad"></b></span>
-                        <br>
-                        <i class="fa-solid fa-chevron-right"></i> <span>Preparación: <b id="duracion"></b></span>
-                        <br>
-                        <i class="fa-solid fa-chevron-right"></i> <span>Dosis: <b id="dosis"></b></span>
+                    <div class="col-5 info-receta py-2 d-flex flex-column justify-content-between">
+                        <div>
+                            <i class="fa-solid fa-chevron-right"></i> <span> Dificultad: <b id="dificultad"></b></span>
+                            <br>
+                            <i class="fa-solid fa-chevron-right"></i> <span>Preparación: <b id="duracion"></b></span>
+                            <br>
+                            <i class="fa-solid fa-chevron-right"></i> <span>Dosis: <b id="dosis"></b></span>
+                        </div>
                     </div>
                 </div>
             </div>
