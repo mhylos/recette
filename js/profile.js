@@ -250,12 +250,12 @@ function setRandomRecete() {
                         nombreTitle += `${nombre[e].toUpperCase()} `;
                     }
                 }
-                innerHTML += `<div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-interval="5000">`
-                innerHTML += `   <img src="assets/img/recetas/${img_name}" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="${nombre}">`
-                innerHTML += `   <div class="carousel-caption">`
-                innerHTML += `       <p class="fs-5"><a href="#" class="text-white">${nombreTitle}</a></p>`
-                innerHTML += `   </div>`
-                innerHTML += `</div>`
+                innerHTML += `  <div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-interval="5000">
+                                    <img src="assets/img/recetas/${img_name}" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="${nombre}">
+                                    <div class="carousel-caption">
+                                       <p class="fs-5"><a href="#" class="text-white">${nombreTitle}</a></p>
+                                    </div>
+                                </div>`
             }
             document.querySelector('#randomRecete1').innerHTML = innerHTML;
             document.querySelector('#randomRecete2').innerHTML = innerHTML;
@@ -281,13 +281,13 @@ function setTopRecete() {
                     }
                 }
                 nombreTitle = nombreTitle.trim();
-                innerHTML += `<div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-interval="5000">`
-                innerHTML += `   <img src="assets/img/recetas/${img_name}" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="${nombre}">`
-                innerHTML += `   <div class="carousel-caption">`
-                innerHTML += `       <h5 class="fs-3 text-nowrap">T O P # ${i + 1}</h5>`
-                innerHTML += `       <p class="fs-5"><a href="#" class="text-white">${nombreTitle}</a></p>`
-                innerHTML += `   </div>`
-                innerHTML += `</div>`
+                innerHTML += `  <div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-interval="5000">
+                                   <img src="assets/img/recetas/${img_name}" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="${nombre}">
+                                    <div class="carousel-caption">
+                                    <h5 class="fs-3 text-nowrap">T O P # ${i + 1}</h5>
+                                    <p class="fs-5"><a href="#" class="text-white">${nombreTitle}</a></p>
+                                    </div>
+                                </div>`;
             }
             document.querySelector('#topRecete1').innerHTML = innerHTML;
             document.querySelector('#topRecete2').innerHTML = innerHTML;
@@ -317,24 +317,24 @@ function setBookmarks() {
                 if (order == 'nombre') {
                     if (ord != nombre[0].toUpperCase()) {
                         ord = nombre[0].toUpperCase();
-                        innerHTML += `<div class='col-12 row m-0 justify-content-around'>`;
-                        innerHTML += `<p class="col2 text-center">`;
-                        innerHTML += `  <hr class="col-5 my-auto">`;
-                        innerHTML += `  ${ord}`;
-                        innerHTML += `<hr class="col-5 my-auto">`;
-                        innerHTML += `</p>`;
-                        innerHTML += `</div>`;
+                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
+                                            <p class="col2 text-center">
+                                            <hr class="col-5 my-auto">
+                                            ${ord}
+                                            <hr class="col-5 my-auto">
+                                            </p>
+                                        </div>`;
                     }
                 } else if (order == 'fecha') {
                     if (ord != fecha) {
                         ord = fecha;
-                        innerHTML += `<div class='col-12 row m-0 justify-content-around'>`;
-                        innerHTML += `<p class="col2 text-center">`;
-                        innerHTML += `  <hr class="col-5 my-auto">`;
-                        innerHTML += `  ${ord}`;
-                        innerHTML += `<hr class="col-5 my-auto">`;
-                        innerHTML += `</p>`;
-                        innerHTML += `</div>`;
+                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
+                                            <p class="col2 text-center">
+                                              <hr class="col-5 my-auto">
+                                              ${ord}
+                                            <hr class="col-5 my-auto">
+                                            </p>
+                                        </div>`;
                     }
                 }
                 // else {
@@ -348,12 +348,10 @@ function setBookmarks() {
                 //         innerHTML += `</div>`;
                 //     }
                 // }
-                innerHTML += `<div class='card p-2 pb-0 col-5 col-md-3 radius-10px shadow'>`;
-                innerHTML += `    <img class='card-img-top radius-10px' src='assets/img/recetas/${img_name}' height='100px`;
-                innerHTML += `        alt='${nombre}'>`;
-                // innerHTML += `    <hr class="my-">`;
-                innerHTML += `    <a href='#' class='card-body px-2'>${nombre}</a>`;
-                innerHTML += `</div>`;
+                innerHTML += `  <div class='card p-2 pb-0 col-5 col-md-3 radius-10px shadow'>
+                                    <img class='card-img-top radius-10px' src='assets/img/recetas/${img_name}' alt='${nombre}'>
+                                    <a href='#' class='card-body px-2'>${nombre}</a>
+                                </div>`;
             }
             document.querySelector('#content-bookmarks').innerHTML = innerHTML;
         }
@@ -379,31 +377,31 @@ function setComments() {
                 // let img_name = iH[i].img_name;
                 let nombre = iH[i].nombre;
                 let titulo = iH[i].contenido;
-                let calificacion = parseInt(iH[i].nota);
+                let calificacion = parseFloat(iH[i].nota);
                 let comentario = iH[i].contenido;
                 let fecha = iH[i].fecha
                 // console.log(fecha != '2022-12-04');
                 if (order == 'nombre') {
                     if (ord != nombre[0].toUpperCase()) {
                         ord = nombre[0].toUpperCase();
-                        innerHTML += `<div class='col-12 row m-0 justify-content-around'>`;
-                        innerHTML += `<p class="col2 text-center">`;
-                        innerHTML += `  <hr class="col-5 my-auto">`;
-                        innerHTML += `  ${ord}`;
-                        innerHTML += `<hr class="col-5 my-auto">`;
-                        innerHTML += `</p>`;
-                        innerHTML += `</div>`;
+                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
+                                            <p class="col2 text-center">
+                                              <hr class="col-5 my-auto">
+                                              ${ord}
+                                            <hr class="col-5 my-auto">
+                                            </p>
+                                        </div>`;
                     }
                 } else if (order == 'fecha') {
                     if (ord != fecha) {
                         ord = fecha;
-                        innerHTML += `<div class='col-12 row m-0 justify-content-around'>`;
-                        innerHTML += `<p class="col2 text-center">`;
-                        innerHTML += `  <hr class="col-5 my-auto">`;
-                        innerHTML += `  ${ord}`;
-                        innerHTML += `<hr class="col-5 my-auto">`;
-                        innerHTML += `</p>`;
-                        innerHTML += `</div>`;
+                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
+                                            <p class="col2 text-center">
+                                              <hr class="col-5 my-auto">
+                                              ${ord}
+                                            <hr class="col-5 my-auto">
+                                            </p>
+                                        </div>`;
                     }
                 }
                 // else {
@@ -417,25 +415,26 @@ function setComments() {
                 //         innerHTML += `</div>`;
                 //     }
                 // }
-                innerHTML += `<div class="col-12 col-lg-9 row m-0 mb-3 p-0 border-1 radius-10px mx-auto justify-content-center shadow" style="border: 1px solid grey;">`
-                innerHTML += `  <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Receta</p>`
-                innerHTML += `  <a class="col-12 col-md-8 pt-0 py-md-2 m-0" href="#" >${nombre}</a>`
-                innerHTML += `  <hr class="m-0" style="color: grey;">`
-                innerHTML += `  <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Título</p>`
-                innerHTML += `  <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${titulo}</p>`
-                innerHTML += `  <hr class="m-0" style="color: grey;">`
-                innerHTML += `  <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Calificación</p>`
-                innerHTML += `  <p class="col-12 col-md-8 pt-0 py-md-2 m-0">`
-                innerHTML += `      ${'<i class="fa-solid fa-star"></i> '.repeat(calificacion)}`
-                innerHTML += `      ${'<i class="fa-regular fa-star"></i> '.repeat(5 - calificacion)}`
-                innerHTML += `  </p>`
-                innerHTML += `  <hr class="m-0" style="color: grey;">`
-                innerHTML += `  <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Comentario</p>`
-                innerHTML += `  <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${comentario}</p>`
-                innerHTML += `  <hr class="m-0" style="color: grey;">`
-                innerHTML += `  <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Fecha</p>`
-                innerHTML += `  <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${fecha}</p>`
-                innerHTML += `</div>`
+                innerHTML += `  <div class="col-12 col-lg-9 row m-0 mb-3 p-0 border-1 radius-10px mx-auto justify-content-center shadow" style="border: 1px solid grey;">
+                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Receta</p>
+                                    <a class="col-12 col-md-8 pt-0 py-md-2 m-0" href="#" >${nombre}</a>
+                                    <hr class="m-0" style="color: grey;">
+                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Título</p>
+                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${titulo}</p>
+                                    <hr class="m-0" style="color: grey;">
+                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Calificación</p>
+                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">
+                                        ${'<i class="fa-solid fa-star"></i> '.repeat(calificacion)}
+                                        ${'<i class="fa-regular fa-star-half-stroke"></i> '.repeat(calificacion % 1 != 0 ? 1 : 0)}
+                                        ${'<i class="fa-regular fa-star"></i> '.repeat(5 - calificacion)}
+                                    </p>
+                                    <hr class="m-0" style="color: grey;">
+                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Comentario</p>
+                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${comentario}</p>
+                                    <hr class="m-0" style="color: grey;">
+                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Fecha</p>
+                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${fecha}</p>
+                                </div>`
             }
             document.querySelector('#content-comments').innerHTML = innerHTML;
         }
