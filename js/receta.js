@@ -43,7 +43,16 @@ function insertCommentButton(){
     $("#btnCalificar").on('click', deployCommentSection)
 }
 
+
 function deployCommentSection(){
+    comment_container = $("#comment-container").removeClass('d-none');
+    $("#btnCalificar").text('Esconder')
+    $("#btnCalificar").on('click', function(){
+        comment_container.addClass('d-none');
+        $(this).remove();
+        insertCommentButton();
+
+    })
     $(".rating").starRating({
         starSize: 15,
         totalStars: 7,

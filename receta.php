@@ -87,10 +87,10 @@
                     <h2 class="bold morado-1">Comentarios</h2>
                 </div>
                 <hr class="w-25 ms-2">
-                <div class="row align-items-center justify-content-center px-2">
+                <div class="row align-items-center justify-content-center px-2 d-none" id="comment-container">
                     <div class="col-md-8 col-lg-9 col-xl-8 col-xxl-9">
                         <div class="form-group">
-                            <textarea class="form-control" id="commentInput" rows="3"></textarea>
+                            <textarea class="form-control" id="commentInput" rows="3" placeholder="Opina sobre esta receta"></textarea>
                         </div>
                     </div>
                     <div class="col-md d-flex flex-md-column justify-content-between mt-2 mt-md-0 gap-2">
@@ -101,9 +101,8 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-end pe-0">
-                            <button class="btn rounded-pill btnComment" disabled>Comentar</button>
+                            <button class="btn rounded-pill btnComment">Comentar</button>
                         </div>
-                        
                     </div>                    
                 </div>
                 <div>
