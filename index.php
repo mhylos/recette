@@ -30,7 +30,7 @@
 <body>
     <?php include('includes/header.php') ?>
     <main>
-        <section class="my-3">
+        <section class="my-3 shadow">
             <div class="swiper swipeRecetas">
                 <div class="swiper-wrapper">
                     <!--RESULTADOS-->
@@ -39,7 +39,7 @@
                 <div class="swiper-button-next"></div>
             </div>
         </section>
-        <section>
+        <section class="shadow">
             <h2>Busqueda</h2>
             <div class="search-container">
                 <div class="categories-container row">
