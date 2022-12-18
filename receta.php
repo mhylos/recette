@@ -36,7 +36,7 @@
         <div class="receta-container">
 
             <div class="d-grid my-2">
-                <div class="row d-flex align-items-end">
+                <div class="row d-flex align-items-end mx-0">
                     <div class="col-10 d-flex">
                         <h2 class="titulo-receta bold morado-1" id="titulo"></h2>
                     </div>
@@ -46,10 +46,10 @@
                 </div>
             </div>
 
-            <div class="d-grid bg-body border rounded-2 shadow my-3">
-                <div class="row">
-                    <div class="col-7">
-                        <img id="receta-img" src="" alt="Sin imagen">
+            <div class="d-grid bg-body border rounded-2 shadow my-3 mx-0">
+                <div class="row mx-0">
+                    <div class="col-7 px-0">
+                        <img id="receta-img" class="rounded-start" src="" alt="Sin imagen">
                     </div>
                     <div class="col-5 info-receta py-2 d-flex flex-column justify-content-between">
                         <div>
