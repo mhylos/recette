@@ -17,6 +17,10 @@ body {
     margin: 0px;
 }
 
+main {
+    background-image: url("../assets/bg-pattern.png");
+}
+
 a {
     text-decoration: none;
     color: purple;

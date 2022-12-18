@@ -37,19 +37,19 @@ function insertSaveButton(){
 function insertCommentButton(){
     container = $(".comments-header")
     html = `<div class="align-self-center">
-                <button type="button" class="btn btn-calificar" id="btnCalificar">Calificar</button>
+                <button type="button" class="btn rounded-pill btn-calificar" id="btnCalificar">Calificar</button>
             </div>`
     container.append(html)
     $("#btnCalificar").on('click', deployCommentSection)
 }
 
 function deployCommentSection(){
-    $(".my-rating").starRating({
+    $(".rating").starRating({
         starSize: 15,
         totalStars: 7,
-        hoverColor: '#613361',
-        ratedColor: '#613361',
-        activeColor: '#613361',
+        hoverColor: 'gold',
+        ratedColor: 'gold',
+        activeColor: 'gold',
         useGradient: false
     });
 }
