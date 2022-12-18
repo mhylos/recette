@@ -1,7 +1,7 @@
 <link rel="preload" href="css/header.css" as="style">
 <link rel="stylesheet" href="css/header.css">
 
-<header>
+<header class="shadow">
     <a href="index.php">
         <img class="my-3" src="./assets/img/logo/logo.png" alt="Recette 2">
     </a>

@@ -15,10 +15,13 @@
 
 body {
     margin: 0px;
-}
-
-main {
+    min-height: 100vh; 
+    background-color: whitesmoke;
     background-image: url("../assets/bg-pattern.png");
+    color: purple;
+    font-family: var(--fuenteParrafos);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 a {
@@ -81,13 +84,4 @@ hr {
 
 .underline {
     text-decoration: underline;
-}
-
-body {
-    min-height: 100vh; 
-    background-color: whitesmoke;
-    color: purple;
-    font-family: var(--fuenteParrafos);
-    display: grid;
-    grid-template-rows: auto 1fr auto;
 }

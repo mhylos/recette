@@ -1,5 +1,5 @@
 header {
-    background-color: white;
+    background-color: var(--gris);
     display: grid;
     text-align: center;
     grid-template-columns: minmax(0, 1fr);
