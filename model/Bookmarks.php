@@ -4,7 +4,7 @@ use function PHPSTORM_META\type;
 
 require "conexion.php";
 
-class SavedRecipes
+class Bookmarks
 {
     private $db;
 
@@ -28,7 +28,7 @@ class SavedRecipes
 
     function isSaved($user_id, $recipe_id)
     {
-        $sentencia = "SELECT * FROM saved_recipes WHERE (user_id = $user_id AND receta_id = $recipe_id)";
+        $sentencia = "SELECT * FROM bookmarks WHERE (user_id = $user_id AND receta_id = $recipe_id)";
         $saved = $this->Ejecutar($sentencia, 0);
         if ($saved) return 1;
         return 0;
@@ -50,9 +50,14 @@ class SavedRecipes
         }
 
         // return $sort;
-        $sql = "SELECT * FROM saved_recipes JOIN recetas USING (receta_id) WHERE user_id = $user_id ORDER BY $order_by";
+        $sql = "SELECT * FROM bookmarks JOIN recetas USING (receta_id) WHERE user_id = $user_id ORDER BY $order_by";
         $results = $this->Ejecutar($sql, 0);
         return $results;
     }
     
+    function bookmark($user_id, $recipe_id)
+    {
+        $sentencia = "INSERT INTO bookmarks(receta_id, user_id) VALUES ('$recipe_id', '$user_id');";
+        $this->Ejecutar($sentencia, 1);
+    }
 }

@@ -303,7 +303,7 @@ function setBookmarks() {
             order: order,
             sort: sortBookmarks
         },
-        url: 'controller/CtrlSavedRecipes.php?op=bookmarks',
+        url: 'controller/CtrlBookmarks.php?op=bookmarks',
         type: 'POST',
         success: function (innerHTML) {
             let iH = $.parseJSON(innerHTML);

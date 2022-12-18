@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 function insertSaveButton(){
     container = $(".info-receta")
-    html = `<button type="button" id="btnSave" class="btn d-flex align-items-center align-self-end me-3 btnSave">
+    html = `<button type="button" id="btnSave" onclick="bookmarkReceta()" class="btn d-flex align-items-center align-self-end me-3 btnSave">
                 <i class="fa-regular fa-bookmark" id="saveIcon"></i><span class="ms-2" id="btnAction">Guardar</span>
             </button>`
     container.append(html)
@@ -30,9 +30,36 @@ function insertSaveButton(){
             $("#saveIcon").attr('class', 'fa-solid fa-bookmark')
             $("#btnAction").text('Eliminar de guardados')
             $("#btnSave").addClass('btnRemove').removeClass('btnSave');
+            $("#btnSave").attr('onclick', 'removeBookmark()');
         }
     });
 }
+
+function setLoadingIcon(jQElement){
+    jQElement.empty()
+    html = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span class="ms-1">Espere...</span>`
+    jQElement.append(html)
+}
+
+function bookmarkReceta(){
+    $("#btnSave").prop('disabled', true)
+    setLoadingIcon($("#btnSave"))
+    user_info = localStorage.getItem('user')
+    user_id = $.parseJSON(user_info).id;
+    receta_id = id
+    // $.ajax({
+    //     url:'controller/CtrlSavedRecipes.php?op=is_saved',
+    //     data: {'user_id': user_id,
+    //            'receta_id': receta_id},
+    //     type:'POST'
+    // });
+}
+
+function removeBookmark(){
+    console.log('remueve');
+}
+
 
 function insertCommentButton(){
     container = $(".comments-header")
@@ -68,7 +95,7 @@ function isSaved(){
     user_id = $.parseJSON(user_info).id;
     receta_id = id
     return ($.ajax({
-        url:'controller/CtrlSavedRecipes.php?op=is_saved',
+        url:'controller/CtrlBookmarks.php?op=is_saved',
         data: {'user_id': user_id,
                'receta_id': receta_id},
         type:'POST'
