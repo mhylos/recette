@@ -101,16 +101,55 @@ function insertCommentButton(){
     $("#btnCalificar").on('click', deployCommentSection)
 }
 
+function submitComment(){
+    texto = $("#commentInput")
+    puntuacion = $('.rating')
+    if (!texto.val()) {
+        texto.effect('shake',{times:2, distance: 5}, 500)
+        return null
+    }
+    if (puntuacion.starRating('getRating') == 0) {
+        puntuacion.effect('shake',{times:2, distance: 5}, 500)
+        return null
+    }
+
+    user_info = localStorage.getItem('user');
+    user_id = $.parseJSON(user_info).id;
+    receta_id = id;
+
+    $.ajax({
+        url:'controller/CtrlComments.php?op=insert_comment',
+        data: {'user_id': user_id,
+               'receta_id': receta_id,
+               'contenido': texto.val(),
+               'nota': puntuacion.starRating('getRating')},
+        type:'POST',
+        success: function(){
+            hideCommentSection()
+            html = `<li class="list-group-item">
+                        <div>
+                            <span class="bold morado-2">${$.parseJSON(user_info).firstName}</span> <span class="fw-light">Justo ahora</span>
+                        </div>
+                        <div>
+                            ${texto.val()} 
+                        </div>                            
+                    </li>`
+            $('#comentarios').prepend(html)
+        }
+    });
+
+}
+
+function hideCommentSection(){
+    $("#comment-container").addClass('d-none')
+    $("#btnCalificar").remove();
+    insertCommentButton();
+}
 
 function deployCommentSection(){
     comment_container = $("#comment-container").removeClass('d-none');
     $("#btnCalificar").text('Esconder')
-    $("#btnCalificar").on('click', function(){
-        comment_container.addClass('d-none');
-        $(this).remove();
-        insertCommentButton();
-
-    })
+    $("#btnCalificar").on('click', hideCommentSection)
     $(".rating").starRating({
         starSize: 15,
         totalStars: 7,
@@ -119,6 +158,8 @@ function deployCommentSection(){
         activeColor: 'gold',
         useGradient: false
     });
+    
+    $("#submitComment").on('click', submitComment)
 }
 
 function isSaved(){
@@ -200,11 +241,12 @@ function rellenar(data) {
     pasos = data.pasos.split('+');
     insertPasos(pasos)
 
-    rellenarComentarios(data.receta_id);
+    insertAllComments(data.receta_id);
 }
 
-function rellenarComentarios(receta_id){
+function insertAllComments(receta_id){
     comentarioshtml = $('#comentarios');
+    comentarioshtml.empty()
 
     $.ajax({
         url:'controller/CtrlComments.php?op=get_all_of_recipe',

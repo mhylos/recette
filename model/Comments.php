@@ -48,11 +48,17 @@ class Comments {
     {
         $sentencia = "SELECT users.nombre, users.apellido, comments.contenido, comments.fecha, comments.nota 
             FROM comments JOIN users USING (user_id)
-            WHERE receta_id = $receta_id";
+            WHERE receta_id = $receta_id
+            ORDER BY comments.fecha DESC";
         $data = $this->Ejecutar($sentencia, 0);
         return $data;
     }
     
+    function insertComment($user_id, $receta_id, $contenido, $nota){
+        $sentencia = "INSERT INTO comments (receta_id, user_id, contenido, nota) VALUES ('$receta_id', '$user_id', '$contenido', '$nota')";
+        $this->Ejecutar($sentencia, 1);
+    }
+
     function getCommentsByUserID($user_id, $order, $sort)
     {
         $sort = $sort == 'true' ? 'ASC' : 'DESC';

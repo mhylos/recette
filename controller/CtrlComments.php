@@ -25,6 +25,11 @@ switch ($_REQUEST["op"]) {
         echo json_encode($data);
         break;
 
+    case 'insert_comment':
+        $comentarios->insertComment($_POST['user_id'], $_POST['receta_id'], $_POST['contenido'], $_POST['nota']);
+        break;
+
+
     case 'comments':
         $userId = $_POST['user_id'];
         $order = $_POST['order'];

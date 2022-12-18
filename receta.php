@@ -101,7 +101,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-end pe-0">
-                            <button class="btn rounded-pill btnComment">Comentar</button>
+                            <button class="btn rounded-pill btnComment" id="submitComment">Comentar</button>
                         </div>
                     </div>                    
                 </div>
@@ -117,6 +117,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="plugins/jquery.star-rating-svg.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/receta.js"></script>
 </body>
 </html>
