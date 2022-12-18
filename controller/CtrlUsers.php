@@ -12,9 +12,9 @@ switch ($request) {
             echo '';
         } else {
             $string = "";
-            $user = mysqli_fetch_array($result);
+            $userResult = mysqli_fetch_array($result);
             for ($i = 0; $i < 9; $i++) {
-                $string .= "$user[$i], ";
+                $string .= "$userResult[$i], ";
             }
             echo $string;
         }
@@ -26,6 +26,7 @@ switch ($request) {
         $password = $_POST['password'];
         $user->register($firstName, $lastName, $email, $password);
         break;
+        
 } 
     
         // else {

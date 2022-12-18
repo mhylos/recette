@@ -34,9 +34,9 @@
 
         <div class="col-2 col-lg-1 p-2 py-3 bg-white radius-10px me-lg-5 shadow" id="left-div" style="height: max-content;">
             <div class="center" id="profile-div">
-                <div class="fa-stack fa-2x">
+                <div class="fa-stack">
                     <i class="fa-solid fa-face-smile-wink fa-stack-1x fa-inverse pointer" style="font-size: 1.5em; --fa-stack-z-index: 2;" id="profile-btn"></i>
-                    <i class="fa-solid fa-circle fa-stack-2x" id="circle-btn" style="--fa-stack-z-index: 1;"></i>
+                    <i class="fa-solid fa-circle fa-stack-2x " id="circle-btn" style="--fa-stack-z-index: 1;"></i>
                 </div>
             </div>
 
@@ -61,10 +61,10 @@
 
         </div>
 
-        <aside class="d-none d-lg-block col-lg-3 col-xxl-2 p-2 py-3 bg-white radius-10px ms-lg-5 text-center shadow" style="height: min-content;">
+        <aside class="d-none d-lg-block col-lg-3 p-2 py-3 bg-white radius-10px ms-lg-5 text-center shadow" style="height: min-content;">
             <b>
-                <p class="m-0">T O P</p>
-                <p class="m-0">R E C E T A S</p>
+                <p class="m-0 text-nowrap">T O P</p>
+                <p class="m-0 text-nowrap">R E C E T A S</p>
             </b>
             <div class="my-2 w-100">
                 <div id="top-recete-aside" class="carousel slide carousel-fade radius-10px" data-bs-ride="carousel">
@@ -73,29 +73,7 @@
                         <button type="button" data-bs-target="#top-recete-aside" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#top-recete-aside" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner" id="topRecete1">
-                        <!-- <div class="carousel-item active" data-bs-interval="5000">
-                            <img src="assets/img/recetas/charquican.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="charquican">
-                            <div class="carousel-caption">
-                                <h5 class="fs-2">T O P # 1</h5>
-                                <p class="fs-4">C H A R Q U I C A N</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/porotos.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="porotos">
-                            <div class="carousel-caption">
-                                <h5 class="fs-2">T O P # 2</h5>
-                                <p class="fs-4">P O R O T O S</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/sopaipillas.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="sopaipillas">
-                            <div class="carousel-caption">
-                                <h5 class="fs-2">T O P # 3</h5>
-                                <p class="fs-4">S O P A I P I L L A S</p>
-                            </div>
-                        </div> -->
-                    </div>
+                    <div class="carousel-inner" id="topRecete1"> </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#top-recete-aside" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                         <span class="visually-hidden">Previous</span>
@@ -110,8 +88,8 @@
             <hr class="mx-auto">
 
             <b>
-                <p class="m-0">R E C E T A</p>
-                <p class="m-0">A L E A T O R I A</p>
+                <p class="m-0 text-nowrap">R E C E T A</p>
+                <p class="m-0 text-nowrap">A L E A T O R I A</p>
             </b>
             <div class="mt-2 w-100">
                 <div id="random-recete-aside" class="carousel slide carousel-fade radius-10px" data-bs-ride="carousel">
@@ -139,8 +117,8 @@
     <div class="d-lg-none row justify-content-center mb-4 mx-auto bg-white w-75 radius-10px text-center shadow">
         <div class="col-6 p-2">
             <b>
-                <p class="m-0">T O P</p>
-                <p class="m-0">R E C E T A S</p>
+                <p class="m-0 text-nowrap">T O P</p>
+                <p class="m-0 text-nowrap">R E C E T A S</p>
             </b>
             <div class="mt-2 w-100">
                 <div id="top-recete-bottom" class="carousel slide carousel-fade radius-10px" data-bs-ride="carousel">
@@ -149,29 +127,7 @@
                         <button type="button" data-bs-target="#top-recete-bottom" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#top-recete-bottom" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner" id="topRecete2">
-                        <!-- <div class="carousel-item active" data-bs-interval="5000">
-                            <img src="assets/img/recetas/charquican.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="charquican">
-                            <div class="carousel-caption">
-                                <h5 class="fs-2">T O P # 1</h5>
-                                <p class="fs-4">C H A R Q U I C A N</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/porotos.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="porotos">
-                            <div class="carousel-caption">
-                                <h5 class="fs-2">T O P # 2</h5>
-                                <p class="fs-4">P O R O T O S</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/sopaipillas.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="sopaipillas">
-                            <div class="carousel-caption">
-                                <h5 class="fs-2">T O P # 3</h5>
-                                <p class="fs-4">S O P A I P I L L A S</p>
-                            </div>
-                        </div> -->
-                    </div>
+                    <div class="carousel-inner" id="topRecete2"></div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#top-recete-bottom" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                         <span class="visually-hidden">Previous</span>
@@ -185,8 +141,8 @@
         </div>
         <div class="col-6 p-2">
             <b>
-                <p class="m-0">R E C E T A</p>
-                <p class="m-0">A L E A T O R I A</p>
+                <p class="m-0 text-nowrap">R E C E T A</p>
+                <p class="m-0 text-nowrap">A L E A T O R I A</p>
             </b>
             <div class="mt-2 w-100">
                 <div id="random-recete-bottom" class="carousel slide carousel-fade radius-10px" data-bs-ride="carousel">

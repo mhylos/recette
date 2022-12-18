@@ -115,7 +115,7 @@ async function logIn() {
     if (formLogin.email) {
         let result = await ajaxPromise(
             { 'email': emailL.value },
-            'controller/controllerUsers.php?op=search',
+            'controller/CtrlUsers.php?op=search',
             'POST',
             function (result) {
                 return result
@@ -140,17 +140,17 @@ async function logIn() {
     }
     if (formLogin.password) {
         if (jsonUser.length != 0) {
-            console.log(jsonUser);
-            console.log(passwordL.value);
             if (passwordL.value != jsonUser.password) {
                 showError('#passwordError', '#passwordEmpty');
             } else {
                 hideError('#passwordError')
                 let remember = document.querySelector('#remember-btn').value;
                 // guardar datos en localStorage
-                localStorage.setItem('remember', remember);
-                localStorage.setItem('logged', true);
-                localStorage.setItem('user', JSON.stringify(jsonUser));
+                if (remember) {
+                    localStorage.setItem('remember', remember);
+                    localStorage.setItem('logged', true);
+                    localStorage.setItem('user', JSON.stringify(jsonUser));
+                }
                 // ir al perfil
                 location.href = 'perfil.php'
             }
@@ -177,7 +177,7 @@ async function register() {
         hideError('#fieldEmpty')
         let result = await ajaxPromise(
             { 'email': email.value },
-            'controller/controllerUsers.php?op=search',
+            'controller/CtrlUsers.php?op=search',
             'POST',
             function (result) {
                 return result
@@ -205,14 +205,14 @@ async function register() {
                     'email': jsonUser.email,
                     'password': jsonUser.password,
                 },
-                'controller/controllerUsers.php?op=register',
+                'controller/CtrlUsers.php?op=register',
                 'POST',
                 function () { }
             );
 
             let result = await ajaxPromise(
                 { 'email': emailL.value },
-                'controller/controllerUsers.php?op=search',
+                'controller/CtrlUsers.php?op=search',
                 'POST',
                 function (result) {
                     return result

@@ -1,7 +1,11 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 require "conexion.php";
 
-class SavedRecipes {
+class SavedRecipes
+{
     private $db;
 
     function __construct()
@@ -12,7 +16,7 @@ class SavedRecipes {
     function Ejecutar($sentencia, $op)
     {
         $this->db->connect();
-        if($op == 0){
+        if ($op == 0) {
             $data = $this->db->EjecutarQuery($sentencia, $op);
             $this->db->disconnect();
             return $data;
@@ -30,4 +34,25 @@ class SavedRecipes {
         return 0;
     }
 
+    function getBookmarksByUserID($user_id, $order, $sort)
+    {
+        $sort = $sort == 'true' ? 'ASC' : 'DESC';
+        
+        if ($order == 'nombre') {
+            $order_by = "nombre $sort, fecha ASC";
+            // $order = 'nombre, fecha, calificacion';
+        } else if ($order == 'fecha') {
+            $order_by = "fecha  $sort, nombre ASC";
+            // $order = 'fecha, nombre, calificacion';
+        } else {
+            $order_by = "nombre  $sort, fecha ASC";
+            // $order = 'calificacion, nombre, fecha';
+        }
+
+        // return $sort;
+        $sql = "SELECT * FROM saved_recipes JOIN recetas USING (receta_id) WHERE user_id = $user_id ORDER BY $order_by";
+        $results = $this->Ejecutar($sql, 0);
+        return $results;
+    }
+    
 }

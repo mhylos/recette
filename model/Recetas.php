@@ -57,7 +57,7 @@ class Recetas
 
     function getTopRecipe()
     {
-        $sentencia = "SELECT AVG(nota) nota, nombre, img_name FROM comments JOIN recetas USING (receta_id) ORDER BY nota DESC LIMIT 3";
+        $sentencia = "SELECT AVG(nota) nota, nombre, img_name FROM comments JOIN recetas USING (receta_id) GROUP BY nombre ORDER BY nota DESC LIMIT 3";
         $data = $this->Ejecutar($sentencia, 0);
         return $data;
     }

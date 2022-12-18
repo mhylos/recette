@@ -156,11 +156,12 @@ function logoutClick(event) {
 
 var tagActive = 'profile';
 
-const profileBtn = document.querySelector(`#profile-btn`);
-const bookmarksBtn = document.querySelector(`#bookmarks-btn`);
-const commentsBtn = document.querySelector(`#comments-btn`);
-const settingsBtn = document.querySelector(`#settings-btn`);
-const logoutBtn = document.querySelector(`#logout-btn`);
+const profileBtn = document.querySelector('#profile-btn');
+const bookmarksBtn = document.querySelector('#bookmarks-btn');
+const commentsBtn = document.querySelector('#comments-btn');
+const settingsBtn = document.querySelector('#settings-btn');
+const logoutBtn = document.querySelector('#logout-btn');
+
 
 profileBtn.addEventListener('mouseenter', profileMouseEnter);
 // profileBtn.addEventListener('mouseleave', profileMouseLeave);
