@@ -1,7 +1,7 @@
 <?php
 class User
 {
-    public $servername = "0.tcp.sa.ngrok.io:15584";
+    public $servername = "localhost";
     public $username = "root";
     public $password = "";
     public $name = "recette";
