@@ -13,7 +13,7 @@ switch ($_REQUEST["op"]) {
 
     case 'get_latest':
         $data = $receta->getLatest(3);
-        echo json_encode($$data);
+        echo json_encode($data);
         break;
 
     case 'get_categories':
