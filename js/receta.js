@@ -211,18 +211,26 @@ function rellenarComentarios(receta_id){
         data: {'receta_id': receta_id},
         type:'POST',
         success: function(response){
-            data = $.parseJSON(response);
-            data.forEach(comentario => {
-                html = `<li class="list-group-item">
-                            <div>
-                                <span class="bold morado-2">${comentario.nombre}</span> <span class="fw-light">${comentario.fecha}</span>
-                            </div>
-                            <div>
-                                ${comentario.contenido} 
-                            </div>                            
-                        </li>`
+            if (response != 'null') {
+                data = $.parseJSON(response);
+                data.forEach(comentario => {
+                    html = `<li class="list-group-item">
+                                <div>
+                                    <span class="bold morado-2">${comentario.nombre}</span> <span class="fw-light">${comentario.fecha}</span>
+                                </div>
+                                <div>
+                                    ${comentario.contenido} 
+                                </div>                            
+                            </li>`
+                    comentarioshtml.append(html);
+                });
+            } else {
+                html = `<div class="ms-3 text-center">
+                            <i class="fa-regular fa-face-frown-open fs-4"></i>
+                            <p class="fw-bold fs-5">Aún no hay comentarios sobre esta receta</p>
+                        </div>`
                 comentarioshtml.append(html);
-            });
+            }
         }
     });
 }
