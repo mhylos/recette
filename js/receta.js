@@ -36,8 +36,22 @@ function insertSaveButton(){
 
 function insertCommentButton(){
     container = $(".comments-header")
-    html = `<button type="button" class="btn btn-calificar">Calificar</button>`
+    html = `<div class="align-self-center">
+                <button type="button" class="btn btn-calificar" id="btnCalificar">Calificar</button>
+            </div>`
     container.append(html)
+    $("#btnCalificar").on('click', deployCommentSection)
+}
+
+function deployCommentSection(){
+    $(".my-rating").starRating({
+        starSize: 15,
+        totalStars: 7,
+        hoverColor: '#613361',
+        ratedColor: '#613361',
+        activeColor: '#613361',
+        useGradient: false
+    });
 }
 
 function isSaved(){
@@ -53,14 +67,9 @@ function isSaved(){
 }
 
 function isLogged(){
-    const myProfile = document.querySelector('#my-profile-btn')
     if (localStorage.getItem('logged') != null) {
-        myProfile.innerHTML = 'Mi Perfil';
-        myProfile.href = 'perfil.php'
         return true
     } else {
-        myProfile.innerHTML = 'Iniciar Sesión';
-        myProfile.href = 'logIn.php'
         return false
     }
 }
