@@ -111,6 +111,7 @@ function ajaxPromise(data, url, type, success) {
 
 async function logIn() {
     let jsonUser = {};
+    // console.log(emailL.value)
     if (formLogin.email) {
         let result = await ajaxPromise(
             { 'email': emailL.value },
@@ -123,7 +124,7 @@ async function logIn() {
         if (validate(result, '#emailError', '#emailEmpty')) {
             let list = result.split(', ');
             list.pop();
-            console.log(list);
+            console.log(result);
             jsonUser = {
                 id: list[0],
                 firstName: list[1],
@@ -139,15 +140,9 @@ async function logIn() {
     }
     if (formLogin.password) {
         if (jsonUser.length != 0) {
-            let md5 = await ajaxPromise(
-                { 'password': passwordL.value, },
-                'controller/controllerUsers.php?op=md5',
-                'POST',
-                function (md5) {
-                    return md5
-                }
-            );
-            if (md5 != jsonUser.password) {
+            console.log(jsonUser);
+            console.log(passwordL.value);
+            if (passwordL.value != jsonUser.password) {
                 showError('#passwordError', '#passwordEmpty');
             } else {
                 hideError('#passwordError')
@@ -192,14 +187,6 @@ async function register() {
         if (result.length != 0) {
             showError('#emailErrorR', '#emailEmptyR');
         } else {
-            let passwordMD5 = await ajaxPromise(
-                { 'password': password.value, },
-                'controller/controllerUsers.php?op=md5',
-                'POST',
-                function (passwordMD5) {
-                    return passwordMD5
-                }
-            );
             let jsonUser = {
                 id: null,
                 firstName: firstName.value,
@@ -207,7 +194,7 @@ async function register() {
                 gender: null,
                 birthday: null,
                 email: email.value,
-                password: passwordMD5,
+                password: password.value,
                 phone: null,
                 address: null,
             };
@@ -223,6 +210,29 @@ async function register() {
                 function () { }
             );
 
+            let result = await ajaxPromise(
+                { 'email': emailL.value },
+                'controller/controllerUsers.php?op=search',
+                'POST',
+                function (result) {
+                    return result
+                }
+            );
+            if (validate(result, '#emailError', '#emailEmpty')) {
+                let list = result.split(', ');
+                list.pop();
+                jsonUser = {
+                    id: list[0],
+                    firstName: list[1],
+                    lastName: list[2],
+                    gender: list[3],
+                    birthday: list[4],
+                    email: list[5],
+                    password: list[6],
+                    phone: list[7],
+                    address: list[8],
+                };
+            }
             localStorage.setItem('logged', true);
             localStorage.setItem('user', JSON.stringify(jsonUser));
             modal.toggle()

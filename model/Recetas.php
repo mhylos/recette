@@ -1,8 +1,9 @@
 <?php
 require "conexion.php";
 
-class Recetas {
-    public $recetas;
+class Recetas
+{
+    // public $recetas;
     private $db;
 
     function __construct()
@@ -13,7 +14,7 @@ class Recetas {
     function Ejecutar($sentencia, $op)
     {
         $this->db->connect();
-        if($op == 0){
+        if ($op == 0) {
             $data = $this->db->EjecutarQuery($sentencia, $op);
             $this->db->disconnect();
             return $data;
@@ -31,7 +32,7 @@ class Recetas {
         $receta = mysqli_fetch_all($result, MYSQLI_ASSOC);
         $this->db->disconnect();
         return $receta;
-    }    
+    }
 
     function listarRecetas()
     {
@@ -43,6 +44,20 @@ class Recetas {
     function getLatest($quantity)
     {
         $sentencia = "SELECT * FROM recetas ORDER BY fecha DESC LIMIT $quantity";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
+    }
+
+    function getRandomRecipe()
+    {
+        $sentencia = "SELECT * FROM recetas ORDER BY RAND() LIMIT 3";
+        $data = $this->Ejecutar($sentencia, 0);
+        return $data;
+    }
+
+    function getTopRecipe()
+    {
+        $sentencia = "SELECT AVG(nota) nota, nombre, img_name FROM comments JOIN recetas USING (receta_id) ORDER BY nota DESC LIMIT 3";
         $data = $this->Ejecutar($sentencia, 0);
         return $data;
     }

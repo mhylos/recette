@@ -38,33 +38,34 @@ function setProfileScreen() {
                                     </div>
                                 </div>
 
-                            </div>
-                            <div class="row bg-white my-2 p-2 radius-10px  justify-content-center shadow">
-                                <div class="col-12 row m-0 mb-3 text-start fs-5">
-                                    <p class="col-10 col-sm-9 col-lg-8 my-auto p-0 text-end">Guardados <span class="fs-6">(Recientes)</span></p>
-                                </div>
-
-                                <div class="col-12 row m-0 p-0 justify-content-evenly">
-                                    
-                                    <div class="card p-2 col-5 col-md-3 radius-10px">
-                                        <img class="card-img-top radius-10px" src="assets/img/recetas/charquican.jpg" height="100px" alt="Charquican">
-                                        <a href="#" class="card-body">Charquican</a>
-                                    </div>
-
-                                    <div class="d-none d-sm-flex card p-2 col-5 col-md-3 radius-10px">
-                                        <img class="card-img-top radius-10px" src="assets/img/recetas/porotos.jpg" height="100px" alt="Porotos">
-                                        <a href="#" class="card-body">Porotos</a>
-                                    </div>
-
-                                    <div class="d-none d-md-flex card p-2 col-5 col-md-3 radius-10px">
-                                        <img class="card-img-top radius-10px" src="assets/img/recetas/sopaipillas.jpg" height="100px" alt="Sopaipillas">
-                                        <a href="#" class="card-body">Sopaipillas</a>
-                                    </div>
-                                </div>
-
-                                <button class="col-3 my-2 radius-10px btn-custom " onclick="toSettings()"> Ver Más</button>
-
                             </div>`;
+
+    // <div class="row bg-white my-2 p-2 radius-10px  justify-content-center shadow">
+    //     <div class="col-12 row m-0 mb-3 text-start fs-5">
+    //         <p class="col-10 col-sm-9 col-lg-8 my-auto p-0 text-end">Guardados <span class="fs-6">(Recientes)</span></p>
+    //     </div>
+
+    //     <div class="col-12 row m-0 p-0 justify-content-evenly">
+
+    //         <div class="card p-2 col-5 col-md-3 radius-10px">
+    //             <img class="card-img-top radius-10px" src="assets/img/recetas/charquican.jpg" height="100px" alt="Charquican">
+    //             <a href="#" class="card-body">Charquican</a>
+    //         </div>
+
+    //         <div class="d-none d-sm-flex card p-2 col-5 col-md-3 radius-10px">
+    //             <img class="card-img-top radius-10px" src="assets/img/recetas/porotos.jpg" height="100px" alt="Porotos">
+    //             <a href="#" class="card-body">Porotos</a>
+    //         </div>
+
+    //         <div class="d-none d-md-flex card p-2 col-5 col-md-3 radius-10px">
+    //             <img class="card-img-top radius-10px" src="assets/img/recetas/sopaipillas.jpg" height="100px" alt="Sopaipillas">
+    //             <a href="#" class="card-body">Sopaipillas</a>
+    //         </div>
+    //     </div>
+
+    //     <button class="col-3 my-2 radius-10px btn-custom " onclick="setBookmarksScreen()"> Ver Más</button>
+
+    // </div>
     setScreen(profileScreen)
 
 }
@@ -170,7 +171,7 @@ function setCommentsScreen() {
 
     setScreen(commentsScreen);
 }
-// TODO: seguir acomodando datos
+
 function setSettingsScreen() {
 
     let email = user.email;
@@ -192,7 +193,7 @@ function setSettingsScreen() {
 
         <label class="col-4 p-0 m-auto" for="password">Contraseña</label>
         <div class="col-8 p-0 my-1">
-            <input type="text" class="form-control text-center" value="${password}" id="password" disabled>
+            <input type="password" class="form-control text-center" value="${password}" id="password" disabled>
         </div>
 
         <label class="col-4 p-0 m-auto" for="phone">Celular</label>
@@ -256,9 +257,75 @@ function setSettingsScreen() {
     setScreen(settingsScreen);
 }
 
-// var title = 'Perfil';
 
-// TODO: agregar btn logout!!!
+function setRandomRecete() {
+    $.ajax({
+        data: {},
+        url: 'controller/CtrlRecetas.php?op=random',
+        type: 'POST',
+        success: function (innerHTML) {
+            let iH = $.parseJSON(innerHTML);
+            innerHTML = ''
+            for (let i = 0; i < iH.length; i++) {
+                innerHTML += `<div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-interval="5000">`
+                innerHTML += `   <img src="assets/img/recetas/${iH[i].img_name}" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="${iH[i].nombre}">`
+                innerHTML += `   <div class="carousel-caption">`
+                innerHTML += `       <p class="fs-4">${iH[i].nombre}</p>`
+                innerHTML += `   </div>`
+                innerHTML += `</div>`
+            }
+            document.querySelector('#randomRecete1').innerHTML = innerHTML;
+            document.querySelector('#randomRecete2').innerHTML = innerHTML;
+        }
+    })
+}
+
+function setTopRecete() {
+    $.ajax({
+        data: {},
+        url: 'controller/CtrlRecetas.php?op=top',
+        type: 'POST',
+        success: function (innerHTML) {
+            let iH = $.parseJSON(innerHTML);
+            innerHTML = ''
+            for (let i = 0; i < iH.length; i++) {
+                innerHTML += `<div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-interval="5000">`
+                innerHTML += `    <img src="assets/img/recetas/${iH[i].img_name}" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="${iH[i].nombre}">`
+                innerHTML += `    <div class="carousel-caption">`
+                innerHTML += `        <h5 class="fs-2">T O P # ${i + 1}</h5>`
+                innerHTML += `        <p class="fs-4">${iH[i].nombre}</p>`
+                innerHTML += `    </div>`
+                innerHTML += `</div>`
+            }
+            document.querySelector('#topRecete1').innerHTML = innerHTML;
+            document.querySelector('#topRecete2').innerHTML = innerHTML;
+        }
+    })
+}
+
+function setBookmarks() {
+    $.ajax({
+        data: {},
+        url: 'controller/CtrlRecetas.php?op=top',
+        type: 'POST',
+        success: function (innerHTML) {
+            let iH = $.parseJSON(innerHTML);
+            innerHTML = ''
+            for (let i = 0; i < iH.length; i++) {
+                innerHTML += `<div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-interval="5000">`
+                innerHTML += `    <img src="assets/img/recetas/${iH[i].img_name}" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="${iH[i].nombre}">`
+                innerHTML += `    <div class="carousel-caption">`
+                innerHTML += `        <h5 class="fs-2">T O P # ${i + 1}</h5>`
+                innerHTML += `        <p class="fs-4">${iH[i].nombre}</p>`
+                innerHTML += `    </div>`
+                innerHTML += `</div>`
+            }
+            document.querySelector('#topRecete1').innerHTML = innerHTML;
+            document.querySelector('#topRecete2').innerHTML = innerHTML;
+        }
+    })
+}
+
 
 const date = new Date();
 
@@ -267,4 +334,7 @@ const user = JSON.parse(localStorage.getItem('user'));
 const rightDiv = document.querySelector('#rightDiv');
 
 setProfileScreen();
-// updateScreen(profileScreen);
+
+setRandomRecete();
+
+setTopRecete();

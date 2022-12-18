@@ -1,5 +1,5 @@
 <?php
-class UserTable
+class User
 {
     public $servername = "localhost";
     public $username = "root";

@@ -51,7 +51,7 @@
             <div class="pad-icons bd-radius center mt-4 mb-3 icon-color" id="settings-div">
                 <i class="fa-solid fa-gear fa-2x fa-spin-reverse pointer" id="settings-btn"></i>
             </div>
-            
+
             <div class="pad-icons bd-radius center mt-4 icon-color" id="logout-div">
                 <i class="fa-solid fa-arrow-right-from-bracket fa-2x pointer" id="logout-btn"></i>
             </div>
@@ -73,8 +73,8 @@
                         <button type="button" data-bs-target="#top-recete-aside" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#top-recete-aside" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="carousel-inner" id="topRecete1">
+                        <!-- <div class="carousel-item active" data-bs-interval="5000">
                             <img src="assets/img/recetas/charquican.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="charquican">
                             <div class="carousel-caption">
                                 <h5 class="fs-2">T O P # 1</h5>
@@ -94,7 +94,7 @@
                                 <h5 class="fs-2">T O P # 3</h5>
                                 <p class="fs-4">S O P A I P I L L A S</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#top-recete-aside" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
@@ -120,26 +120,7 @@
                         <button type="button" data-bs-target="#random-recete-aside" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#random-recete-aside" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="5000">
-                            <img src="assets/img/recetas/charquican.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="charquican">
-                            <div class="carousel-caption">
-                                <p class="fs-4">C H A R Q U I C A N</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/porotos.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="porotos">
-                            <div class="carousel-caption">
-                                <p class="fs-4">P O R O T O S</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/sopaipillas.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="sopaipillas">
-                            <div class="carousel-caption">
-                                <p class="fs-4">S O P A I P I L L A S</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="carousel-inner" id="randomRecete1"> <!-- profile.js/setRandomRecete() --> </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#random-recete-aside" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                         <span class="visually-hidden">Previous</span>
@@ -168,8 +149,8 @@
                         <button type="button" data-bs-target="#top-recete-bottom" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#top-recete-bottom" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="carousel-inner" id="topRecete2">
+                        <!-- <div class="carousel-item active" data-bs-interval="5000">
                             <img src="assets/img/recetas/charquican.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="charquican">
                             <div class="carousel-caption">
                                 <h5 class="fs-2">T O P # 1</h5>
@@ -189,7 +170,7 @@
                                 <h5 class="fs-2">T O P # 3</h5>
                                 <p class="fs-4">S O P A I P I L L A S</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#top-recete-bottom" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
@@ -214,26 +195,7 @@
                         <button type="button" data-bs-target="#random-recete-bottom" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#random-recete-bottom" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="5000">
-                            <img src="assets/img/recetas/charquican.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="charquican">
-                            <div class="carousel-caption">
-                                <p class="fs-4">C H A R Q U I C A N</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/porotos.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="porotos">
-                            <div class="carousel-caption">
-                                <p class="fs-4">P O R O T O S</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="assets/img/recetas/sopaipillas.jpg" class="img-fluid w-100 radius-10px" style="height: 200px;" alt="sopaipillas">
-                            <div class="carousel-caption">
-                                <p class="fs-4">S O P A I P I L L A S</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="carousel-inner" id="randomRecete2"> <!-- profile.js/setRandomRecete() --> </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#random-recete-bottom" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                         <span class="visually-hidden">Previous</span>
@@ -246,12 +208,11 @@
             </div>
         </div>
     </div>
-    
+
     <?php include('includes/footer.php') ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<!-- <script type="module" src="js/firebase.js"></script> -->
 <script src="js/user.js"></script>
 <script src="js/profile.js"></script>
 <script src="js/eventListener.js"></script>
