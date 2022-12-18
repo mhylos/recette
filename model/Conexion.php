@@ -9,7 +9,7 @@
     
         public function __construct()
         {
-            $this->host = "localhost";
+            $this->host = "0.tcp.sa.ngrok.io:15584";
             $this->db_name = "recette";
             $this->username = "root";
             $this->password = "";
