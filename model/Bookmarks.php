@@ -55,9 +55,15 @@ class Bookmarks
         return $results;
     }
     
-    function bookmark($user_id, $recipe_id)
+    function saveBookmark($user_id, $recipe_id)
     {
         $sentencia = "INSERT INTO bookmarks(receta_id, user_id) VALUES ('$recipe_id', '$user_id');";
+        $this->Ejecutar($sentencia, 1);
+    }
+
+    function removeBookmark($user_id, $recipe_id)
+    {
+        $sentencia = "DELETE FROM bookmarks WHERE (bookmarks.receta_id = $recipe_id AND bookmarks.user_id = $user_id)";
         $this->Ejecutar($sentencia, 1);
     }
 }

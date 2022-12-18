@@ -21,18 +21,34 @@ $(document).ready(function () {
 
 function insertSaveButton(){
     container = $(".info-receta")
-    html = `<button type="button" id="btnSave" onclick="bookmarkReceta()" class="btn d-flex align-items-center align-self-end me-3 btnSave">
-                <i class="fa-regular fa-bookmark" id="saveIcon"></i><span class="ms-2" id="btnAction">Guardar</span>
+    html = `<button type="button" id="btnBookmark" class="btn d-flex align-items-center align-self-end me-3">
+                <i class="spinner-border spinner-border-sm" id="bookmarkIcon"></i><span class="ms-2" id="btnAction"></span>
             </button>`
     container.append(html)
     $.when(isSaved()).done(function(response) {
         if (response == true) {
-            $("#saveIcon").attr('class', 'fa-solid fa-bookmark')
-            $("#btnAction").text('Eliminar de guardados')
-            $("#btnSave").addClass('btnRemove').removeClass('btnSave');
-            $("#btnSave").attr('onclick', 'removeBookmark()');
+            swapBookmarkBtn('remove')
+        } else {
+            swapBookmarkBtn('save')
         }
     });
+}
+
+function swapBookmarkBtn(action){
+    btn = $("#btnBookmark")
+    btn.empty()
+    btn.prop('disabled', false)
+    if (action == 'remove') {
+        btn.addClass('btnRemove').removeClass('btnSave')
+        btn.attr('onclick', 'removeBookmark()')
+        html = '<i class="fa-solid fa-bookmark" id="bookmarkIcon"></i><span class="ms-2">Eliminar de guardados</span>'
+    } else {
+        btn.addClass('btnSave').removeClass('btnRemove')
+        btn.attr('onclick', 'saveBookmark()')
+        html = '<i class="fa-regular fa-bookmark" id="bookmarkIcon"></i><span class="ms-2">Guardar</span>'
+    }
+    btn.append(html)
+
 }
 
 function setLoadingIcon(jQElement){
@@ -42,24 +58,39 @@ function setLoadingIcon(jQElement){
     jQElement.append(html)
 }
 
-function bookmarkReceta(){
-    $("#btnSave").prop('disabled', true)
-    setLoadingIcon($("#btnSave"))
+function saveBookmark(){
+    $("#btnBookmark").prop('disabled', true)
+    setLoadingIcon($("#btnBookmark"))
     user_info = localStorage.getItem('user')
     user_id = $.parseJSON(user_info).id;
     receta_id = id
-    // $.ajax({
-    //     url:'controller/CtrlSavedRecipes.php?op=is_saved',
-    //     data: {'user_id': user_id,
-    //            'receta_id': receta_id},
-    //     type:'POST'
-    // });
+    $.ajax({
+        url:'controller/CtrlBookmarks.php?op=save_bookmark',
+        data: {'user_id': user_id,
+               'receta_id': receta_id},
+        type:'POST',
+        success: function(){
+            swapBookmarkBtn('remove')
+        }
+    });
 }
 
 function removeBookmark(){
-    console.log('remueve');
+    $("#btnBookmark").prop('disabled', true)
+    setLoadingIcon($("#btnBookmark"))
+    user_info = localStorage.getItem('user')
+    user_id = $.parseJSON(user_info).id;
+    receta_id = id
+    $.ajax({
+        url:'controller/CtrlBookmarks.php?op=remove_bookmark',
+        data: {'user_id': user_id,
+               'receta_id': receta_id},
+        type:'POST',
+        success: function(){
+            swapBookmarkBtn('save')
+        }
+    });
 }
-
 
 function insertCommentButton(){
     container = $(".comments-header")

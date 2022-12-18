@@ -16,4 +16,16 @@ switch ($_REQUEST["op"]) {
         $result = $bookmarks->getBookmarksByUserID($userId, $order, $sort);
         echo json_encode($result);
         break;
+    case 'save_bookmark':
+        if (isset($_POST['user_id']) && isset($_POST['receta_id'])) {
+            $bookmarks->saveBookmark($_POST['user_id'], $_POST['receta_id']);
+        }
+        break;
+
+    case 'remove_bookmark':
+        if (isset($_POST['user_id']) && isset($_POST['receta_id'])) {
+            $bookmarks->removeBookmark($_POST['user_id'], $_POST['receta_id']);
+        }
+        break;
+
 }
