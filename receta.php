@@ -23,6 +23,8 @@
     <link rel="preload" href="css/footer.css" as="style">
     <link rel="stylesheet" href="css/footer.css">
 
+    <link rel="stylesheet" type="text/css" href="plugins/css/star-rating-svg.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -62,12 +64,16 @@
             </div>
 
             <div class="d-grid bg-body my-3 p-2 rounded-2 shadow" id="ingredientes">
-                <h2 class="bold morado-1">Ingredientes</h2>
+                <div class="ingredientes-header">
+                    <h2 class="bold morado-1">Ingredientes</h2>
+                </div>
                 <hr class="w-25 ms-2">
             </div>
 
             <div class="d-grid bg-body my-3 p-2 rounded-2 shadow">
-                <h2 class="bold morado-1">Preparación</h2>
+                <div class="preparacion-header">
+                    <h2 class="bold morado-1">Preparación</h2>
+                </div>
                 <hr class="w-25 ms-2">
                 <div>
                     <ol class="list-group list-group-flush" id="pasos">
@@ -82,6 +88,9 @@
                 </div>
                 <hr class="w-25 ms-2">
                 <div>
+                    <div class="my-rating"></div>
+                </div>
+                <div>
                     <ul class="list-group list-group-flush" id="comentarios">
                         
                     </ul>
@@ -92,9 +101,7 @@
     <?php include('includes/footer.php') ?>
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="plugins/jquery.star-rating-svg.js"></script>
     <script src="js/receta.js"></script>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
 </html>
