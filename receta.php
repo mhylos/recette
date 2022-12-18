@@ -41,7 +41,7 @@
                         <h2 class="titulo-receta bold morado-1" id="titulo"></h2>
                     </div>
                     <div class="col-2 d-flex justify-content-end">
-                        <i class="fa-solid fa-star"></i><b><span id="score">0</span>/7</b>
+                        <i class="fa-solid fa-star"></i><b><span id="score">0</span>/5</b>
                     </div>
                 </div>
             </div>

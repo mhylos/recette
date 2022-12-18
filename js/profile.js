@@ -426,8 +426,8 @@ function setComments() {
                 innerHTML += `  <hr class="m-0" style="color: grey;">`
                 innerHTML += `  <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Calificación</p>`
                 innerHTML += `  <p class="col-12 col-md-8 pt-0 py-md-2 m-0">`
-                innerHTML += `      ${'<i class="fa-solid fa-star"></i> '.repeat(calificacion - 1)}`
-                innerHTML += `      ${'<i class="fa-regular fa-star"></i> '.repeat(6 - calificacion)}`
+                innerHTML += `      ${'<i class="fa-solid fa-star"></i> '.repeat(calificacion)}`
+                innerHTML += `      ${'<i class="fa-regular fa-star"></i> '.repeat(5 - calificacion)}`
                 innerHTML += `  </p>`
                 innerHTML += `  <hr class="m-0" style="color: grey;">`
                 innerHTML += `  <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Comentario</p>`

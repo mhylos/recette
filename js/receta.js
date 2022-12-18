@@ -108,10 +108,6 @@ function submitComment(){
         texto.effect('shake',{times:2, distance: 5}, 500)
         return null
     }
-    if (puntuacion.starRating('getRating') == 0) {
-        puntuacion.effect('shake',{times:2, distance: 5}, 500)
-        return null
-    }
 
     user_info = localStorage.getItem('user');
     user_id = $.parseJSON(user_info).id;
@@ -152,7 +148,7 @@ function deployCommentSection(){
     $("#btnCalificar").on('click', hideCommentSection)
     $(".rating").starRating({
         starSize: 15,
-        totalStars: 7,
+        totalStars: 5,
         hoverColor: 'gold',
         ratedColor: 'gold',
         activeColor: 'gold',
