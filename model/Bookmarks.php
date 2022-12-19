@@ -45,12 +45,11 @@ class Bookmarks
             $order_by = "fecha  $sort, nombre ASC";
             // $order = 'fecha, nombre, calificacion';
         } else {
-            $order_by = "nombre  $sort, fecha ASC";
+            $order_by = "puntaje $sort, nombre  ASC, fecha ASC";
             // $order = 'calificacion, nombre, fecha';
         }
 
-        // return $sort;
-        $sql = "SELECT * FROM bookmarks JOIN recetas USING (receta_id) WHERE user_id = $user_id ORDER BY $order_by";
+        $sql = "SELECT AVG(nota) puntaje, R.nombre, R.img_name, C.fecha FROM comments C JOIN recetas R USING(receta_id) WHERE receta_id IN( SELECT receta_id FROM bookmarks JOIN recetas USING(receta_id) WHERE user_id = $user_id ) AND user_id = $user_id GROUP BY nombre ORDER BY $order_by";
         $results = $this->Ejecutar($sql, 0);
         return $results;
     }

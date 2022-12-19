@@ -26,12 +26,9 @@ class Recetas
 
     function obtenerRecetaPorId($id)
     {
-        $this->db->connect();
         $sql = "SELECT * FROM recetas WHERE receta_id = $id";
-        $result = mysqli_query($this->db->conn, $sql);
-        $receta = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $this->db->disconnect();
-        return $receta;
+        $data = $this->Ejecutar($sql, 0);
+        return $data;
     }
 
     function listarRecetas()

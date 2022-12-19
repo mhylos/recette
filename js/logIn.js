@@ -124,7 +124,7 @@ async function logIn() {
         if (validate(result, '#emailError', '#emailEmpty')) {
             let list = result.split(', ');
             list.pop();
-            console.log(result);
+            // console.log(result);
             jsonUser = {
                 id: list[0],
                 firstName: list[1],
@@ -144,13 +144,11 @@ async function logIn() {
                 showError('#passwordError', '#passwordEmpty');
             } else {
                 hideError('#passwordError')
-                let remember = document.querySelector('#remember-btn').value;
+
                 // guardar datos en localStorage
-                if (remember) {
-                    localStorage.setItem('remember', remember);
-                    localStorage.setItem('logged', true);
-                    localStorage.setItem('user', JSON.stringify(jsonUser));
-                }
+                localStorage.setItem('logged', true);
+                localStorage.setItem('user', JSON.stringify(jsonUser));
+
                 // ir al perfil
                 location.href = 'perfil.php'
             }
@@ -191,12 +189,12 @@ async function register() {
                 id: null,
                 firstName: firstName.value,
                 lastName: lastName.value,
-                gender: null,
-                birthday: null,
+                gender: 'No Definido',
+                birthday: '2000-01-01',
                 email: email.value,
                 password: password.value,
-                phone: null,
-                address: null,
+                phone: 0,
+                address: 'Sin Dirección',
             };
             await ajaxPromise(
                 {
@@ -211,28 +209,27 @@ async function register() {
             );
 
             let result = await ajaxPromise(
-                { 'email': emailL.value },
+                { 'email': email.value },
                 'controller/CtrlUsers.php?op=search',
                 'POST',
                 function (result) {
                     return result
                 }
             );
-            if (validate(result, '#emailError', '#emailEmpty')) {
-                let list = result.split(', ');
-                list.pop();
-                jsonUser = {
-                    id: list[0],
-                    firstName: list[1],
-                    lastName: list[2],
-                    gender: list[3],
-                    birthday: list[4],
-                    email: list[5],
-                    password: list[6],
-                    phone: list[7],
-                    address: list[8],
-                };
-            }
+            let list = result.split(', ');
+            list.pop();
+            jsonUser = {
+                id: list[0],
+                firstName: list[1],
+                lastName: list[2],
+                gender: list[3],
+                birthday: list[4],
+                email: list[5],
+                password: list[6],
+                phone: list[7],
+                address: list[8],
+            };
+
             localStorage.setItem('logged', true);
             localStorage.setItem('user', JSON.stringify(jsonUser));
             modal.toggle()

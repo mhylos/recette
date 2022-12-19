@@ -34,5 +34,5 @@ switch ($_REQUEST["op"]) {
         $order = $_POST['order'];
         $sort = $_POST['sort'];
         $result = $comentarios->getCommentsByUserID($userId, $order, $sort);
-        echo json_encode($result);
+        echo $result ? json_encode($result) : '' ;
 }

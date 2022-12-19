@@ -72,30 +72,12 @@
                             <p class="d-none m-0 mt-2 text-danger" id="passwordEmpty">
                                 Campo Obligatorio *
                             </p>
-                            <div class="form-check form-switch mt-3 ms-3">
-                                <input class="form-check-input shadow-none fs-5" type="checkbox" id="remember-btn">
-                                <label class="form-check-label fs-5" for="remember-btn">Recordarme</label>
-                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
                         <p class="text-center m-0">
                             <i class="bi bi-person-bounding-box icon-color" style="font-size: 150px;"></i>
                         </p>
-
-                        <!-- <label for="usernameRegister" class="fs-5">Nombre de Usuario</label>
-                        <div class="input-group shadow">
-                            <span class="input-group-text">
-                                <i class="bi bi-person fs-6 icon-color"></i>
-                            </span>
-                            <input type="text" class="form-control shadow-none" id="usernameRegister">
-                        </div>
-                        <p class="d-none m-0 mt-2 text-danger" id="userEmpty">
-                            Campo Obligatorio *
-                        </p>
-                        <p class="d-none m-0 mt-2 text-danger" id="userError">
-                            El usuario ingresado ya se encuentra registrado
-                        </p> -->
 
                         <label for="name" class="mt-3 fs-5">Nombre Completo *</label>
                         <div class="input-group shadow">

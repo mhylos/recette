@@ -67,15 +67,15 @@ class Comments {
             $order_by = "nombre $sort, R.fecha ASC";
             // $order = 'nombre, fecha, calificacion';
         } else if ($order == 'fecha') {
-            $order_by = "R.fecha  $sort, nombre ASC";
+            $order_by = "fecha  $sort, nombre ASC";
             // $order = 'fecha, nombre, calificacion';
         } else {
-            $order_by = "nombre  $sort, R.fecha ASC";
+            $order_by = "puntaje $sort, nombre  ASC, fecha ASC";
             // $order = 'calificacion, nombre, fecha';
         }
 
         // return $sort;
-        $sql = "SELECT * FROM comments C JOIN recetas R USING (receta_id) WHERE user_id = $user_id ORDER BY $order_by";
+        $sql = "SELECT R.nombre, C.nota puntaje, C.contenido, C.fecha FROM comments C JOIN recetas R USING (receta_id) WHERE user_id = $user_id ORDER BY $order_by";
         $results = $this->Ejecutar($sql, 0);
         return $results;
     }

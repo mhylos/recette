@@ -13,59 +13,40 @@ function setProfileScreen() {
                             <div class="row bg-white my-2 p-2 radius-10px justify-content-center shadow">
                                 <div class="col-12 row m-0 mb-3 justify-content-center fs-5">
                                     <p class="col-10 col-sm-6 col-xl-5 my-auto p-0 text-end">Información Personal</p>
-                                    <i class="col-2 fa-regular fa-pen-to-square col-icons w-auto icon-color pad-icons-2 text-start my-auto pointer" id="edit-security-btn"></i>
+                                    <i class="col-2 fa-regular fa-pen-to-square col-icons w-auto icon-color pad-icons-2 text-start my-auto pointer" id="edit-security-btn" onclick="editInfoPersonal()"></i>
                                 </div>
 
                                 <label class="col-4 p-0 m-auto" for="first-name">Nombre</label>
                                 <div class="col-8 p-0 my-1">
-                                    <input type="text" class="form-control text-center" value = "${firstName}"id="first-name" disabled>
+                                    <input type="text" class="form-control text-center shadow-none" value = "${firstName}"id="first-name" disabled>
                                 </div>
 
                                 <label class="col-4 p-0 m-auto" for="last-name">Apellido</label>
                                 <div class="col-8 p-0 my-1">
-                                    <input type="text" class="form-control text-center" value = "${lastName}" id="last-name" disabled>
+                                    <input type="text" class="form-control text-center shadow-none" value = "${lastName}" id="last-name" disabled>
                                 </div>
 
                                 <label class="col-4 p-0 m-auto" for="gender">Género</label>
                                 <div class="col-8 p-0 my-1">
-                                    <input type="text" class="form-control text-center" value = "${gender}" id="gender" disabled>
+                                    <input type="text" class="form-control text-center shadow-none" value = "${gender}" id="gender" disabled>
                                 </div>
 
                                 <label class="col-4 p-0 m-auto" for="birthday">Cumpleaños</label>
                                 <div class="col-8 row m-0 p-0 my-1">
-                                    <div class="col-3 p-0 m-0 w-100">
-                                        <input type="date" class="form-control text-center" value = "${birthday}" id="birthday" disabled>
+                                    <div class="p-0 m-0 w-100">
+                                        <input type="date" class="form-control text-center shadow-none" value = "${birthday}" id="birthday" disabled>
                                     </div>
                                 </div>
-
+                                <div class="d-none row m-0 mt-3 fs-5 justify-content-evenly" id="btn-info">
+                                    <button class="btn w-auto" id="cancel" onclick="cancel()">
+                                        Cancelar
+                                    </button>
+                                    <button type="button" class="btn w-auto" id="confirm-info">
+                                        Continuar
+                                    </button>
+                                </div>
                             </div>`;
 
-    // <div class="row bg-white my-2 p-2 radius-10px  justify-content-center shadow">
-    //     <div class="col-12 row m-0 mb-3 text-start fs-5">
-    //         <p class="col-10 col-sm-9 col-lg-8 my-auto p-0 text-end">Guardados <span class="fs-6">(Recientes)</span></p>
-    //     </div>
-
-    //     <div class="col-12 row m-0 p-0 justify-content-evenly">
-
-    //         <div class="card p-2 col-5 col-md-3 radius-10px">
-    //             <img class="card-img-top radius-10px" src="assets/img/recetas/charquican.jpg" height="100px" alt="Charquican">
-    //             <a href="#" class="card-body">Charquican</a>
-    //         </div>
-
-    //         <div class="d-none d-sm-flex card p-2 col-5 col-md-3 radius-10px">
-    //             <img class="card-img-top radius-10px" src="assets/img/recetas/porotos.jpg" height="100px" alt="Porotos">
-    //             <a href="#" class="card-body">Porotos</a>
-    //         </div>
-
-    //         <div class="d-none d-md-flex card p-2 col-5 col-md-3 radius-10px">
-    //             <img class="card-img-top radius-10px" src="assets/img/recetas/sopaipillas.jpg" height="100px" alt="Sopaipillas">
-    //             <a href="#" class="card-body">Sopaipillas</a>
-    //         </div>
-    //     </div>
-
-    //     <button class="col-3 my-2 radius-10px btn-custom " onclick="setBookmarksScreen()"> Ver Más</button>
-
-    // </div>
     setScreen(profileScreen)
 
 }
@@ -73,23 +54,20 @@ function setProfileScreen() {
 function setBookmarksScreen() {
 
     let bookmarksScreen = `<b class="fs-1">Guardados</b>
-                            <div class="row bg-white my-2 px-2 pt-2 radius-10px justify-content-center shadow" style="padding-bottom: 14px;">
-                                <div class="col-12 row m-0 text-start fs-5 gap-1 justify-content-center justify-content-sm-start">
+                            <div class="row bg-white my-2 px-2 pt-2  radius-10px justify-content-center shadow" style="padding-bottom: 14px;">
+                                <div class="col-12 row m-0 mb-3 text-start fs-5 gap-1 justify-content-center justify-content-sm-start">
                                     <label class="col-12 col-sm-6 my-auto p-0 text-center text-sm-end px-2 px-sm-0 fs-5" for="bookmarks-order">Ordenado por:</label>
                                     <select class="col-5 form-select pe-auto text-center border-0 shadow-none fs-5 w-auto" id="bookmarks-order" onchange="setBookmarks()">
                                         <option value="nombre" class="text-start">Nombre</option>
                                         <option value="fecha" class="text-start">Fecha</option>
                                         <option value="calificacion" class="text-start">Puntaje</option>
                                     </select>
-                                    <!-- <i class="col-6 bi bi-arrow-down-up bg-black"></i> -->
-                                    <i class="col-1 fa-solid fa-arrow-down-a-z my-auto pointer w-auto p-0 icon-color" id="sort-bookmarks-btn"></i>
+                                    <i class="col-1 fa-solid fa-arrow-down-short-wide my-auto pointer w-auto p-0 icon-color" id="sort-bookmarks-btn"></i>
                                 </div>
 
                                 <div class="col-12 row m-0 p-0 justify-content-evenly" id="content-bookmarks"> </div>
                                 
                             </div>`
-
-    // <button class="col-3 my-2 radius-10px btn-custom " onclick="toSettings()"> Ver Más</button>
 
     setScreen(bookmarksScreen)
 
@@ -97,10 +75,10 @@ function setBookmarksScreen() {
 
     const sortBookmarksBTN = document.querySelector('#sort-bookmarks-btn');
     sortBookmarksBTN.addEventListener('click', () => {
-        if (sortBookmarksBTN.classList.contains('fa-arrow-down-a-z')) {
-            sortBookmarksBTN.classList.replace('fa-arrow-down-a-z', 'fa-arrow-up-z-a')
+        if (sortBookmarksBTN.classList.contains('fa-arrow-down-short-wide')) {
+            sortBookmarksBTN.classList.replace('fa-arrow-down-short-wide', 'fa-arrow-down-wide-short')
         } else {
-            sortBookmarksBTN.classList.replace('fa-arrow-up-z-a', 'fa-arrow-down-a-z')
+            sortBookmarksBTN.classList.replace('fa-arrow-down-wide-short', 'fa-arrow-down-short-wide')
         }
         sortBookmarks = !sortBookmarks;
         setBookmarks()
@@ -117,13 +95,11 @@ function setCommentsScreen() {
                                     <label class="col-12 col-sm-6 my-auto p-0 text-center text-sm-end px-2 px-sm-0 fs-5" for="comments-order">Ordenado por:</label>
                                     <select class="col-5 form-select pe-auto text-center border-0 shadow-none fs-5 w-auto" id="comments-order" onchange="setComments()">
                                         <option value="nombre" class="text-start">Receta</option>
-                                        <option value="titulo" class="text-start">Titulo</option>
-                                        <option value="calificacion" class="text-start">Calificacion</option>
-                                        <option value="comentario" class="text-start">Comentario</option>
                                         <option value="fecha" class="text-start">Fecha</option>
+                                        <option value="calificacion" class="text-start">Puntaje</option>
                                     </select>
                                     <!-- <i class="col-6 bi bi-arrow-down-up bg-black"></i> -->
-                                    <i class="col-1 fa-solid fa-arrow-down-a-z my-auto pointer w-auto p-0 icon-color" id="sort-comments-btn"></i>
+                                    <i class="col-1 fa-solid fa-arrow-down-short-wide my-auto pointer w-auto p-0 icon-color" id="sort-comments-btn"></i>
                                 </div>
 
                                 <div class="col-12 row m-0" id="content-comments">
@@ -136,10 +112,10 @@ function setCommentsScreen() {
 
     const sortCommentsBTN = document.querySelector('#sort-comments-btn');
     sortCommentsBTN.addEventListener('click', () => {
-        if (sortCommentsBTN.classList.contains('fa-arrow-down-a-z')) {
-            sortCommentsBTN.classList.replace('fa-arrow-down-a-z', 'fa-arrow-up-z-a')
+        if (sortCommentsBTN.classList.contains('fa-arrow-down-short-wide')) {
+            sortCommentsBTN.classList.replace('fa-arrow-down-short-wide', 'fa-arrow-down-wide-short')
         } else {
-            sortCommentsBTN.classList.replace('fa-arrow-up-z-a', 'fa-arrow-down-a-z')
+            sortCommentsBTN.classList.replace('fa-arrow-down-wide-short', 'fa-arrow-down-short-wide')
         }
         sortComments = !sortComments;
         setComments()
@@ -187,48 +163,6 @@ function setSettingsScreen() {
                                         disabled>
                                 </div>
                             </div>`;
-    // <div class="row bg-white mt-3 p-2 radius-10px fs-5 shadow">
-    //     <div class="col-12 row m-0">
-    //         <p class="col-9 col-sm-8 my-auto p-0 text-end">Información de Pago</p>
-    //         <i class="col-3 col-sm-4 fa-regular fa-pen-to-square col-icons w-auto icon-color pad-icons-2 text-start my-auto pointer" id="edit-pay-btn"></i>
-    //     </div>
-
-    //     <label class="col-4 p-0 m-auto" for="number_card">Número de tarjeta</label>
-    //     <div class="col-8 p-0 row m-0 my-1">
-    //         <input type="text" class="col-10 form-control text-center w-75" id="number_card" disabled>
-    //         <i class="col-2 fa-brands fa-cc-mastercard m-auto fs-1"></i>
-    //     </div>
-
-    //     <label class="col-4 p-0 m-auto" for="cvv">CVV</label>
-    //     <div class="col-8 p-0 m-0 my-1">
-    //         <input type="password" class="form-control text-center w-25" id="cvv" disabled>
-    //     </div>
-
-    //     <label class="col-4 p-0 m-auto">Fecha Expiración</label>
-    //     <div class="col-8 p-0 row m-0 my-1">
-
-    //         <div class="col-5 p-0 input-group me-1" style="width: auto;">
-    //             <select class=" form-select pe-auto text-center" id="day-exp" disabled>
-    //                 <!-- <option selected></option> -->
-    //                 <option value=30>30</option>
-    //                 <option value=12>12</option>
-    //                 <option value=31>31</option>
-    //             </select>
-    //         </div>
-    //         <div class="col-5 p-0 input-group me-1" style="width: auto;">
-    //             <select class=" form-select pe-auto text-center" id="year-exp" disabled>
-    //                 <!-- <option selected></option> -->
-    //                 <option value=22>22</option>
-    //                 <option value=24>24</option>
-    //                 <option value=26>26</option>
-    //             </select>
-    //         </div>
-    //         <!-- <input type="number" class="col-5 form-control text-center me-1" style="width: 30%;" id="exp"
-    //             placeholder="31" disabled>
-    //         <input type="number" class="col-5 form-control text-center ms-1" style="width: 35%;" id="exp"
-    //             placeholder="1234" disabled> -->
-    //     </div>
-    // </div>`;
 
     setScreen(settingsScreen);
 }
@@ -306,54 +240,63 @@ function setBookmarks() {
         url: 'controller/CtrlBookmarks.php?op=bookmarks',
         type: 'POST',
         success: function (innerHTML) {
-            let iH = $.parseJSON(innerHTML);
-            innerHTML = '';
-            let ord = '';
-            for (let i = 0; i < iH.length; i++) {
-                let img_name = iH[i].img_name;
-                let nombre = iH[i].nombre;
-                let fecha = iH[i].fecha
-                // console.log(fecha != '2022-12-04');
-                if (order == 'nombre') {
-                    if (ord != nombre[0].toUpperCase()) {
-                        ord = nombre[0].toUpperCase();
-                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
+            if (innerHTML != '') {
+                let iH = $.parseJSON(innerHTML);
+                innerHTML = '';
+                let ord = '';
+                for (let i = 0; i < iH.length; i++) {
+                    let nombre = iH[i].nombre;
+                    let img_name = iH[i].img_name;
+                    let fecha = iH[i].fecha.substring(0, 10);
+                    let calificacion = iH[i].puntaje;
+                    // console.log(fecha != '2022-12-04');
+                    if (order == 'nombre') {
+                        if (ord != nombre[0].toUpperCase()) {
+                            ord = nombre[0].toUpperCase();
+                            innerHTML += `  <div class='col-12 row m-0 p-0 justify-content-around'>
                                             <p class="col2 text-center">
-                                            <hr class="col-5 my-auto">
-                                            ${ord}
-                                            <hr class="col-5 my-auto">
+                                                <hr class="col-5 my-auto">
+                                                ${ord}
+                                                <hr class="col-5 my-auto">
                                             </p>
                                         </div>`;
-                    }
-                } else if (order == 'fecha') {
-                    if (ord != fecha) {
-                        ord = fecha;
-                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
+                        }
+                    } else if (order == 'fecha') {
+                        if (ord != fecha) {
+                            ord = fecha;
+                            innerHTML += `  <div class='col-12 row m-0 p-0 justify-content-around'>
                                             <p class="col2 text-center">
-                                              <hr class="col-5 my-auto">
-                                              ${ord}
-                                            <hr class="col-5 my-auto">
+                                                <hr class="col-5 my-auto">
+                                                ${ord}
+                                                <hr class="col-5 my-auto">
                                             </p>
                                         </div>`;
+                        }
                     }
-                }
-                // else {
-                //     // ord =  ? '0' : ord;
-                //     if (ord != '0') {
-                //         ord = nombre[0].toUpperCase();
-                //         innerHTML += `<div class='col-12'>`;
-                //         innerHTML += `<hr class="mx-auto">`;
-                //         innerHTML += `<p class="text-center">${ord}</p>`;
-                //         innerHTML += `<hr class="mx-auto">`;
-                //         innerHTML += `</div>`;
-                //     }
-                // }
-                innerHTML += `  <div class='card p-2 pb-0 col-5 col-md-3 radius-10px shadow'>
+                    else {
+                        if (ord != calificacion) {
+                            ord = calificacion;
+                            innerHTML += `  <div class='col-12 row m-0 p-0 justify-content-around'>
+                                            <p class="col2 text-center">
+                                                <hr class="col-5 my-auto">
+                                                <span class="p-0" style="width: fit-content;">${'<i class="fa-solid fa-star"></i> '.repeat(calificacion)}
+                                                ${'<i class="fa-regular fa-star-half-stroke"></i> '.repeat(calificacion % 1 != 0 ? 1 : 0)}
+                                                ${'<i class="fa-regular fa-star"></i> '.repeat(5 - calificacion)}</span>
+                                                <hr class="col-5 my-auto">
+                                            </p>
+                                        </div>`;
+                        }
+                    }
+                    innerHTML += `  <div class='card p-2 pb-0 col-5 col-md-3 radius-10px shadow'>
                                     <img class='card-img-top radius-10px' src='assets/img/recetas/${img_name}' alt='${nombre}'>
                                     <a href='#' class='card-body px-2'>${nombre}</a>
                                 </div>`;
+                }
+                document.querySelector('#content-bookmarks').innerHTML = innerHTML;
+            } else {
+                document.querySelector('#content-bookmarks').innerHTML = `  <i class="fa-solid fa-face-dizzy fs-1"></i>
+                                                                            <p class="mt-2">No Hay Recetas Guardadas</p>`;
             }
-            document.querySelector('#content-bookmarks').innerHTML = innerHTML;
         }
     })
 }
@@ -369,77 +312,101 @@ function setComments() {
         url: 'controller/CtrlComments.php?op=comments',
         type: 'POST',
         success: function (innerHTML) {
-            let iH = $.parseJSON(innerHTML);
-            // console.log(iH);
-            innerHTML = '';
-            let ord = '';
-            for (let i = 0; i < iH.length; i++) {
-                // let img_name = iH[i].img_name;
-                let nombre = iH[i].nombre;
-                let titulo = iH[i].contenido;
-                let calificacion = parseFloat(iH[i].nota);
-                let comentario = iH[i].contenido;
-                let fecha = iH[i].fecha
-                // console.log(fecha != '2022-12-04');
-                if (order == 'nombre') {
-                    if (ord != nombre[0].toUpperCase()) {
-                        ord = nombre[0].toUpperCase();
-                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
-                                            <p class="col2 text-center">
-                                              <hr class="col-5 my-auto">
-                                              ${ord}
-                                            <hr class="col-5 my-auto">
-                                            </p>
-                                        </div>`;
+            if (innerHTML != '') {
+                let iH = $.parseJSON(innerHTML);
+                innerHTML = '';
+                let ord = '';
+                for (let i = 0; i < iH.length; i++) {
+                    let nombre = iH[i].nombre;
+                    let calificacion = iH[i].puntaje;
+                    let comentario = iH[i].contenido;
+                    let fecha = iH[i].fecha.substring(0, 10)
+                    if (order == 'nombre') {
+                        if (ord != nombre[0].toUpperCase()) {
+                            ord = nombre[0].toUpperCase();
+                            innerHTML += `  <div class='col-12 row m-0 p-0 justify-content-around'>
+                                                <p class="col2 text-center">
+                                                <hr class="col-5 my-auto">
+                                                ${ord}
+                                                <hr class="col-5 my-auto">
+                                                </p>
+                                            </div>`;
+                        }
+                    } else if (order == 'fecha') {
+                        if (ord != fecha) {
+                            ord = fecha;
+                            innerHTML += `  <div class='col-12 row m-0 p-0 justify-content-around'>
+                                                <p class="col2 text-center">
+                                                <hr class="col-5 my-auto">
+                                                ${ord}
+                                                <hr class="col-5 my-auto">
+                                                </p>
+                                            </div>`;
+                        }
+                    } else {
+                        if (ord != calificacion) {
+                            ord = calificacion;
+                            innerHTML += `  <div class='col-12 row m-0 p-0 justify-content-around'>
+                                                <p class="col2 text-center">
+                                                    <hr class="col-5 my-auto">
+                                                    <span class="p-0" style="width: fit-content;">${'<i class="fa-solid fa-star"></i> '.repeat(calificacion)}
+                                                    ${'<i class="fa-regular fa-star-half-stroke"></i> '.repeat(calificacion % 1 != 0 ? 1 : 0)}
+                                                    ${'<i class="fa-regular fa-star"></i> '.repeat(5 - calificacion)}</span>
+                                                    <hr class="col-5 my-auto">
+                                                </p>
+                                            </div>`;
+                        }
                     }
-                } else if (order == 'fecha') {
-                    if (ord != fecha) {
-                        ord = fecha;
-                        innerHTML += `  <div class='col-12 row m-0 justify-content-around'>
-                                            <p class="col2 text-center">
-                                              <hr class="col-5 my-auto">
-                                              ${ord}
-                                            <hr class="col-5 my-auto">
-                                            </p>
-                                        </div>`;
-                    }
+                    innerHTML += `  <div class="col-12 col-lg-9 row m-0 mb-3 p-0 border-1 radius-10px mx-auto justify-content-center shadow" style="border: 1px solid grey;">
+                                        <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Receta</p>
+                                        <a class="col-12 col-md-8 pt-0 py-md-2 m-0" href="#" >${nombre}</a>
+                                        <hr class="m-0" style="color: grey;">
+                                        <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Calificación</p>
+                                        <p class="col-12 col-md-8 pt-0 py-md-2 m-0">
+                                            ${'<i class="fa-solid fa-star"></i> '.repeat(calificacion)}
+                                            ${'<i class="fa-regular fa-star-half-stroke"></i> '.repeat(calificacion % 1 != 0 ? 1 : 0)}
+                                            ${'<i class="fa-regular fa-star"></i> '.repeat(5 - calificacion)}
+                                        </p>
+                                        <hr class="m-0" style="color: grey;">
+                                        <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Comentario</p>
+                                        <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${comentario}</p>
+                                        <hr class="m-0" style="color: grey;">
+                                        <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Fecha</p>
+                                        <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${iH[i].fecha}</p>
+                                    </div>`
                 }
-                // else {
-                //     // ord =  ? '0' : ord;
-                //     if (ord != '0') {
-                //         ord = nombre[0].toUpperCase();
-                //         innerHTML += `<div class='col-12'>`;
-                //         innerHTML += `<hr class="mx-auto">`;
-                //         innerHTML += `<p class="text-center">${ord}</p>`;
-                //         innerHTML += `<hr class="mx-auto">`;
-                //         innerHTML += `</div>`;
-                //     }
-                // }
-                innerHTML += `  <div class="col-12 col-lg-9 row m-0 mb-3 p-0 border-1 radius-10px mx-auto justify-content-center shadow" style="border: 1px solid grey;">
-                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Receta</p>
-                                    <a class="col-12 col-md-8 pt-0 py-md-2 m-0" href="#" >${nombre}</a>
-                                    <hr class="m-0" style="color: grey;">
-                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Título</p>
-                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${titulo}</p>
-                                    <hr class="m-0" style="color: grey;">
-                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Calificación</p>
-                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">
-                                        ${'<i class="fa-solid fa-star"></i> '.repeat(calificacion)}
-                                        ${'<i class="fa-regular fa-star-half-stroke"></i> '.repeat(calificacion % 1 != 0 ? 1 : 0)}
-                                        ${'<i class="fa-regular fa-star"></i> '.repeat(5 - calificacion)}
-                                    </p>
-                                    <hr class="m-0" style="color: grey;">
-                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Comentario</p>
-                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${comentario}</p>
-                                    <hr class="m-0" style="color: grey;">
-                                    <p class="col-12 col-md-4 pb-0 py-md-2 m-0 border-right">Fecha</p>
-                                    <p class="col-12 col-md-8 pt-0 py-md-2 m-0">${fecha}</p>
-                                </div>`
+                document.querySelector('#content-comments').innerHTML = innerHTML;
+            } else {
+                document.querySelector('#content-comments').innerHTML = `   <i class="fa-solid fa-face-sad-tear fs-1"></i>
+                                                                            <p class="mt-2">No Hay Comentarios</p>`;
             }
-            document.querySelector('#content-comments').innerHTML = innerHTML;
         }
     })
 }
+
+function editInfoPersonal() {
+    // continuar acá!
+    let info = {
+        firstName: document.querySelector('#first-name'),
+        lastName: document.querySelector('#last-name'),
+        gender: document.querySelector('#gender'),
+        birthday: document.querySelector('#birthday')
+    };
+    if (!info.firstName.disabled) {
+        location.href = 'perfil.php'
+    }
+    for (let e in info) {
+        info[e].disabled = !info[e].disabled;
+    }
+
+    // console.log(info);
+    // for (let i = 0; i < info.length; i++) {
+        // console.log(info[i]);
+        // info[i].removeAttribute('disabled');
+    // }
+}
+
+
 var sortBookmarks, sortComments = true;
 
 // const date = new Date();

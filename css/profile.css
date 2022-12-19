@@ -28,7 +28,7 @@ hr {
 
 
 aside img,
-div img{
+div img {
     object-fit: cover;
     width: 100%;
     height: 300px;
@@ -90,17 +90,44 @@ div img{
     color: var(--color-text);
 }
 
-@media (min-width: 768px) {
-    .border-right {
-        border-right: 1px solid grey;
-    }
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#cancel-register-btn,
+#continue-register-btn {
+    border: 1px solid #ced4da;
+    color: black;
+}
+
+#cancel-register-btn:hover {
+    color: red;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+#continue-register-btn:hover {
+    color: var(--color-text);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
 #profile-div {
     font-size: 1.5em;
 }
 
+
 @media (min-width: 768px) {
+    .border-right {
+        border-right: 1px solid grey;
+    }
+
     #profile-div {
         font-size: 2em;
     }
