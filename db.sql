@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-12-2022 a las 06:11:20
+-- Tiempo de generación: 20-12-2022 a las 07:24:55
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -41,7 +41,15 @@ CREATE TABLE `bookmarks` (
 INSERT INTO `bookmarks` (`receta_id`, `user_id`) VALUES
 (1, 1),
 (2, 1),
-(6, 1);
+(4, 19),
+(5, 10),
+(5, 17),
+(6, 1),
+(6, 10),
+(6, 18),
+(7, 1),
+(7, 10),
+(7, 17);
 
 -- --------------------------------------------------------
 
@@ -90,10 +98,12 @@ INSERT INTO `comments` (`comment_id`, `receta_id`, `user_id`, `contenido`, `fech
 (4, 2, 2, 'Muy bueno', '2022-11-25 01:57:34', 5),
 (12, 2, 1, 'ola', '2022-12-18 19:36:05', 5),
 (13, 2, 1, 'ma o meno', '2022-12-18 19:44:40', 3),
-(14, 2, 1, 'a', '2022-12-18 19:45:55', 1.5),
 (15, 2, 1, 'excelente', '2022-12-18 19:49:15', 4.5),
 (16, 6, 1, 'tan wenas', '2022-12-18 22:07:24', 5),
-(17, 7, 1, 'a', '2022-12-18 22:10:49', 4.5);
+(18, 6, 10, 'muy buena', '2022-12-20 02:14:49', 5),
+(20, 5, 17, 'exquisito', '2022-12-20 03:09:51', 5),
+(21, 4, 17, 'perfecto para navidad', '2022-12-20 03:10:33', 5),
+(23, 7, 18, 'mi receta favorita', '2022-12-20 03:13:50', 4.5);
 
 -- --------------------------------------------------------
 
@@ -155,7 +165,10 @@ INSERT INTO `users` (`user_id`, `nombre`, `apellido`, `genero`, `f_nacimiento`, 
 (6, 'Juan', 'Perez', '', '2000-01-01', 'juan.perez.verna@alumnos.uta.cl', 'Juanperez123', 0, ''),
 (7, 'aaaa', 'aaaaa', '', '2000-01-01', 'aa@aa.cl', 'Aa123456', 0, ''),
 (8, 'alan', 'arias', '', '2000-01-01', 'a@dasd.com', 'Alan1234', 0, ''),
-(9, 'juan', 'perez 2', '', '0000-00-00', 'juan.pere@uta.cl', 'Juan1234', 0, '');
+(10, 'Camilo', 'Valenzuela', '', '0000-00-00', 'camilovale@gmail.com', 'Camilo12', 0, ''),
+(17, 'Juan', 'a', 'No Def', '2000-01-01', 'a@a.cl', 'Camilo12', 0, 'Sin Dirección#0'),
+(18, 'a', 'a', 'No Def', '2000-01-01', 'a@sa.cl', 'Camilo12', 0, 'Sin Dirección#0'),
+(19, 'Pedro', 'perez', 'Hombre', '2000-01-01', 'pedro@gmail.com', 'Pedro123', 0, 'Sin Dirección#0');
 
 --
 -- Índices para tablas volcadas
@@ -203,7 +216,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `recetas`
@@ -215,7 +228,7 @@ ALTER TABLE `recetas`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restricciones para tablas volcadas
