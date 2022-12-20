@@ -73,7 +73,7 @@
                         <button type="button" data-bs-target="#top-recete-aside" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#top-recete-aside" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner" id="topRecete1"> </div>
+                    <div class="carousel-inner" id="topRecete1">  <!-- profile.js/setTopRecete() --> </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#top-recete-aside" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                         <span class="visually-hidden">Previous</span>
@@ -109,7 +109,6 @@
                     </button>
                 </div>
             </div>
-            <!-- <hr> -->
         </aside>
 
     </div>
@@ -127,7 +126,7 @@
                         <button type="button" data-bs-target="#top-recete-bottom" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#top-recete-bottom" data-bs-slide-to="2"></button>
                     </div>
-                    <div class="carousel-inner" id="topRecete2"></div>
+                    <div class="carousel-inner" id="topRecete2">  <!-- profile.js/setTopRecete() --> </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#top-recete-bottom" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                         <span class="visually-hidden">Previous</span>
@@ -161,7 +160,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+            </div>s
         </div>
     </div>
 

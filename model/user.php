@@ -3,7 +3,6 @@ require "conexion.php";
 
 class User
 {
-    // public $recetas;
     private $db;
 
     function __construct()
@@ -36,7 +35,6 @@ class User
         $sql = "INSERT INTO users (nombre, apellido, genero, f_nacimiento, email, pass, celular, direccion)
                 VALUES ('$firstName', '$lastName', '$gender', '$birthday', '$email', '$password', '$phone', '$address')";
         $this->Ejecutar($sql, 1);
-        // return $results;
     }
 
     function update($user_id, $columns, $values) {
@@ -45,56 +43,9 @@ class User
             $colVal .= "$columns[$i] = '$values[$i]'";
             $colVal .= $i < count($columns) - 1 ? ", " : "";
         }
-        // $colVal
-        // echo $colVal;
         $sql = "UPDATE users SET $colVal WHERE user_id = $user_id";
         $this->Ejecutar($sql, 1);
         echo 1;
     }
 
 }
-
-// class User
-// {
-//     public $servername = "190.45.88.109:3306";
-//     public $username = "root";
-//     public $password = "";
-//     public $name = "recette";
-//     public $conn;
-
-//     function start()
-//     {
-//         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->name);
-//         if ($this->conn->connect_error) {
-//             die("Connection failed: " . $this->conn->connect_error);
-//         }
-//     }
-
-//     function close()
-//     {
-//         $this->conn->close();
-//     }
-
-//     function query($sql)
-//     {
-//         $this->start();
-//         $result = $this->conn->query($sql);
-//         $this->close();
-//         return $result;
-//     }
-
-//     function search($email)
-//     {
-//         $sql = "SELECT * FROM users WHERE email = '$email'";
-//         $results = $this->query($sql);
-//         return $results;
-//     }
-//     function register($firstName, $lastName, $email, $password)
-//     {
-//         $sql = "INSERT INTO USERS (NOMBRE, APELLIDO, EMAIL, PASS) VALUES ('$firstName', '$lastName', '$email', '$password')";
-//         $this->query($sql);
-//         // return $results;
-//     }
-    
-
-// }

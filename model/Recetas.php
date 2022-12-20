@@ -3,7 +3,6 @@ require "conexion.php";
 
 class Recetas
 {
-    // public $recetas;
     private $db;
 
     function __construct()

@@ -94,10 +94,7 @@ async function confirmSett() {
                 },
                 url: 'controller/CtrlUsers.php?op=update',
                 type: 'POST',
-                success: () => {
-                    // console.log(result);
-                    // return result;
-                }
+                success: () => { }
             }))
         } catch {
             reject(0);
@@ -112,10 +109,8 @@ async function confirmSett() {
         $('#successfulUpdate').modal('show');
         for (let e in sett) {
             sett[e].disabled = !sett[e].disabled;
-            // sett[e].value = user[e];
         }
         setTimeout(() => {
-            console.log('5 sec');
             $('#successfulUpdate').modal('hide');
         }, 5000);
         btns.classList.add('d-none');

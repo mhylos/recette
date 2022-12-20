@@ -139,9 +139,10 @@ function logoutClick() {
         logoutBtn.removeEventListener('mouseenter', logoutMouseEnter);
         logoutBtn.removeEventListener('mouseleave', logoutMouseLeave);
         tagActive = 'logout';
+
         //volver al index
         location.href = 'index.php';
-        // console.log(JSON.parse(localStorage.getItem('user')).id);
+        //eliminar datos de localStorage
         localStorage.removeItem('remember');
         localStorage.removeItem('logged');
         localStorage.removeItem('user');

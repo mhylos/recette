@@ -49,8 +49,6 @@
             title.href = 'logIn.php'
         }
     } else {
-        // logo.classList.replace('fa-circle-user', 'fa-house');
-        // title.innerHTML = 'Inicio';
         btnHome.addEventListener("click", () => {
             location.href = 'index.php';
         });

@@ -28,21 +28,6 @@ switch ($request) {
         $columns = $_POST['columns'];
         $values = $_POST['values'];
         
-        // echo json_encode($values);
         echo $user -> update($user_id, $columns, $values);
-
-        // for ($i=0; $i < ; $i++) { 
-        //     # code...
-        // }
-        // echo json_encode($columns);
-        // $firstName = $_POST['firstName'];
-        // $lastName = $_POST['lastName'];
-        // $email = $_POST['email'];
-        // $password = $_POST['password'];
-        // $user->register($firstName, $lastName, $email, $password);
         break;
-} 
-    
-        // else {
-            // echo md5($_POST['password']);
-// }
+}

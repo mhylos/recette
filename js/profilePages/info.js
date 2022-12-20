@@ -101,16 +101,12 @@ async function confirmInfo() {
                 },
                 url: 'controller/CtrlUsers.php?op=update',
                 type: 'POST',
-                success: () => {
-                    // console.log(result);
-                    // return result;
-                }
+                success: () => {}
             }))
         } catch {
             reject(0);
         }
     });
-    // console.log(result);
     if (result == 1) {
         user.firstName = values[0];
         user.lastName = values[1];
@@ -120,10 +116,8 @@ async function confirmInfo() {
         $('#successfulUpdate').modal('show');
         for (let e in info) {
             info[e].disabled = !info[e].disabled;
-            // info[e].value = user[e];
         }
         setTimeout(() => {
-            console.log('5 sec');
             $('#successfulUpdate').modal('hide');
         }, 5000);
         btns.classList.add('d-none');

@@ -76,7 +76,7 @@ class Comments {
                 $order_by = "puntaje $sort, nombre  ASC, fecha ASC";
                 break;
         }
-        // return $sort;
+        
         $sql = "SELECT R.receta_id, R.nombre, C.nota puntaje, C.contenido, C.fecha FROM comments C JOIN recetas R USING (receta_id) WHERE user_id = $user_id ORDER BY $order_by";
         $results = $this->Ejecutar($sql, 0);
         return $results;

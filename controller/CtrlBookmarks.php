@@ -14,11 +14,7 @@ switch ($_REQUEST["op"]) {
         $order = $_POST['order'];
         $sort = $_POST['sort'];
         $result = $bookmarks->getBookmarksByUserID($userId, $order, $sort);
-        // if () {    
-        //     echo '';
-        // } else {
-        echo $result ? json_encode($result) : '' ;
-        // }
+        echo json_encode($result);
         break;
     case 'save_bookmark':
         if (isset($_POST['user_id']) && isset($_POST['receta_id'])) {

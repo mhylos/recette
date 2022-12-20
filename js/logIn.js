@@ -111,7 +111,6 @@ function ajaxPromise(data, url, type, success) {
 
 async function logIn() {
     let jsonUser = {};
-    // console.log(emailL.value)
     if (formLogin.email) {
         let result = $.parseJSON(await ajaxPromise(
             { 'email': emailL.value },
