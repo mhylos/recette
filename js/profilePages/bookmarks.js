@@ -45,7 +45,8 @@ function setBookmarks() {
         url: 'controller/CtrlBookmarks.php?op=bookmarks',
         type: 'POST',
         success: function (innerHTML) {
-            if (innerHTML != '') {
+            
+            if (innerHTML != 'null') {
                 let iH = $.parseJSON(innerHTML);
                 innerHTML = '';
                 let ord = '';

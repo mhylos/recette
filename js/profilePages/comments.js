@@ -46,7 +46,7 @@ function setComments() {
         url: 'controller/CtrlComments.php?op=comments',
         type: 'POST',
         success: function (innerHTML) {
-            if (innerHTML != '') {
+            if (innerHTML != 'null') {
                 let iH = $.parseJSON(innerHTML);
                 innerHTML = '';
                 let ord = '';
