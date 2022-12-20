@@ -206,7 +206,7 @@ async function register() {
             );
 
             let result = $.parseJSON(await ajaxPromise(
-                { 'email': emailL.value },
+                { 'email': email.value },
                 'controller/CtrlUsers.php?op=search',
                 'POST',
                 function () { }
