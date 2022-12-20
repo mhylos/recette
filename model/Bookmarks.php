@@ -38,18 +38,21 @@ class Bookmarks
     {
         $sort = $sort == 'true' ? 'ASC' : 'DESC';
         
-        if ($order == 'nombre') {
-            $order_by = "nombre $sort, fecha ASC";
-            // $order = 'nombre, fecha, calificacion';
-        } else if ($order == 'fecha') {
-            $order_by = "fecha  $sort, nombre ASC";
-            // $order = 'fecha, nombre, calificacion';
-        } else {
-            $order_by = "puntaje $sort, nombre  ASC, fecha ASC";
-            // $order = 'calificacion, nombre, fecha';
+        switch ($order) {
+            case 'nombre':
+                $order_by = "nombre $sort, R.fecha ASC";
+                break;
+            
+            case 'fecha':
+                $order_by = "fecha  $sort, nombre ASC";
+                break;
+            
+            case 'puntaje':
+                $order_by = "puntaje $sort, nombre  ASC, fecha ASC";
+                break;
         }
-
-        $sql = "SELECT AVG(nota) puntaje, R.nombre, R.img_name, C.fecha FROM comments C JOIN recetas R USING(receta_id) WHERE receta_id IN( SELECT receta_id FROM bookmarks JOIN recetas USING(receta_id) WHERE user_id = $user_id ) AND user_id = $user_id GROUP BY nombre ORDER BY $order_by";
+        
+        $sql = "SELECT AVG(nota) puntaje, R.receta_id, R.nombre, R.img_name, C.fecha FROM comments C JOIN recetas R USING(receta_id) WHERE receta_id IN( SELECT receta_id FROM bookmarks JOIN recetas USING(receta_id) WHERE user_id = $user_id ) AND user_id = $user_id GROUP BY nombre ORDER BY $order_by";
         $results = $this->Ejecutar($sql, 0);
         return $results;
     }

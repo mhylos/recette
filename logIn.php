@@ -29,7 +29,7 @@
         <div class="card-header p-2 pb-0 ">
             <nav>
                 <div class="nav nav-tabs justify-content-between border-0" id="nav-tab" role="tablist">
-                    <button class="nav-link active m-0" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true" onclick="setContinue('login')">Iniciar Sesión</button>
+                    <button class="nav-link active m-0 " id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true" onclick="setContinue('login')">Iniciar Sesión</button>
                     <button class="nav-link m-0" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false" onclick="setContinue('register')">Registrarse</button>
                 </div>
             </nav>
@@ -98,7 +98,7 @@
                             </span>
                             <input type="email" placeholder="usuario@email.com" class="form-control shadow-none m-0 rounded-end fs-6" id="emailRegister">
                         </div>
-                        <p class="d-none m-0 mt-2 text-danger" id="emailEmptyR">
+                        <p class="d-none m-0 mt-2 text-danger " id="emailEmptyR">
                             Campo Obligatorio *
                         </p>
                         <p class="d-none m-0 mt-2 text-danger" id="emailErrorR">

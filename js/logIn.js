@@ -14,7 +14,7 @@ function hideError(idError1) {
 }
 
 function validate(value, idError1, idError2) {
-    if (value.length == 0) {
+    if (!value || value.length == 0) {
         showError(idError1, idError2);
         return false;
     } else {
@@ -113,28 +113,23 @@ async function logIn() {
     let jsonUser = {};
     // console.log(emailL.value)
     if (formLogin.email) {
-        let result = await ajaxPromise(
+        let result = $.parseJSON(await ajaxPromise(
             { 'email': emailL.value },
             'controller/CtrlUsers.php?op=search',
             'POST',
-            function (result) {
-                return result
-            }
-        );
+            function () { }
+        ));
         if (validate(result, '#emailError', '#emailEmpty')) {
-            let list = result.split(', ');
-            list.pop();
-            // console.log(result);
             jsonUser = {
-                id: list[0],
-                firstName: list[1],
-                lastName: list[2],
-                gender: list[3],
-                birthday: list[4],
-                email: list[5],
-                password: list[6],
-                phone: list[7],
-                address: list[8],
+                id: result[0].user_id,
+                firstName: result[0].nombre,
+                lastName: result[0].apellido,
+                gender: result[0].genero,
+                birthday: result[0].f_nacimiento,
+                email: result[0].email,
+                password: result[0].pass,
+                phone: result[0].celular,
+                address: result[0].direccion,
             };
         }
     }
@@ -177,14 +172,12 @@ async function register() {
             { 'email': email.value },
             'controller/CtrlUsers.php?op=search',
             'POST',
-            function (result) {
-                return result
-            }
+            function () { }
         );
-
-        if (result.length != 0) {
+        if (result != 'null' && result.length != 0) {
             showError('#emailErrorR', '#emailEmptyR');
         } else {
+            hideError('#emailErrorR');
             let jsonUser = {
                 id: null,
                 firstName: firstName.value,
@@ -194,45 +187,39 @@ async function register() {
                 email: email.value,
                 password: password.value,
                 phone: 0,
-                address: 'Sin Dirección',
+                address: 'Sin Dirección#0',
             };
             await ajaxPromise(
                 {
-                    'firstName': jsonUser.firstName,
-                    'lastName': jsonUser.lastName,
-                    'email': jsonUser.email,
-                    'password': jsonUser.password,
+                    firstName: jsonUser.firstName,
+                    lastName: jsonUser.lastName,
+                    gender: jsonUser.gender,
+                    birthday: jsonUser.birthday,
+                    email: jsonUser.email,
+                    password: jsonUser.password,
+                    phone: jsonUser.phone,
+                    address: jsonUser.address
                 },
                 'controller/CtrlUsers.php?op=register',
                 'POST',
                 function () { }
             );
 
-            let result = await ajaxPromise(
-                { 'email': email.value },
+            let result = $.parseJSON(await ajaxPromise(
+                { 'email': emailL.value },
                 'controller/CtrlUsers.php?op=search',
                 'POST',
-                function (result) {
-                    return result
-                }
-            );
-            let list = result.split(', ');
-            list.pop();
-            jsonUser = {
-                id: list[0],
-                firstName: list[1],
-                lastName: list[2],
-                gender: list[3],
-                birthday: list[4],
-                email: list[5],
-                password: list[6],
-                phone: list[7],
-                address: list[8],
-            };
+                function () { }
+            ));
 
+            jsonUser.id = result[0].user_id;
+
+            // guardar datos en localStorage
             localStorage.setItem('logged', true);
             localStorage.setItem('user', JSON.stringify(jsonUser));
-            modal.toggle()
+
+            // ir al perfil
+            $('#successfulRegistration').modal('show');
             timeOut('#redirecting', 5, 'perfil.php');
         };
     } else {
@@ -252,7 +239,6 @@ const formLogin = {
 }
 
 const formValidated = {
-    // username: false,
     firstName: false,
     lastName: false,
     email: false,
@@ -268,14 +254,11 @@ emailL.oninput = () => formLogin.email = validate(emailL.value, '#emailEmpty', '
 
 passwordL.oninput = () => formLogin.password = validate(passwordL.value, '#passwordEmpty', '#passwordError');
 
-// const username = document.querySelector('#usernameRegister');
 const firstName = document.querySelector('#firstNameRegister');
 const lastName = document.querySelector('#lastNameRegister');
 const email = document.querySelector('#emailRegister');
 const password = document.querySelector('#passwordRegister');
 const repeatPassword = document.querySelector('#repeatPasswordRegister');
-
-// username.oninput = () => formValidated.username = validate(username.value, '#userEmpty', '#userError');
 
 firstName.oninput = () => formValidated.firstName = validate(firstName.value, '#nameEmpty', '#none');
 
@@ -286,7 +269,3 @@ email.oninput = () => formValidated.email = validate(email.value, '#emailEmptyR'
 password.oninput = () => formValidated.password = validatePassword(password.value, '#passwordEmptyR');
 
 repeatPassword.oninput = () => formValidated.repeatPassword = comparePassword(repeatPassword.value, '#repeatPasswordEmptyR');
-
-const successfulRegistration = document.querySelector('#successfulRegistration');
-const modal = new bootstrap.Modal(successfulRegistration);
-// successfulRegistration.addEventListener('shown.bs.modal', () => {})

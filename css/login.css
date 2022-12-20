@@ -1,6 +1,3 @@
-/* root { */
-/* --bs-nav-tabs-link-active-color: var(--color-text); */
-/* } */
 .pointer:hover {
     cursor: pointer;
 }
@@ -56,21 +53,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-15deg);
-}
-#remember-btn {
-    background-color: white;
-    border: 1px solid rgba(0,0,0,.25);
-}
-
-#remember-btn:checked {
-    background-color: purple;
-    border-color: purple;
-
-}
-
-#remember-btn[selected] {
-    box-shadow: none;
-
 }
 
 #cancel-register-btn,

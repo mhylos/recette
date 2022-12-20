@@ -47,14 +47,14 @@ class Recetas
 
     function getRandomRecipe()
     {
-        $sentencia = "SELECT * FROM recetas ORDER BY RAND() LIMIT 3";
+        $sentencia = "SELECT receta_id, nombre, img_name FROM recetas ORDER BY RAND() LIMIT 3";
         $data = $this->Ejecutar($sentencia, 0);
         return $data;
     }
 
     function getTopRecipe()
     {
-        $sentencia = "SELECT AVG(nota) nota, nombre, img_name FROM comments JOIN recetas USING (receta_id) GROUP BY nombre ORDER BY nota DESC LIMIT 3";
+        $sentencia = "SELECT AVG(nota) nota, receta_id, nombre, img_name FROM comments JOIN recetas USING (receta_id) GROUP BY nombre ORDER BY nota DESC LIMIT 3";
         $data = $this->Ejecutar($sentencia, 0);
         return $data;
     }

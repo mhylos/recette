@@ -7,27 +7,31 @@
     </a>
     <nav class="mb-2">
         <div class="d-flex gap-2" id="btns">
-            <button class="btn rounded-pill fs-5 d-flex align-items-center" >
-                <i class="fa-solid fa-circle-user fs-2"></i>
-                <span id="my-profile-btn"></span>
-            </button> 
+            <button id="btnHome" class="btn rounded-pill fs-5 d-flex align-items-center gap-2" id="btnUser">
+                <i class="fa-solid fa-house fs-2 m-0"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="btn rounded-pill fs-5 d-flex align-items-center gap-2" id="btnUser">
+                <i class="fa-solid fa-circle-user fs-2 m-0"></i>
+                <span id="title"></span>
+            </button>
             <button id="btnLogOut" class="d-none btn rounded-pill fs-5 d-flex align-items-center">
                 <i class="fa-solid fa-arrow-right-from-bracket fs-2"></i>
                 <span>Salir</span>
-            </button>      
+            </button>
         </div>
     </nav>
 </header>
 
 <script>
-
-
+    const btnHome = document.querySelector('#btnHome');
+    const btnUser = document.querySelector('#btnUser');
+    const title = document.querySelector('#title');
+    const logOut = document.querySelector('#btnLogOut');
     if (['/recette/index.php', '/recette/receta.php'].includes(location.pathname)) {
-        const myProfile = document.querySelector('#my-profile-btn');
-        const logOut = document.querySelector('#btnLogOut');
         if (localStorage.getItem('logged')) {
-            myProfile.innerHTML = 'Mi Perfil';
-            myProfile.addEventListener("click", () => {
+            title.innerHTML = 'Perfil';
+            btnUser.addEventListener("click", () => {
                 location.href = 'perfil.php';
             });
             logOut.classList.remove('d-none')
@@ -38,13 +42,23 @@
                 localStorage.removeItem('user');
             });
         } else {
-            myProfile.innerHTML = 'Iniciar Sesión';
-            myProfile.addEventListener("click", () => {
+            title.innerHTML = 'Iniciar Sesión';
+            btnUser.addEventListener("click", () => {
                 location.href = 'logIn.php'
             });
-            myProfile.href = 'logIn.php'
+            title.href = 'logIn.php'
         }
     } else {
-        document.querySelector('#btns').classList.add('d-none');
+        // logo.classList.replace('fa-circle-user', 'fa-house');
+        // title.innerHTML = 'Inicio';
+        btnHome.addEventListener("click", () => {
+            location.href = 'index.php';
+        });
+        btnUser.classList.add('d-none');
+    }
+    if (location.pathname.includes('index')) {
+        btnHome.classList.add('d-none');
+    } else {
+        btnHome.classList.remove('d-none');
     }
 </script>

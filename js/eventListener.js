@@ -1,17 +1,18 @@
 function restoreListener(tag) {
     const element = document.querySelector(`#${tagActive}-btn`);
     if (tag == 'profile') {
-        profileBtn.classList.remove('fa-face-smile-wink');
-        profileBtn.classList.add('fa-face-smile');
+        profileBtn.classList.replace('fa-face-smile-wink', 'fa-face-smile');
         document.querySelector('#circle-btn').style.color = 'grey';
         element.addEventListener('mouseenter', profileMouseEnter);
         element.addEventListener('mouseleave', profileMouseLeave);
     } else if (tag == 'bookmarks') {
+        bookmarksBtn.classList.add('fa-regular');
         bookmarksBtn.classList.remove('fa-solid');
         bookmarksBtn.style.color = 'grey';
         element.addEventListener('mouseenter', bookmarksMouseEnter);
         element.addEventListener('mouseleave', bookmarksMouseLeave);
     } else if (tag == 'comments') {
+        commentsBtn.classList.add('fa-regular');
         commentsBtn.classList.remove('fa-solid');
         commentsBtn.style.color = 'grey';
         element.addEventListener('mouseenter', commentsMouseEnter);
@@ -27,19 +28,17 @@ function restoreListener(tag) {
     }
 }
 
-function profileMouseEnter(event) {
-    profileBtn.classList.remove('fa-face-smile');
-    profileBtn.classList.add('fa-face-smile-wink');
+function profileMouseEnter() {
+    profileBtn.classList.replace('fa-face-smile', 'fa-face-smile-wink');
     document.querySelector('#circle-btn').style.color = 'purple';
 }
 
-function profileMouseLeave(event) {
-    profileBtn.classList.remove('fa-face-smile-wink');
-    profileBtn.classList.add('fa-face-smile');
+function profileMouseLeave() {
+    profileBtn.classList.replace('fa-face-smile-wink', 'fa-face-smile');
     document.querySelector('#circle-btn').style.color = 'grey';
 }
 
-function profileClick(event) {
+function profileClick() {
     if (tagActive != 'profile') {
         restoreListener(tagActive);
         document.querySelector('#circle-btn').style.color = 'purple';
@@ -50,25 +49,23 @@ function profileClick(event) {
     }
 }
 
-function bookmarksMouseEnter(event) {
-    bookmarksBtn.classList.remove('fa-regular');
-    bookmarksBtn.classList.add('fa-solid');
+function bookmarksMouseEnter() {
+    bookmarksBtn.classList.replace('fa-regular', 'fa-solid');
     bookmarksBtn.classList.add('fa-beat');
     bookmarksBtn.style.color = 'purple';
 }
 
-function bookmarksMouseLeave(event) {
-    bookmarksBtn.classList.remove('fa-solid');
-    bookmarksBtn.classList.add('fa-regular');
+function bookmarksMouseLeave() {
+    bookmarksBtn.classList.replace('fa-solid', 'fa-regular');
     bookmarksBtn.classList.remove('fa-beat');
     bookmarksBtn.style.color = 'grey';
 }
 
-function bookmarksClick(event) {
+function bookmarksClick() {
     if (tagActive != 'bookmarks') {
-        bookmarksBtn.classList.add('fa-regular');
-        bookmarksBtn.classList.remove('fa-beat');
+        // bookmarksBtn.classList.add('fa-regular');
         restoreListener(tagActive);
+        bookmarksBtn.classList.remove('fa-beat');
         bookmarksBtn.style.color = 'purple';
         bookmarksBtn.removeEventListener('mouseenter', bookmarksMouseEnter);
         bookmarksBtn.removeEventListener('mouseleave', bookmarksMouseLeave);
@@ -77,25 +74,23 @@ function bookmarksClick(event) {
     }
 }
 
-function commentsMouseEnter(event) {
-    commentsBtn.classList.remove('fa-regular');
-    commentsBtn.classList.add('fa-solid');
+function commentsMouseEnter() {
+    commentsBtn.classList.replace('fa-regular', 'fa-solid');
     commentsBtn.classList.add('fa-beat');
     commentsBtn.style.color = 'purple';
 }
 
-function commentsMouseLeave(event) {
-    commentsBtn.classList.remove('fa-solid');
-    commentsBtn.classList.add('fa-regular');
+function commentsMouseLeave() {
+    commentsBtn.classList.replace('fa-solid', 'fa-regular');
     commentsBtn.classList.remove('fa-beat');
     commentsBtn.style.color = 'grey';
 }
 
-function commentsClick(event) {
+function commentsClick() {
     if (tagActive != 'comments') {
-        commentsBtn.classList.add('fa-regular');
-        commentsBtn.classList.remove('fa-beat');
+        // commentsBtn.classList.add('fa-regular');
         restoreListener(tagActive);
+        commentsBtn.classList.remove('fa-beat');
         commentsBtn.style.color = 'purple';
         commentsBtn.removeEventListener('mouseenter', commentsMouseEnter);
         commentsBtn.removeEventListener('mouseleave', commentsMouseLeave);
@@ -104,20 +99,20 @@ function commentsClick(event) {
     }
 }
 
-function settingsMouseEnter(event) {
+function settingsMouseEnter() {
     settingsBtn.classList.add('fa-spin');
     settingsBtn.style.color = 'purple';
 }
 
-function settingsMouseLeave(event) {
+function settingsMouseLeave() {
     settingsBtn.classList.remove('fa-spin');
     settingsBtn.style.color = 'grey';
 }
 
-function settingsClick(event) {
+function settingsClick() {
     if (tagActive != 'settings') {
-        settingsBtn.classList.remove('fa-spin');
         restoreListener(tagActive);
+        settingsBtn.classList.remove('fa-spin');
         settingsBtn.style.color = 'purple';
         settingsBtn.removeEventListener('mouseenter', settingsMouseEnter);
         settingsBtn.removeEventListener('mouseleave', settingsMouseLeave);
@@ -126,20 +121,20 @@ function settingsClick(event) {
     }
 }
 
-function logoutMouseEnter(event) {
+function logoutMouseEnter() {
     logoutBtn.classList.add('fa-beat');
     logoutBtn.style.color = 'purple';
 }
 
-function logoutMouseLeave(event) {
+function logoutMouseLeave() {
     logoutBtn.classList.remove('fa-beat');
     logoutBtn.style.color = 'grey';
 }
 
-function logoutClick(event) {
+function logoutClick() {
     if (tagActive != 'logout') {
-        logoutBtn.classList.remove('fa-beat');
         restoreListener(tagActive);
+        logoutBtn.classList.remove('fa-beat');
         logoutBtn.style.color = 'purple';
         logoutBtn.removeEventListener('mouseenter', logoutMouseEnter);
         logoutBtn.removeEventListener('mouseleave', logoutMouseLeave);
@@ -164,7 +159,6 @@ const logoutBtn = document.querySelector('#logout-btn');
 
 
 profileBtn.addEventListener('mouseenter', profileMouseEnter);
-// profileBtn.addEventListener('mouseleave', profileMouseLeave);
 profileBtn.addEventListener('click', profileClick);
 
 bookmarksBtn.addEventListener('mouseenter', bookmarksMouseEnter);
